@@ -13,12 +13,12 @@ import { AccountsModule } from './accounts/accounts.module';
 
 @Module({})
 export class HederaModule {
-  static forRoot(operator: Operator, mirrorNode: MirrorNode, network: 'mainnet' | 'testnet'): DynamicModule {
+  static forRoot(operators: Array<Operator>, mirrorNode: MirrorNode, network: 'mainnet' | 'testnet'): DynamicModule {
     return {
       module: HederaModule,
       imports: [
         KeysModule, 
-        ClientModule.forRoot(operator, network), 
+        ClientModule.forRoot(operators, network), 
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
         HcsModule,
@@ -30,7 +30,7 @@ export class HederaModule {
       exports: [
         HederaService,
         KeysModule, 
-        ClientModule.forRoot(operator, network), 
+        ClientModule.forRoot(operators, network), 
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
         HcsModule,

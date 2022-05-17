@@ -4,13 +4,13 @@ import { ClientService } from './client.service';
 
 @Module({})
 export class ClientModule {
-  static forRoot(operator: Operator, network: 'mainnet' | 'testnet'): DynamicModule {
+  static forRoot(operators: Array<Operator>, network: 'mainnet' | 'testnet'): DynamicModule {
     return {
       module: ClientModule,
       providers: [
         {
-          provide: 'operator',
-          useValue: operator,
+          provide: 'operators',
+          useValue: operators,
         },
         {
           provide: 'network',

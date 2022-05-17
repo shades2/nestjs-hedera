@@ -6,29 +6,28 @@ import { Operator } from '../../types/operator.types';
 @Injectable()
 export class ClientService {
   private client: Client;
+  private operator: Operator;
   private logger: Logger = new Logger("Client Service");
 
   constructor(
-    @Inject('operator') private operator: Operator,
+    @Inject('operators') private operators: Array<Operator>,
     @Inject('network') private network: 'mainnet' | 'testnet',
   ) {
     // Create our connection to the Hedera network...
-    this.client = this.generateNewClient();
+    this.client = this.getClient();
+    this.operator = this.getNodeOperator();
   }
 
   @OnEvent('client.invalid_node_operator')
-  generateNewClient() {
+  getClient(): Client {
     if (this.network == 'testnet') {
       this.client = Client.forTestnet();
     } else {
       this.client = Client.forMainnet();
     }
     
+    this.operator = this.operators[Math.floor(Math.random() * this.operators.length)];
     this.client.setOperator(this.operator.accountId, this.operator.privateKey);
-    return this.client;
-  }
-
-  getClient(): Client {
     return this.client;
   }
 

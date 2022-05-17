@@ -1,12 +1,12 @@
 import { Client } from '@hashgraph/sdk';
 import { Operator } from '../../types/operator.types';
 export declare class ClientService {
-    private operator;
+    private operators;
     private network;
     private client;
+    private operator;
     private logger;
-    constructor(operator: Operator, network: 'mainnet' | 'testnet');
-    generateNewClient(): Client;
+    constructor(operators: Array<Operator>, network: 'mainnet' | 'testnet');
     getClient(): Client;
     getNodeOperator(): Operator;
 }

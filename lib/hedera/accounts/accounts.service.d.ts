@@ -18,5 +18,5 @@ export declare class AccountsService {
     }>;
     freezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise<any>;
     unfreezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise<any>;
-    getQueryBalance(accountId: string | AccountId, tokenId?: string, raw?: boolean): Promise<AccountBalance>;
+    getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<AccountBalance>;
 }

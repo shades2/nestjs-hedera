@@ -181,7 +181,7 @@ export class AccountsService {
     });
   }
 
-  getQueryBalance(accountId: string | AccountId, tokenId?: string, raw?: boolean): Promise<AccountBalance> {
+  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<AccountBalance> {
     return new Promise(async (resolve, reject) => {
       try {
         const query = new AccountBalanceQuery()
