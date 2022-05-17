@@ -1,1 +1,1 @@
-# HSuite - Smart Node - Hedera for NestJS
+# HSuite - Hedera for NestJS

@@ -6,6 +6,7 @@ import { ClientModule } from './client/client.module';
 import { RestModule } from './rest/rest.module';
 import { Operator } from '../types/operator.types';
 import { MirrorNode } from '../types/mirror.types';
+import { HcsModule } from './hcs/hcs.module';
 
 // import { HfsModule } from './hfs/hfs.module';
 // import { HcsModule } from './hcs/hcs.module';
@@ -22,8 +23,8 @@ export class HederaModule {
         ClientModule.forRoot(operator, network), 
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
+        HcsModule,
         // HfsModule, 
-        // HcsModule, 
         // HtsModule, 
         // AccountsModule    
       ],
@@ -34,8 +35,8 @@ export class HederaModule {
         ClientModule.forRoot(operator, network), 
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
-        // HfsModule, 
-        // HcsModule, 
+        HcsModule,
+        // HfsModule,
         // HtsModule, 
         // AccountsModule         
       ],
