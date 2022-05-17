@@ -8,10 +8,7 @@ import { Operator } from '../types/operator.types';
 import { MirrorNode } from '../types/mirror.types';
 import { HcsModule } from './hcs/hcs.module';
 import { HfsModule } from './hfs/hfs.module';
-
-// import { HfsModule } from './hfs/hfs.module';
-// import { HcsModule } from './hcs/hcs.module';
-// import { HtsModule } from './hts/hts.module';
+import { HtsModule } from './hts/hts.module';
 // import { AccountsModule } from './accounts/accounts.module';
 
 @Module({})
@@ -26,7 +23,7 @@ export class HederaModule {
         TransactionsModule,
         HcsModule,
         HfsModule, 
-        // HtsModule, 
+        HtsModule,
         // AccountsModule    
       ],
       providers: [HederaService],
@@ -38,7 +35,7 @@ export class HederaModule {
         TransactionsModule,
         HcsModule,
         HfsModule,
-        // HtsModule, 
+        HtsModule,
         // AccountsModule         
       ],
       global: true
