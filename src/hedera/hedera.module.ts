@@ -9,7 +9,7 @@ import { MirrorNode } from '../types/mirror.types';
 import { HcsModule } from './hcs/hcs.module';
 import { HfsModule } from './hfs/hfs.module';
 import { HtsModule } from './hts/hts.module';
-// import { AccountsModule } from './accounts/accounts.module';
+import { AccountsModule } from './accounts/accounts.module';
 
 @Module({})
 export class HederaModule {
@@ -24,7 +24,7 @@ export class HederaModule {
         HcsModule,
         HfsModule, 
         HtsModule,
-        // AccountsModule    
+        AccountsModule    
       ],
       providers: [HederaService],
       exports: [
@@ -36,7 +36,7 @@ export class HederaModule {
         HcsModule,
         HfsModule,
         HtsModule,
-        // AccountsModule         
+        AccountsModule         
       ],
       global: true
     }
