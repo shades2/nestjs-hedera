@@ -14,10 +14,18 @@ export class RestService {
   async call(endpoint: string): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
+        let headers = {};
+
+        if(this.mirrorNode.apiKey) {
+          headers = {
+            'authorization': this.mirrorNode.apiKey
+          }
+        }
+
         let response = await this.httpService
         .get(
           `${this.mirrorNode.url}/api/v1/${endpoint}`,
-          { headers: {'authorization': this.mirrorNode.apiKey} }).toPromise();
+          { headers: headers }).toPromise();
   
         resolve(response?.data);
       } catch(error) {
