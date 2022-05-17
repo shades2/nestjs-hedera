@@ -1,5 +1,6 @@
 import { DynamicModule } from '@nestjs/common';
-import { MirrorNode } from '../../types/mirror.types';
+import { HederaOptions } from '../../types/hedera_options.types';
 export declare class RestModule {
-    static forRoot(mirrorNode: MirrorNode): DynamicModule;
+    static forRoot(options: HederaOptions): DynamicModule;
+    static forRootAsync(options: any): DynamicModule;
 }

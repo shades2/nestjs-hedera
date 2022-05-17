@@ -1,4 +1,4 @@
-import { Module, DynamicModule } from '@nestjs/common';
+import { Module, DynamicModule, Provider } from '@nestjs/common';
 import { HederaService } from './hedera.service';
 import { KeysModule } from './keys/keys.module';
 import { TransactionsModule } from './transactions/transactions.module';
@@ -10,16 +10,17 @@ import { HcsModule } from './hcs/hcs.module';
 import { HfsModule } from './hfs/hfs.module';
 import { HtsModule } from './hts/hts.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { HederaOptions } from '../types/hedera_options.types';
 
 @Module({})
 export class HederaModule {
-  static forRoot(operators: Array<Operator>, mirrorNode: MirrorNode, network: 'mainnet' | 'testnet'): DynamicModule {
+  static forRoot(options: HederaOptions): DynamicModule {
     return {
       module: HederaModule,
       imports: [
         KeysModule, 
-        ClientModule.forRoot(operators, network), 
-        RestModule.forRoot(mirrorNode),
+        ClientModule.forRoot(options), 
+        RestModule.forRoot(options),
         TransactionsModule,
         HcsModule,
         HfsModule, 
@@ -30,13 +31,42 @@ export class HederaModule {
       exports: [
         HederaService,
         KeysModule, 
-        ClientModule.forRoot(operators, network), 
-        RestModule.forRoot(mirrorNode),
+        ClientModule.forRoot(options), 
+        RestModule.forRoot(options),
         TransactionsModule,
         HcsModule,
         HfsModule,
         HtsModule,
-        AccountsModule         
+        AccountsModule
+      ],
+      global: true
+    }
+  }
+
+  static forRootAsync(options: HederaOptions): DynamicModule {
+    return {
+      module: HederaModule,
+      imports: [
+        KeysModule, 
+        ClientModule.forRootAsync(options), 
+        RestModule.forRootAsync(options),
+        TransactionsModule,
+        HcsModule,
+        HfsModule, 
+        HtsModule,
+        AccountsModule    
+      ],
+      providers: [HederaService],
+      exports: [
+        HederaService,
+        KeysModule, 
+        ClientModule.forRootAsync(options), 
+        RestModule.forRootAsync(options),
+        TransactionsModule,
+        HcsModule,
+        HfsModule,
+        HtsModule,
+        AccountsModule
       ],
       global: true
     }

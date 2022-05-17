@@ -1,21 +1,35 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { Operator } from '../../types/operator.types';
 import { ClientService } from './client.service';
+import { ConfigModule } from '@nestjs/config';
+import { HederaOptions } from '../../types/hedera_options.types';
 
 @Module({})
 export class ClientModule {
-  static forRoot(operators: Array<Operator>, network: 'mainnet' | 'testnet'): DynamicModule {
+  static forRoot(options: HederaOptions): DynamicModule {
     return {
       module: ClientModule,
       providers: [
         {
-          provide: 'operators',
-          useValue: operators,
+          provide: 'hederaOptions',
+          useValue: options,
         },
+        ClientService,
+      ],
+      exports: [ClientService]
+    }
+  }
+
+  static forRootAsync(options: any): DynamicModule {
+    return {
+      module: ClientModule,
+      imports: [ConfigModule],
+      providers: [
         {
-          provide: 'network',
-          useValue: network
-        },
+          provide: 'hederaOptions',
+          useFactory: options.useFactory,
+          inject: [options.useExisting]
+        },       
         ClientService,
       ],
       exports: [ClientService]

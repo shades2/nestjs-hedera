@@ -1,12 +1,14 @@
 import { Client } from '@hashgraph/sdk';
 import { Operator } from '../../types/operator.types';
+import { HederaOptions } from '../../types/hedera_options.types';
 export declare class ClientService {
-    private operators;
-    private network;
+    private hederaOptions;
     private client;
     private operator;
+    private operators;
+    private network;
     private logger;
-    constructor(operators: Array<Operator>, network: 'mainnet' | 'testnet');
+    constructor(hederaOptions: HederaOptions);
     getClient(): Client;
     getNodeOperator(): Operator;
 }
