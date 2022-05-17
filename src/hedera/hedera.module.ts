@@ -7,6 +7,7 @@ import { RestModule } from './rest/rest.module';
 import { Operator } from '../types/operator.types';
 import { MirrorNode } from '../types/mirror.types';
 import { HcsModule } from './hcs/hcs.module';
+import { HfsModule } from './hfs/hfs.module';
 
 // import { HfsModule } from './hfs/hfs.module';
 // import { HcsModule } from './hcs/hcs.module';
@@ -24,7 +25,7 @@ export class HederaModule {
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
         HcsModule,
-        // HfsModule, 
+        HfsModule, 
         // HtsModule, 
         // AccountsModule    
       ],
@@ -36,7 +37,7 @@ export class HederaModule {
         RestModule.forRoot(mirrorNode),
         TransactionsModule,
         HcsModule,
-        // HfsModule,
+        HfsModule,
         // HtsModule, 
         // AccountsModule         
       ],

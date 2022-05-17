@@ -32,7 +32,7 @@ export class TransactionsService {
 
         let receipt = await transaction.execute(this.clientService.getClient());
         resolve(receipt);
-      } catch(error) {
+      } catch(error: any) {
         reject(error);
       }
     });
@@ -43,7 +43,8 @@ export class TransactionsService {
       try {
         let transaction = new TransactionReceiptQuery()
         .setTransactionId(transactionId)
-        .setIncludeDuplicates(true);
+        .setIncludeDuplicates(true)
+        .setIncludeChildren(true);
 
         let receipt = await transaction.execute(this.clientService.getClient());
         resolve(receipt);
