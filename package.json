@@ -1,6 +1,6 @@
 {
   "name": "hsuite-nestjs-hedera",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HbarSuite/smart-node-sdk.git"
+    "url": "git+https://github.com/HbarSuite/nestjs-hedera.git"
   },
   "keywords": [
     "hsuite",
     "smart-node",
-    "smart-node-sdk",
+    "nestjs-hedera",
     "hsuite-network",
     "hedera",
     "dex"
@@ -23,7 +23,7 @@
   "author": "HSuite",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HbarSuite/smart-node-sdk/issues"
+    "url": "https://github.com/HbarSuite/nestjs-hedera/issues"
   },
   "homepage": "https://hsuite.finance",
   "devDependencies": {
