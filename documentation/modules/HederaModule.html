@@ -87,15 +87,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(operator: <a href="../interfaces/Operator.html" target="_self">Operator</a>, mirrorNode: <a href="../interfaces/MirrorNode.html" target="_self">MirrorNode</a>, network: "mainnet" | "testnet")</code>
+                    <code>forRoot(options: <a href="../interfaces/HederaOptions.html" target="_self">HederaOptions</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/hedera/hedera.module.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/hedera/hedera.module.ts:17</a></div>
                 </td>
             </tr>
 
@@ -116,9 +116,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>operator</td>
+                                    <td>options</td>
                                     <td>
-                                                <code><a href="../interfaces/Operator.html" target="_self" >Operator</a></code>
+                                                <code><a href="../interfaces/HederaOptions.html" target="_self" >HederaOptions</a></code>
                                     </td>
 
                                     <td>
@@ -127,22 +127,69 @@
 
 
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>DynamicModule</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forRootAsync"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>forRootAsync</b></span>
+                        <a href="#forRootAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forRootAsync(options: <a href="../interfaces/HederaOptions.html" target="_self">HederaOptions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/hedera/hedera.module.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
                                 <tr>
-                                    <td>mirrorNode</td>
-                                    <td>
-                                                <code><a href="../interfaces/MirrorNode.html" target="_self" >MirrorNode</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <td>network</td>
+                                    <td>options</td>
                                     <td>
-                                            <code>&quot;mainnet&quot; | &quot;testnet&quot;</code>
+                                                <code><a href="../interfaces/HederaOptions.html" target="_self" >HederaOptions</a></code>
                                     </td>
 
                                     <td>
@@ -172,7 +219,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule, Provider } from &#x27;@nestjs/common&#x27;;
 import { HederaService } from &#x27;./hedera.service&#x27;;
 import { KeysModule } from &#x27;./keys/keys.module&#x27;;
 import { TransactionsModule } from &#x27;./transactions/transactions.module&#x27;;
@@ -181,38 +228,66 @@ import { RestModule } from &#x27;./rest/rest.module&#x27;;
 import { Operator } from &#x27;../types/operator.types&#x27;;
 import { MirrorNode } from &#x27;../types/mirror.types&#x27;;
 import { HcsModule } from &#x27;./hcs/hcs.module&#x27;;
-
-// import { HfsModule } from &#x27;./hfs/hfs.module&#x27;;
-// import { HcsModule } from &#x27;./hcs/hcs.module&#x27;;
-// import { HtsModule } from &#x27;./hts/hts.module&#x27;;
-// import { AccountsModule } from &#x27;./accounts/accounts.module&#x27;;
+import { HfsModule } from &#x27;./hfs/hfs.module&#x27;;
+import { HtsModule } from &#x27;./hts/hts.module&#x27;;
+import { AccountsModule } from &#x27;./accounts/accounts.module&#x27;;
+import { HederaOptions } from &#x27;../types/hedera_options.types&#x27;;
 
 @Module({})
 export class HederaModule {
-  static forRoot(operator: Operator, mirrorNode: MirrorNode, network: &#x27;mainnet&#x27; | &#x27;testnet&#x27;): DynamicModule {
+  static forRoot(options: HederaOptions): DynamicModule {
     return {
       module: HederaModule,
       imports: [
         KeysModule, 
-        ClientModule.forRoot(operator, network), 
-        RestModule.forRoot(mirrorNode),
+        ClientModule.forRoot(options), 
+        RestModule.forRoot(options),
         TransactionsModule,
         HcsModule,
-        // HfsModule, 
-        // HtsModule, 
-        // AccountsModule    
+        HfsModule, 
+        HtsModule,
+        AccountsModule    
       ],
       providers: [HederaService],
       exports: [
         HederaService,
         KeysModule, 
-        ClientModule.forRoot(operator, network), 
-        RestModule.forRoot(mirrorNode),
+        ClientModule.forRoot(options), 
+        RestModule.forRoot(options),
         TransactionsModule,
         HcsModule,
-        // HfsModule,
-        // HtsModule, 
-        // AccountsModule         
+        HfsModule,
+        HtsModule,
+        AccountsModule
+      ],
+      global: true
+    }
+  }
+
+  static forRootAsync(options: HederaOptions): DynamicModule {
+    return {
+      module: HederaModule,
+      imports: [
+        KeysModule, 
+        ClientModule.forRootAsync(options), 
+        RestModule.forRootAsync(options),
+        TransactionsModule,
+        HcsModule,
+        HfsModule, 
+        HtsModule,
+        AccountsModule    
+      ],
+      providers: [HederaService],
+      exports: [
+        HederaService,
+        KeysModule, 
+        ClientModule.forRootAsync(options), 
+        RestModule.forRootAsync(options),
+        TransactionsModule,
+        HcsModule,
+        HfsModule,
+        HtsModule,
+        AccountsModule
       ],
       global: true
     }

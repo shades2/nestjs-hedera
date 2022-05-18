@@ -87,15 +87,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(operator: <a href="../interfaces/Operator.html" target="_self">Operator</a>, network: "mainnet" | "testnet")</code>
+                    <code>forRoot(options: <a href="../interfaces/HederaOptions.html" target="_self">HederaOptions</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="7"
-                            class="link-to-prism">src/hedera/client/client.module.ts:7</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="9"
+                            class="link-to-prism">src/hedera/client/client.module.ts:9</a></div>
                 </td>
             </tr>
 
@@ -116,9 +116,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>operator</td>
+                                    <td>options</td>
                                     <td>
-                                                <code><a href="../interfaces/Operator.html" target="_self" >Operator</a></code>
+                                                <code><a href="../interfaces/HederaOptions.html" target="_self" >HederaOptions</a></code>
                                     </td>
 
                                     <td>
@@ -127,10 +127,69 @@
 
 
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>DynamicModule</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forRootAsync"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>forRootAsync</b></span>
+                        <a href="#forRootAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forRootAsync(options: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/hedera/client/client.module.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
                                 <tr>
-                                    <td>network</td>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
                                     <td>
-                                            <code>&quot;mainnet&quot; | &quot;testnet&quot;</code>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -163,21 +222,35 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
 import { Operator } from &#x27;../../types/operator.types&#x27;;
 import { ClientService } from &#x27;./client.service&#x27;;
+import { ConfigModule } from &#x27;@nestjs/config&#x27;;
+import { HederaOptions } from &#x27;../../types/hedera_options.types&#x27;;
 
 @Module({})
 export class ClientModule {
-  static forRoot(operator: Operator, network: &#x27;mainnet&#x27; | &#x27;testnet&#x27;): DynamicModule {
+  static forRoot(options: HederaOptions): DynamicModule {
     return {
       module: ClientModule,
       providers: [
         {
-          provide: &#x27;operator&#x27;,
-          useValue: operator,
+          provide: &#x27;hederaOptions&#x27;,
+          useValue: options,
         },
+        ClientService,
+      ],
+      exports: [ClientService]
+    }
+  }
+
+  static forRootAsync(options: any): DynamicModule {
+    return {
+      module: ClientModule,
+      imports: [ConfigModule],
+      providers: [
         {
-          provide: &#x27;network&#x27;,
-          useValue: network
-        },
+          provide: &#x27;hederaOptions&#x27;,
+          useFactory: options.useFactory,
+          inject: [options.useExisting]
+        },       
         ClientService,
       ],
       exports: [ClientService]

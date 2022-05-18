@@ -43,7 +43,7 @@ export class HederaModule {
     }
   }
 
-  static forRootAsync(options: HederaOptions): DynamicModule {
+  static forRootAsync(options: any): DynamicModule {
     return {
       module: HederaModule,
       imports: [

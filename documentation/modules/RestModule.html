@@ -87,15 +87,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(mirrorNode: <a href="../interfaces/MirrorNode.html" target="_self">MirrorNode</a>)</code>
+                    <code>forRoot(options: <a href="../interfaces/HederaOptions.html" target="_self">HederaOptions</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/hedera/rest/rest.module.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/hedera/rest/rest.module.ts:10</a></div>
                 </td>
             </tr>
 
@@ -116,9 +116,80 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>mirrorNode</td>
+                                    <td>options</td>
                                     <td>
-                                                <code><a href="../interfaces/MirrorNode.html" target="_self" >MirrorNode</a></code>
+                                                <code><a href="../interfaces/HederaOptions.html" target="_self" >HederaOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>DynamicModule</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forRootAsync"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>forRootAsync</b></span>
+                        <a href="#forRootAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forRootAsync(options: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/hedera/rest/rest.module.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -152,18 +223,36 @@
 import { RestService } from &#x27;./rest.service&#x27;;
 import { HttpModule } from &#x27;@nestjs/axios&#x27;;
 import { MirrorNode } from &#x27;../../types/mirror.types&#x27;;
+import { ConfigModule } from &#x27;@nestjs/config&#x27;;
+import { HederaOptions } from &#x27;../../types/hedera_options.types&#x27;;
 
 @Module({})
 export class RestModule {
-  static forRoot(mirrorNode: MirrorNode): DynamicModule {
+  static forRoot(options: HederaOptions): DynamicModule {
     return {
       module: RestModule,
       imports: [HttpModule],
       providers: [
         {
-          provide: &#x27;mirrorNode&#x27;,
-          useValue: mirrorNode,
+          provide: &#x27;hederaOptions&#x27;,
+          useValue: options,
         },
+        RestService,
+      ],
+      exports: [RestService]
+    }
+  }
+
+  static forRootAsync(options: any): DynamicModule {
+    return {
+      module: RestModule,
+      imports: [HttpModule, ConfigModule],
+      providers: [
+        {
+          provide: &#x27;hederaOptions&#x27;,
+          useFactory: options.useFactory,
+          inject: [options.useExisting]
+        },       
         RestService,
       ],
       exports: [RestService]

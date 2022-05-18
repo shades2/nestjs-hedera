@@ -40,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >TransactionsService</li>
+  <li >HfsService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/hedera/transactions/transactions.service.ts</code>
+            <code>src/hedera/hfs/hfs.service.ts</code>
         </p>
 
 
@@ -95,23 +95,27 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createScheduledTransaction" >createScheduledTransaction</a>
+                                <a href="#append" >append</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getScheduledTrasaction" >getScheduledTrasaction</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getTransactionQuery" >getTransactionQuery</a>
+                                <a href="#delete" >delete</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getTransactionReceipt" >getTransactionReceipt</a>
+                                <a href="#getContents" >getContents</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#signScheduledTransaction" >signScheduledTransaction</a>
+                                <a href="#getInfos" >getInfos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
                             </li>
                         </ul>
                     </td>
@@ -136,7 +140,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/hedera/transactions/transactions.service.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/hedera/hfs/hfs.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -183,26 +187,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createScheduledTransaction"></a>
+                    <a name="append"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
-                        <span ><b>createScheduledTransaction</b></span>
-                        <a href="#createScheduledTransaction"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>append</b></span>
+                        <a href="#append"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createScheduledTransaction(transactionToSchedule: Transaction)</code>
+                    <code>append(fileId: FileId, key: PrivateKey, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, maxTransactionFee?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/hedera/transactions/transactions.service.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:62</a></div>
                 </td>
             </tr>
 
@@ -223,293 +227,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>transactionToSchedule</td>
+                                    <td>fileId</td>
                                     <td>
-                                            <code>Transaction</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;ScheduleId | null&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getScheduledTrasaction"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>getScheduledTrasaction</b></span>
-                        <a href="#getScheduledTrasaction"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getScheduledTrasaction(scheduleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/hedera/transactions/transactions.service.ts:102</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>scheduleId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getTransactionQuery"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>getTransactionQuery</b></span>
-                        <a href="#getTransactionQuery"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getTransactionQuery(transactionId: TransactionId)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/hedera/transactions/transactions.service.ts:26</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>transactionId</td>
-                                    <td>
-                                            <code>TransactionId</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getTransactionReceipt"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>getTransactionReceipt</b></span>
-                        <a href="#getTransactionReceipt"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getTransactionReceipt(transactionId: TransactionId)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/hedera/transactions/transactions.service.ts:41</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>transactionId</td>
-                                    <td>
-                                            <code>TransactionId</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signScheduledTransaction"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>signScheduledTransaction</b></span>
-                        <a href="#signScheduledTransaction"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signScheduledTransaction(scheduleId: ScheduleId, key: PrivateKey)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/hedera/transactions/transactions.service.ts:57</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>scheduleId</td>
-                                    <td>
-                                            <code>ScheduleId</code>
+                                            <code>FileId</code>
                                     </td>
 
                                     <td>
@@ -526,6 +246,505 @@
 
                                     <td>
                                         No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>maxTransactionFee</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Status&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(key: PrivateKey, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, maxTransactionFee?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>memo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>maxTransactionFee</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;FileId | null&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(fileId: FileId, key: PrivateKey, maxTransactionFee?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileId</td>
+                                    <td>
+                                            <code>FileId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>maxTransactionFee</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Status&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContents"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getContents</b></span>
+                        <a href="#getContents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getContents(fileId: FileId)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:174</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileId</td>
+                                    <td>
+                                            <code>FileId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfos"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getInfos</b></span>
+                        <a href="#getInfos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getInfos(fileId: FileId)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileId</td>
+                                    <td>
+                                            <code>FileId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;FileInfo&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(fileId: FileId, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, signKey: PrivateKey, newKey?: PrivateKey, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, maxTransactionFee?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fileId</td>
+                                    <td>
+                                            <code>FileId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>signKey</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>newKey</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>memo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>maxTransactionFee</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
                                     </td>
 
 
@@ -572,12 +791,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Logger(&quot;Transactions Service&quot;)</code>
+                        <i>Default value : </i><code>new Logger(&quot;HFS Service&quot;)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/hedera/transactions/transactions.service.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/hedera/hfs/hfs.service.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -590,116 +809,210 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
-import { ClientService } from &#x27;../client/client.service&#x27;;
-import { 
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { 
+  FileAppendTransaction, 
+  FileContentsQuery, 
+  FileCreateTransaction, 
+  FileDeleteTransaction, 
+  FileId, 
+  FileInfo, 
+  FileInfoQuery, 
+  FileUpdateTransaction, 
+  Hbar, 
   PrivateKey, 
-  ScheduleCreateTransaction, 
-  ScheduleId, 
-  ScheduleInfoQuery, 
-  ScheduleSignTransaction, 
-  Status, 
-  Transaction, 
-  TransactionId, 
-  TransactionReceipt, 
-  TransactionReceiptQuery,
-  TransactionRecordQuery, 
-  TransactionResponse 
+  Status 
 } from &#x27;@hashgraph/sdk&#x27;;
+import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
+import { ClientService } from &#x27;../client/client.service&#x27;;
 
 @Injectable()
-export class TransactionsService {
-  protected logger: Logger &#x3D; new Logger(&quot;Transactions Service&quot;);
+export class HfsService {
+  protected logger: Logger &#x3D; new Logger(&quot;HFS Service&quot;);
 
   constructor(
     private clientService: ClientService
   ) {}
 
-  async getTransactionQuery(transactionId: TransactionId): Promise&lt;any&gt; {
+  async create(
+    key: PrivateKey,
+    content: string,
+    memo?: string,
+    maxTransactionFee?: number,
+  ): Promise&lt;FileId | null&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
-        let transaction &#x3D; new TransactionRecordQuery()
-        .setTransactionId(transactionId)
-        .setIncludeDuplicates(true);
+        // Creating the transaction...
+        const transaction &#x3D; await new FileCreateTransaction()
+          .setKeys([key])
+          .setContents(content);
 
-        let receipt &#x3D; await transaction.execute(this.clientService.getClient());
-        resolve(receipt);
-      } catch(error: any) {
-        reject(error);
-      }
-    });
-  }  
+        if(memo) {
+          transaction.setFileMemo(memo);
+        }
 
-  async getTransactionReceipt(transactionId: TransactionId): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
-      try {
-        let transaction &#x3D; new TransactionReceiptQuery()
-        .setTransactionId(transactionId)
-        .setIncludeDuplicates(true)
-        .setIncludeChildren(true);
+        if(maxTransactionFee) {
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+        }
 
-        let receipt &#x3D; await transaction.execute(this.clientService.getClient());
-        resolve(receipt);
+        transaction.freezeWith(this.clientService.getClient());
+
+        // Signing with the file private keys...
+        const signTx &#x3D; await transaction.sign(key);
+        // Executing the transaction...
+        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        // Requesting the receipt...
+        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        // Get the file ID
+        resolve(receipt.fileId);        
       } catch(error) {
         reject(error);
       }
     });
   }
 
-  async signScheduledTransaction(scheduleId: ScheduleId, key: PrivateKey): Promise&lt;Status&gt; {
-    return new Promise(async (resolve, reject) &#x3D;&gt; {
+  async append(
+    fileId: FileId,
+    key: PrivateKey,
+    content: string,
+    maxTransactionFee?: number,
+  ): Promise&lt;Status&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
         // Creating the transaction...
-        const transaction &#x3D; await new ScheduleSignTransaction()
-            .setScheduleId(scheduleId)
-            .freezeWith(this.clientService.getClient())
-            .sign(key);
+        const transaction &#x3D; await new FileAppendTransaction()
+          .setFileId(fileId)
+          .setContents(content);
 
-        // Signing with the client operator key...
-        const txResponse &#x3D; await transaction.execute(this.clientService.getClient());
+        if(maxTransactionFee) {
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+        }
 
-        // Getting the receipt of the transaction...
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-
-        // Getting the transaction status...
-        resolve(receipt.status);
-      } catch (error) {
+        transaction.freezeWith(this.clientService.getClient());
+        
+        // Signing with the file private keys...
+        const signTx &#x3D; await transaction.sign(key);
+        // Executing the transaction...
+        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        // Requesting the receipt...
+        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        // Get the transaction status
+        resolve(receipt.status);        
+      } catch(error) {
         reject(error);
       }
     });
   }
 
-  async createScheduledTransaction(transactionToSchedule: Transaction): Promise&lt;ScheduleId | null&gt; {
-    return new Promise(async (resolve, reject) &#x3D;&gt; {
+  async update(
+    fileId: FileId,
+    content: string,
+    signKey: PrivateKey,
+    newKey?: PrivateKey,    
+    memo?: string,
+    maxTransactionFee?: number,
+  ): Promise&lt;Status&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
-        // Creating a schedule transaction...
-        let  scheduledTransaction: ScheduleCreateTransaction &#x3D; new ScheduleCreateTransaction()
-            .setScheduledTransaction(transactionToSchedule);
+        // Creating the transaction...
+        const transaction &#x3D; await new FileUpdateTransaction()
+          .setFileId(fileId)
+          .setContents(content);
 
-        // Signing with the client operator key and submit the transaction to a Hedera network...
-        let txResponse: TransactionResponse &#x3D; await scheduledTransaction.execute(this.clientService.getClient());
+        if(memo) {
+          transaction.setFileMemo(memo);
+        }          
 
-        // Requesting the receipt of the transaction...
-        let receipt: TransactionReceipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        if(maxTransactionFee) {
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+        }
 
-        // Geting the schedule ID...
-        let scheduleId: ScheduleId | null &#x3D; receipt.scheduleId;
-        resolve(scheduleId);
-      } catch (error) {
+        if(newKey) {
+          transaction.setKeys([newKey]);
+        }
+
+        transaction.freezeWith(this.clientService.getClient());
+        
+        // Signing the transaction...
+        let signTx &#x3D; await transaction.sign(signKey);
+
+        if(newKey) {
+          signTx &#x3D; await signTx.sign(newKey);
+        }
+        
+        // Executing the transaction...
+        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        // Requesting the receipt...
+        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        // Get the transaction status
+        resolve(receipt.status);        
+      } catch(error) {
         reject(error);
       }
     });
   }
 
-  async getScheduledTrasaction(scheduleId: string): Promise&lt;any&gt; {
-    return new Promise(async (resolve, reject) &#x3D;&gt; {
+  async delete(
+    fileId: FileId,
+    key: PrivateKey,
+    maxTransactionFee?: number,
+  ): Promise&lt;Status&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
-        const query &#x3D; new ScheduleInfoQuery()
-          .setScheduleId(scheduleId);
+        // Creating the transaction...
+        const transaction &#x3D; await new FileDeleteTransaction()
+          .setFileId(fileId);
 
-        const info &#x3D; await query.execute(this.clientService.getClient());
-        resolve(info);
-      } catch (error) {
+        if(maxTransactionFee) {
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+        }
+
+        transaction.freezeWith(this.clientService.getClient());
+        
+        // Signing with the file private keys...
+        const signTx &#x3D; await transaction.sign(key);
+        // Executing the transaction...
+        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        // Requesting the receipt...
+        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        // Get the transaction status
+        resolve(receipt.status);        
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async getContents(
+    fileId: FileId
+  ): Promise&lt;string&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        // Creating the transaction...
+        const transaction &#x3D; new FileContentsQuery()
+            .setFileId(fileId);
+
+        // Signing the transaction...
+        const contents &#x3D; await transaction.execute(this.clientService.getClient());
+        resolve(contents.toString());
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async getInfos(
+    fileId: FileId
+  ): Promise&lt;FileInfo&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        // Creating the transaction...
+        const transaction &#x3D; new FileInfoQuery()
+            .setFileId(fileId);
+
+        // Signing the transaction...
+        const infos &#x3D; await transaction.execute(this.clientService.getClient());
+        resolve(infos);
+      } catch(error) {
         reject(error);
       }
     });
@@ -748,7 +1061,7 @@ export class TransactionsService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'TransactionsService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'HfsService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

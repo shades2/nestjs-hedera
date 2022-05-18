@@ -1,0 +1,1160 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hsuite-nestjs-hedera documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >AccountsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/hedera/accounts/accounts.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAccount" >createAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#freezeAccount" >freezeAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getInfo" >getInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getKeys" >getKeys</a>
+                            </li>
+                            <li>
+                                <a href="#getQueryBalance" >getQueryBalance</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#unfreezeAccount" >unfreezeAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateAccount" >updateAccount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(clientService: <a href="../injectables/ClientService.html" target="_self">ClientService</a>, keysService: <a href="../injectables/KeysService.html" target="_self">KeysService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/hedera/accounts/accounts.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>clientService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ClientService.html" target="_self" >ClientService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>keysService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/KeysService.html" target="_self" >KeysService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAccount"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createAccount</b></span>
+                        <a href="#createAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAccount(balance: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysLength: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysThreshold?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>balance</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>keysLength</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>keysThreshold</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="freezeAccount"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>freezeAccount</b></span>
+                        <a href="#freezeAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>freezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tokenId</td>
+                                    <td>
+                                            <code>TokenId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>freezeKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfo"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getInfo</b></span>
+                        <a href="#getInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getInfo(accountId: AccountId)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;AccountInfo&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getKeys"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getKeys</b></span>
+                        <a href="#getKeys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getKeys(accountId: AccountId)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQueryBalance"></a>
+                    <span class="name">
+                        <span ><b>getQueryBalance</b></span>
+                        <a href="#getQueryBalance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getQueryBalance(accountId: string | AccountId, tokenId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>string | AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tokenId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/AccountBalance.html" target="_self" >Promise&lt;AccountBalance&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unfreezeAccount"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>unfreezeAccount</b></span>
+                        <a href="#unfreezeAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unfreezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tokenId</td>
+                                    <td>
+                                            <code>TokenId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>freezeKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAccount"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>updateAccount</b></span>
+                        <a href="#updateAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>accountId</td>
+                                    <td>
+                                            <code>AccountId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>signKey</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>newKey</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>memo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Status&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Logger</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(&quot;Accounts Service&quot;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/hedera/accounts/accounts.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { 
+  AccountBalanceQuery,
+  AccountCreateTransaction, 
+  AccountId, 
+  AccountInfo, 
+  AccountInfoQuery, 
+  AccountUpdateTransaction, 
+  Hbar,
+  PrivateKey,
+  Status, 
+  TokenFreezeTransaction, 
+  TokenId, 
+  TokenUnfreezeTransaction
+} from &#x27;@hashgraph/sdk&#x27;;
+import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
+import { ClientService } from &#x27;../client/client.service&#x27;;
+import { KeysService } from &#x27;../keys/keys.service&#x27;;
+import { TokenBalance } from &#x27;../../types/token_balance.types&#x27;;
+import { AccountBalance } from &#x27;../../types/account_balance.types&#x27;;
+import { PrivateKeyList } from &#x27;../../types/private-key-list.types&#x27;;
+
+@Injectable()
+export class AccountsService {
+  protected logger: Logger &#x3D; new Logger(&quot;Accounts Service&quot;);
+
+  constructor(
+    private clientService: ClientService,
+    private keysService: KeysService
+  ) {}
+
+  async getInfo(accountId: AccountId): Promise&lt;AccountInfo&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        // Creating the transaction...
+        const transaction &#x3D; new AccountInfoQuery()
+            .setAccountId(accountId);
+
+        // Signing the transaction...
+        const accountInfo &#x3D; await transaction.execute(this.clientService.getClient());
+
+        // resolving the account&#x27;s info...
+        resolve(accountInfo);        
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async getKeys(accountId: AccountId): Promise&lt;any&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        const accountInfo &#x3D; await this.getInfo(accountId);
+        resolve(&lt;any&gt;accountInfo.key);
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async updateAccount(
+    accountId: AccountId,
+    signKey: PrivateKey,
+    newKey?: PrivateKey,
+    memo?: string
+  ): Promise&lt;Status&gt; {
+    return new Promise(async(resolve,reject) &#x3D;&gt; {
+      try {
+        // Creating the transaction...
+        const transaction &#x3D; await new AccountUpdateTransaction()
+            // setting single node accountId, as a workound for offline signature...
+            .setNodeAccountIds([new AccountId(6)])    
+            .setAccountId(accountId);
+
+        if(memo) {
+          transaction.setAccountMemo(memo);
+        }
+
+        if(newKey) {
+          transaction.setKey(newKey);
+        }
+
+        transaction.freezeWith(this.clientService.getClient());
+
+        // Signing the transaction...
+        let signTx &#x3D; await transaction.sign(signKey);
+
+        if(newKey) {
+          signTx &#x3D; await signTx.sign(newKey);
+        }
+
+        // Signing the transaction with the client operator...
+        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
+
+        // Request the receipt of the transaction...
+        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+
+        // Get the transaction consensus status...
+        resolve(receipt.status);
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async createAccount(
+    balance: number,
+    keysLength: number,
+    keysThreshold?: number
+  ): Promise&lt;{accountId: AccountId | null, key: PrivateKey | PrivateKeyList}&gt; {
+    return new Promise(async(resolve,reject) &#x3D;&gt; {
+      try {
+        let key &#x3D; null;
+
+        if(keysLength &gt; 1) {
+          key &#x3D; await this.keysService.generateKeyList(undefined, keysLength, keysThreshold);
+        } else {
+          key &#x3D; await this.keysService.generateKey();
+        }
+
+        //Creating the transaction...
+        const transaction &#x3D; new AccountCreateTransaction()
+            .setKey(keysLength &gt; 1 ? (&lt;PrivateKeyList&gt;key).keyList : (&lt;PrivateKey&gt;key).publicKey)
+            .setInitialBalance(new Hbar(balance));
+
+        // Executing the transactions...
+        const txResponse &#x3D; await transaction.execute(this.clientService.getClient());
+
+        // Fetching the receipt...
+        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+
+        // resolving the accountId...
+        resolve({
+          accountId: receipt.accountId,
+          key: key
+        });
+      } catch(error) {
+        reject(error);        
+      }
+    });
+  }
+
+  async freezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise&lt;any&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        const transaction &#x3D; await new TokenFreezeTransaction()
+            .setAccountId(accountId)
+            .setTokenId(tokenId)
+            .freezeWith(this.clientService.getClient());
+
+        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));   
+        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
+        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        resolve({
+          status: receipt.status,
+          transaction_id: txResponse.transactionId.toString()
+        });
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async unfreezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise&lt;any&gt; {
+    return new Promise(async(resolve, reject) &#x3D;&gt; {
+      try {
+        const transaction &#x3D; await new TokenUnfreezeTransaction()
+            .setAccountId(accountId)
+            .setTokenId(tokenId)
+            .freezeWith(this.clientService.getClient());
+
+        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));   
+        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
+        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        resolve({
+          status: receipt.status,
+          transaction_id: txResponse.transactionId.toString()
+        });
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise&lt;AccountBalance&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        const query &#x3D; new AccountBalanceQuery()
+          .setAccountId(accountId);
+
+        const response &#x3D; await query.execute(this.clientService.getClient());
+        let balance &#x3D; null;
+
+        if(tokenId) {
+          balance &#x3D; {
+            tokens: [{
+              tokenId: tokenId,
+              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()): 0,
+              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)): 0
+            }],
+            hbars: response.hbars
+          };
+        } else {
+          let tokens &#x3D; new Array&lt;TokenBalance&gt;();
+          
+          response.tokens?._map.forEach((value, tokenId) &#x3D;&gt; {
+            tokens.push({
+              tokenId: tokenId,
+              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()): 0,
+              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)): 0
+            });
+          });
+
+          balance &#x3D; {
+            tokens: tokens,
+            hbars: response.hbars
+          };
+        }
+
+        resolve(balance);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AccountsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
