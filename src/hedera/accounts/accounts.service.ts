@@ -7,6 +7,7 @@ import {
   AccountUpdateTransaction, 
   Hbar,
   PrivateKey,
+  PublicKey,
   Status, 
   TokenFreezeTransaction, 
   TokenId, 
@@ -105,6 +106,7 @@ export class AccountsService {
   async createAccount(
     balance: number,
     keysLength: number,
+    publicKeys?: Array<string>,
     keysThreshold?: number
   ): Promise<{accountId: AccountId | null, key: PrivateKey | PrivateKeyList}> {
     return new Promise(async(resolve,reject) => {
@@ -112,7 +114,7 @@ export class AccountsService {
         let key = null;
 
         if(keysLength > 1) {
-          key = await this.keysService.generateKeyList(undefined, keysLength, keysThreshold);
+          key = await this.keysService.generateKeyList(publicKeys, keysLength, keysThreshold);
         } else {
           key = await this.keysService.generateKey();
         }

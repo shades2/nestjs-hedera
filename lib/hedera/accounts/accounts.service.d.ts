@@ -12,7 +12,7 @@ export declare class AccountsService {
     getInfo(accountId: AccountId): Promise<AccountInfo>;
     getKeys(accountId: AccountId): Promise<any>;
     updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: string): Promise<Status>;
-    createAccount(balance: number, keysLength: number, keysThreshold?: number): Promise<{
+    createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number): Promise<{
         accountId: AccountId | null;
         key: PrivateKey | PrivateKeyList;
     }>;

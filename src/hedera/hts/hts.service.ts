@@ -31,7 +31,7 @@ export class HtsService {
   async associateToken(
     accountId: AccountId,
     tokenId: TokenId,
-    key: PrivateKey
+    keys: PrivateKey | Array<PrivateKey>
     ): Promise<Status | undefined> {
     return new Promise(async(resolve, reject) => {
       try {
@@ -40,7 +40,16 @@ export class HtsService {
         .setTokenIds([tokenId])
         .freezeWith(this.clientService.getClient());
 
-        let signTx = await transaction.sign(key);         
+        let signTx = null;
+
+        if(keys instanceof PrivateKey) {
+          signTx = await transaction.sign(keys);
+        } else {
+          for (let i = 0; i < keys.length; i++) {
+            signTx = await transaction.sign(keys[i]);
+          };
+        }
+                 
         const txResponse = await signTx.execute(this.clientService.getClient());
         const receipt = await txResponse.getReceipt(this.clientService.getClient());
         resolve(receipt.status);        
@@ -53,7 +62,7 @@ export class HtsService {
   async dissociateToken(
     accountId: AccountId,
     tokenId: TokenId,
-    key: PrivateKey
+    keys: PrivateKey | Array<PrivateKey>
     ): Promise<Status | undefined> {
     return new Promise(async(resolve, reject) => {
       try {
@@ -62,7 +71,16 @@ export class HtsService {
         .setTokenIds([tokenId])
         .freezeWith(this.clientService.getClient());
 
-        let signTx = await transaction.sign(key);         
+        let signTx = null;
+
+        if(keys instanceof PrivateKey) {
+          signTx = await transaction.sign(keys);
+        } else {
+          for (let i = 0; i < keys.length; i++) {
+            signTx = await transaction.sign(keys[i]);
+          };
+        }
+
         const txResponse = await signTx.execute(this.clientService.getClient());
         const receipt = await txResponse.getReceipt(this.clientService.getClient());
         resolve(receipt.status);        
@@ -108,20 +126,36 @@ export class HtsService {
 
   async mintNftToken(
     tokenId: TokenId,
-    supplyKey: PrivateKey,
-    CID: string
-  ): Promise<TransactionReceipt> {
+    CID: string,
+    supplyKey?: PrivateKey | Array<PrivateKey>
+  ): Promise<TransactionReceipt | Transaction> {
     return new Promise(async(resolve, reject) => {
       try {
         const transaction = new TokenMintTransaction()
         .setTokenId(tokenId)
-        .addMetadata(Buffer.from(CID))
-        .freezeWith(this.clientService.getClient());
+        .addMetadata(Buffer.from(CID));
 
-        const signTx = await transaction.sign(supplyKey);
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt);        
+        if(supplyKey) {
+          transaction.freezeWith(this.clientService.getClient());
+
+          let signTx = null;
+
+          if(supplyKey instanceof PrivateKey) {
+            signTx = await transaction.sign(supplyKey);
+          } else {
+            for (let i = 0; i < supplyKey.length; i++) {
+              signTx = await transaction.sign(supplyKey[i]);
+            };
+          }
+  
+          const txResponse = await signTx.execute(this.clientService.getClient());
+          const receipt = await txResponse.getReceipt(this.clientService.getClient());
+          resolve(receipt); 
+        } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
+          resolve(transaction);
+        }       
       } catch(error) {
         reject(error);
       }
@@ -182,6 +216,8 @@ export class HtsService {
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...          
           resolve(transaction);
         }
           
@@ -229,6 +265,8 @@ export class HtsService {
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
           resolve(transaction);
         }          
       } catch(error) {
@@ -268,6 +306,8 @@ export class HtsService {
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
           resolve(transaction);
         }          
       } catch(error) {
