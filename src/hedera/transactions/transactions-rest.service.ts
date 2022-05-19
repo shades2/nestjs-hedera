@@ -70,6 +70,19 @@ export class TransactionsRestService {
     });
   }
 
+  getTransactionByTimestamp(timestamp: string): Promise<any> {
+    return new Promise(async(resolve, reject) => {
+      try {
+        let response = await this.restService
+        .call(`transactions/?timestamp=${timestamp}`);
+
+        resolve(response.transactions);
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
   getLatestTransactions(accountId: string): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
