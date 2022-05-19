@@ -32,12 +32,14 @@ export class AccountsService {
   async getInfo(accountId: AccountId): Promise<AccountInfo> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = new AccountInfoQuery()
             .setAccountId(accountId);
 
         // Signing the transaction...
-        const accountInfo = await transaction.execute(this.clientService.getClient());
+        const accountInfo = await transaction.execute(client);
 
         // resolving the account's info...
         resolve(accountInfo);        
@@ -50,6 +52,8 @@ export class AccountsService {
   async getKeys(accountId: AccountId): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const accountInfo = await this.getInfo(accountId);
         resolve(<any>accountInfo.key);
       } catch(error) {
@@ -66,6 +70,8 @@ export class AccountsService {
   ): Promise<Status> {
     return new Promise(async(resolve,reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = await new AccountUpdateTransaction()
             // setting single node accountId, as a workound for offline signature...
@@ -80,7 +86,7 @@ export class AccountsService {
           transaction.setKey(newKey);
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
 
         // Signing the transaction...
         let signTx = await transaction.sign(signKey);
@@ -90,10 +96,10 @@ export class AccountsService {
         }
 
         // Signing the transaction with the client operator...
-        const txResponse = await signTx.execute(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
 
         // Request the receipt of the transaction...
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const receipt = await txResponse.getReceipt(client);
 
         // Get the transaction consensus status...
         resolve(receipt.status);
@@ -111,6 +117,7 @@ export class AccountsService {
   ): Promise<{accountId: AccountId | null, key: PrivateKey | PrivateKeyList}> {
     return new Promise(async(resolve,reject) => {
       try {
+        const client = this.clientService.getClient();
         let key = null;
 
         if(keysLength > 1) {
@@ -125,10 +132,10 @@ export class AccountsService {
             .setInitialBalance(new Hbar(balance));
 
         // Executing the transactions...
-        const txResponse = await transaction.execute(this.clientService.getClient());
+        const txResponse = await transaction.execute(client);
 
         // Fetching the receipt...
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const receipt = await txResponse.getReceipt(client);
 
         // resolving the accountId...
         resolve({
@@ -144,14 +151,16 @@ export class AccountsService {
   async freezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         const transaction = await new TokenFreezeTransaction()
             .setAccountId(accountId)
             .setTokenId(tokenId)
-            .freezeWith(this.clientService.getClient());
+            .freezeWith(client);
 
         const signTx = await transaction.sign(PrivateKey.fromString(freezeKey));   
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve({
           status: receipt.status,
           transaction_id: txResponse.transactionId.toString()
@@ -165,14 +174,16 @@ export class AccountsService {
   async unfreezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = await new TokenUnfreezeTransaction()
             .setAccountId(accountId)
             .setTokenId(tokenId)
-            .freezeWith(this.clientService.getClient());
+            .freezeWith(client);
 
         const signTx = await transaction.sign(PrivateKey.fromString(freezeKey));   
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve({
           status: receipt.status,
           transaction_id: txResponse.transactionId.toString()
@@ -186,10 +197,12 @@ export class AccountsService {
   getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<AccountBalance> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         const query = new AccountBalanceQuery()
           .setAccountId(accountId);
 
-        const response = await query.execute(this.clientService.getClient());
+        const response = await query.execute(client);
         let balance = null;
 
         if(tokenId) {

@@ -34,6 +34,8 @@ export class HcsService {
   ): Promise<TopicId | null> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // creating the transaction...
         const transaction = new TopicCreateTransaction();
         let txResponse = null;
@@ -50,18 +52,18 @@ export class HcsService {
           transaction.setTopicMemo(memo);
         }
         // freezing the transaction...
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         // if there is an admin key, transaction must be signed...
         if(adminKey) {
           const signTx = await transaction.sign(adminKey);
-          txResponse = await signTx.execute(this.clientService.getClient());
+          txResponse = await signTx.execute(client);
         } 
         // otherwise, we can just execute it...
         else {
-          txResponse = await transaction.execute(this.clientService.getClient());
+          txResponse = await transaction.execute(client);
         }
         // finally, fetching the topicId from the response...
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.topicId);
       } catch (error) {
         reject(error);
@@ -79,6 +81,8 @@ export class HcsService {
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // creating the transaction...
         const transaction = new TopicUpdateTransaction().setTopicId(topicId);
         let txResponse = null;
@@ -95,7 +99,7 @@ export class HcsService {
           transaction.setTopicMemo(memo);
         }
         // freezing the transaction...
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         // if the transaction has got an admin key, we must use it to sign...
         if(currentAdminKey) {
           let signTx = await transaction.sign(currentAdminKey);
@@ -104,14 +108,14 @@ export class HcsService {
             signTx = await signTx.sign(adminKey);
           }
           // executing the transaction, after signatures...
-          txResponse = await signTx.execute(this.clientService.getClient());
+          txResponse = await signTx.execute(client);
         } 
         // otherwise we can just sign the transaction...
         else {
-          txResponse = await transaction.execute(this.clientService.getClient());
+          txResponse = await transaction.execute(client);
         }
         // fetching the status of the executed transaction...
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.status);
       } catch (error) {
         reject(error);
@@ -126,15 +130,17 @@ export class HcsService {
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // creating the transaction, and freezing it...
         const transaction = new TopicDeleteTransaction()
         .setTopicId(topicId)
-        .freezeWith(this.clientService.getClient());
+        .freezeWith(client);
         // signing the transaction with admin key...
         const signTx = await transaction.sign(adminKey);
         // fetching response...
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         // resolving status...
         resolve(receipt.status);
       } catch (error) {
@@ -149,8 +155,10 @@ export class HcsService {
   ): Promise<TopicInfo> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = new TopicInfoQuery().setTopicId(topicId);  
-        const info = await transaction.execute(this.clientService.getClient());
+        const info = await transaction.execute(client);
         resolve(info);
       } catch (error) {
         reject(error);
@@ -166,24 +174,26 @@ export class HcsService {
   ): Promise<string | undefined> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         let txResponse = null;
         // creating the transaction, setting topic and message...
         const transaction = new TopicMessageSubmitTransaction()
         .setTopicId(topicId)
         .setMessage(message);
         // freezing the transaction...
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         // if there is an submit key, transaction must be signed...
         if(submitKey) {
           const signTx = await transaction.sign(submitKey);
-          txResponse = await signTx.execute(this.clientService.getClient());
+          txResponse = await signTx.execute(client);
         } 
         // otherwise, we can just execute it...
         else {
-          txResponse = await transaction.execute(this.clientService.getClient());
+          txResponse = await transaction.execute(client);
         }        
         // finally, fetching the status...
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.topicSequenceNumber?.toString());
       } catch (error) {
         reject(error);
@@ -201,6 +211,8 @@ export class HcsService {
   ): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         // creating the transaction...
         const transaction = new TopicMessageQuery()
         .setTopicId(topicId);

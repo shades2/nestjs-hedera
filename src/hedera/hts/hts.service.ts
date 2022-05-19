@@ -35,23 +35,25 @@ export class HtsService {
     ): Promise<Status | undefined> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = await new TokenAssociateTransaction()
         .setAccountId(accountId)
         .setTokenIds([tokenId])
-        .freezeWith(this.clientService.getClient());
+        .freezeWith(client);
 
         let signTx = null;
 
-        if(keys instanceof PrivateKey) {
-          signTx = await transaction.sign(keys);
-        } else {
+        if(Array.isArray(keys)) {
           for (let i = 0; i < keys.length; i++) {
             signTx = await transaction.sign(keys[i]);
           };
+        } else {
+          signTx = await transaction.sign(keys);
         }
                  
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.status);        
       } catch(error) {
         reject(error);
@@ -66,23 +68,25 @@ export class HtsService {
     ): Promise<Status | undefined> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = await new TokenDissociateTransaction()
         .setAccountId(accountId)
         .setTokenIds([tokenId])
-        .freezeWith(this.clientService.getClient());
+        .freezeWith(client);
 
         let signTx = null;
 
-        if(keys instanceof PrivateKey) {
-          signTx = await transaction.sign(keys);
-        } else {
+        if(Array.isArray(keys)) {
           for (let i = 0; i < keys.length; i++) {
             signTx = await transaction.sign(keys[i]);
           };
+        } else {
+          signTx = await transaction.sign(keys);
         }
 
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.status);        
       } catch(error) {
         reject(error);
@@ -93,13 +97,15 @@ export class HtsService {
   async pauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise<Status> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = new TokenPauseTransaction()
         .setTokenId(tokenId)
-        .freezeWith(this.clientService.getClient());
+        .freezeWith(client);
 
         const signTx = await transaction.sign(pauseKey);
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.status);        
       } catch(error) {
         reject(error);
@@ -110,13 +116,15 @@ export class HtsService {
   async unpauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise<Status> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = new TokenUnpauseTransaction()
         .setTokenId(tokenId)
-        .freezeWith(this.clientService.getClient());
+        .freezeWith(client);
 
         const signTx = await transaction.sign(pauseKey);
-        const txResponse = await signTx.execute(this.clientService.getClient());
-        const receipt = await txResponse.getReceipt(this.clientService.getClient());
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
         resolve(receipt.status);        
       } catch(error) {
         reject(error);
@@ -131,25 +139,27 @@ export class HtsService {
   ): Promise<TransactionReceipt | Transaction> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         const transaction = new TokenMintTransaction()
         .setTokenId(tokenId)
-        .addMetadata(Buffer.from(CID));
+        .addMetadata(Buffer.from(CID));  
 
         if(supplyKey) {
-          transaction.freezeWith(this.clientService.getClient());
+          transaction.freezeWith(client);
 
           let signTx = null;
 
-          if(supplyKey instanceof PrivateKey) {
-            signTx = await transaction.sign(supplyKey);
-          } else {
+          if(Array.isArray(supplyKey)) {
             for (let i = 0; i < supplyKey.length; i++) {
               signTx = await transaction.sign(supplyKey[i]);
             };
+          } else {
+            signTx = await transaction.sign(supplyKey);
           }
   
-          const txResponse = await signTx.execute(this.clientService.getClient());
-          const receipt = await txResponse.getReceipt(this.clientService.getClient());
+          const txResponse = await signTx.execute(client);
+          const receipt = await txResponse.getReceipt(client);
           resolve(receipt); 
         } else {
           // if no key has been provided, we return the transasction to be wrapped
@@ -168,10 +178,12 @@ export class HtsService {
   ): Promise<TokenNftInfo[]> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         let nftId = new NftId(tokenId, serialNumber);
         let nftInfos = await new TokenNftInfoQuery()
         .setNftId(nftId)
-        .execute(this.clientService.getClient());
+        .execute(client);
 
         resolve(nftInfos);        
       } catch(error) {
@@ -189,6 +201,8 @@ export class HtsService {
   ): Promise<TransactionDetails | Transaction> {
     return new Promise(async(resolve,reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating a transaction...
         const transaction = new TransferTransaction()
           .addHbarTransfer(from, new Hbar(-amount))
@@ -199,16 +213,16 @@ export class HtsService {
         }
           
         if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx = await transaction.sign(key);
             
           // Submitting the transaction to a Hedera network...
-          const txResponse = await signTx.execute(this.clientService.getClient());
+          const txResponse = await signTx.execute(client);
   
           // Requesting the receipt of the transaction...
-          const receipt = await txResponse.getReceipt(this.clientService.getClient());
+          const receipt = await txResponse.getReceipt(client);
   
           // Resolving the transaction consensus status...
           resolve({
@@ -238,6 +252,8 @@ export class HtsService {
   ): Promise<TransactionDetails | Transaction> {
     return new Promise(async(resolve,reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         // Creating the transfer transaction...
         const transaction = await new TransferTransaction()
           .addTokenTransfer(tokenId, from, Number(-amount  * (10 ** tokenDecimals)))
@@ -248,16 +264,16 @@ export class HtsService {
           }
 
         if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx = await transaction.sign(key);
             
           // Submitting the transaction to a Hedera network...
-          const txResponse = await signTx.execute(this.clientService.getClient());
+          const txResponse = await signTx.execute(client);
   
           // Requesting the receipt of the transaction...
-          const receipt = await txResponse.getReceipt(this.clientService.getClient());
+          const receipt = await txResponse.getReceipt(client);
   
           // Resolving the transaction consensus status...
           resolve({
@@ -284,21 +300,23 @@ export class HtsService {
   ): Promise<TransactionDetails | Transaction> {
     return new Promise(async(resolve,reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transfer transaction...
         const transaction = await new TransferTransaction()
           .addNftTransfer(new NftId(tokenId, serialNumber), from, to);
 
         if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx = await transaction.sign(key);
             
           // Submitting the transaction to a Hedera network...
-          const txResponse = await signTx.execute(this.clientService.getClient());
+          const txResponse = await signTx.execute(client);
   
           // Requesting the receipt of the transaction...
-          const receipt = await txResponse.getReceipt(this.clientService.getClient());
+          const receipt = await txResponse.getReceipt(client);
   
           // Resolving the transaction consensus status...
           resolve({

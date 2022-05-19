@@ -30,6 +30,8 @@ export class HfsService {
   ): Promise<FileId | null> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = await new FileCreateTransaction()
           .setKeys([key])
@@ -43,14 +45,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
 
         // Signing with the file private keys...
         const signTx = await transaction.sign(key);
         // Executing the transaction...
-        const submitTx = await signTx.execute(this.clientService.getClient());
+        const submitTx = await signTx.execute(client);
         // Requesting the receipt...
-        const receipt = await submitTx.getReceipt(this.clientService.getClient());
+        const receipt = await submitTx.getReceipt(client);
         // Get the file ID
         resolve(receipt.fileId);        
       } catch(error) {
@@ -67,6 +69,8 @@ export class HfsService {
   ): Promise<Status> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         // Creating the transaction...
         const transaction = await new FileAppendTransaction()
           .setFileId(fileId)
@@ -76,14 +80,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing with the file private keys...
         const signTx = await transaction.sign(key);
         // Executing the transaction...
-        const submitTx = await signTx.execute(this.clientService.getClient());
+        const submitTx = await signTx.execute(client);
         // Requesting the receipt...
-        const receipt = await submitTx.getReceipt(this.clientService.getClient());
+        const receipt = await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -102,6 +106,8 @@ export class HfsService {
   ): Promise<Status> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = await new FileUpdateTransaction()
           .setFileId(fileId)
@@ -119,7 +125,7 @@ export class HfsService {
           transaction.setKeys([newKey]);
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing the transaction...
         let signTx = await transaction.sign(signKey);
@@ -129,9 +135,9 @@ export class HfsService {
         }
         
         // Executing the transaction...
-        const submitTx = await signTx.execute(this.clientService.getClient());
+        const submitTx = await signTx.execute(client);
         // Requesting the receipt...
-        const receipt = await submitTx.getReceipt(this.clientService.getClient());
+        const receipt = await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -147,6 +153,8 @@ export class HfsService {
   ): Promise<Status> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = await new FileDeleteTransaction()
           .setFileId(fileId);
@@ -155,14 +163,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing with the file private keys...
         const signTx = await transaction.sign(key);
         // Executing the transaction...
-        const submitTx = await signTx.execute(this.clientService.getClient());
+        const submitTx = await signTx.execute(client);
         // Requesting the receipt...
-        const receipt = await submitTx.getReceipt(this.clientService.getClient());
+        const receipt = await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -176,12 +184,14 @@ export class HfsService {
   ): Promise<string> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+
         // Creating the transaction...
         const transaction = new FileContentsQuery()
             .setFileId(fileId);
 
         // Signing the transaction...
-        const contents = await transaction.execute(this.clientService.getClient());
+        const contents = await transaction.execute(client);
         resolve(contents.toString());
       } catch(error) {
         reject(error);
@@ -194,12 +204,14 @@ export class HfsService {
   ): Promise<FileInfo> {
     return new Promise(async(resolve, reject) => {
       try {
+        const client = this.clientService.getClient();
+        
         // Creating the transaction...
         const transaction = new FileInfoQuery()
             .setFileId(fileId);
 
         // Signing the transaction...
-        const infos = await transaction.execute(this.clientService.getClient());
+        const infos = await transaction.execute(client);
         resolve(infos);
       } catch(error) {
         reject(error);
