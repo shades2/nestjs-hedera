@@ -83,6 +83,19 @@ export class TransactionsRestService {
     });
   }
 
+  getTransactionById(transaction_id: string): Promise<any> {
+    return new Promise(async(resolve, reject) => {
+      try {
+        let response = await this.restService
+        .call(`transactions/${transaction_id}`);
+
+        resolve(response.transactions);
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
   getLatestTransactions(accountId: string): Promise<any> {
     return new Promise(async(resolve, reject) => {
       try {
