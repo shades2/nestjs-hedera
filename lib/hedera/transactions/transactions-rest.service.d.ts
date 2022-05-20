@@ -5,6 +5,7 @@ export declare class TransactionsRestService {
     getAllTransactionsFromTimestamp(timestamp: string, accountId: string): Promise<any>;
     getAllTransactions(accountId: string, filters?: string): Promise<any>;
     getTransactionByTimestamp(timestamp: string): Promise<any>;
+    getTransactionById(transaction_id: string): Promise<any>;
     getLatestTransactions(accountId: string): Promise<any>;
     getScheduledTransaction(transactionId: string): Promise<any>;
 }
