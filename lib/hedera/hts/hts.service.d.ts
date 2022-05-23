@@ -11,6 +11,7 @@ export declare class HtsService {
     pauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise<Status>;
     unpauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise<Status>;
     mintNftToken(tokenId: TokenId, CID: string, supplyKey?: PrivateKey | Array<PrivateKey>): Promise<TransactionReceipt | Transaction>;
+    burnNftToken(tokenId: TokenId, serialNumber: number, supplyKey: PrivateKey): Promise<TransactionReceipt>;
     getNftInfo(tokenId: TokenId, serialNumber: number): Promise<TokenNftInfo[]>;
     transferHbar(amount: number, from: AccountId, to: AccountId, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
     transferToken(tokenId: TokenId, from: AccountId, to: AccountId, amount: number, tokenDecimals: number, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;

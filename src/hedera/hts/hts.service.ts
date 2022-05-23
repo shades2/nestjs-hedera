@@ -14,7 +14,8 @@ import {
   TransactionReceipt, 
   NftId, 
   TokenNftInfoQuery, 
-  TokenNftInfo 
+  TokenNftInfo, 
+  TokenBurnTransaction
 } from '@hashgraph/sdk';
 import { Injectable, Logger } from '@nestjs/common';
 import { TransactionDetails } from '../../types/transaction_details.types';
@@ -166,6 +167,31 @@ export class HtsService {
           // into a scheduled transaction to allow multisig threshold mechanism...
           resolve(transaction);
         }       
+      } catch(error) {
+        reject(error);
+      }
+    });
+  }
+
+  async burnNftToken(
+    tokenId: TokenId,
+    serialNumber: number,
+    supplyKey: PrivateKey
+  ): Promise<TransactionReceipt> {
+    return new Promise(async(resolve, reject) => {
+      try {
+        const client = this.clientService.getClient();
+
+        let transaction = await new TokenBurnTransaction()
+        .setTokenId(tokenId)
+        .setSerials([serialNumber])
+        .freezeWith(client);
+
+        const signTx = await transaction.sign(supplyKey);
+        const txResponse = await signTx.execute(client);
+        const receipt = await txResponse.getReceipt(client);
+
+        resolve(receipt);        
       } catch(error) {
         reject(error);
       }
