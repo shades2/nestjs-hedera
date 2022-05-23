@@ -268,10 +268,10 @@ export class HtsService {
   }
 
   async transferToken(
-    tokenId: TokenId,
+    tokenId: TokenId | Array<TokenId>,
     from: AccountId,
     to: AccountId,    
-    amount: number,
+    amount: number | Array<Number>,
     tokenDecimals: number,
     memo?: string,
     key?: PrivateKey
@@ -281,13 +281,25 @@ export class HtsService {
         const client = this.clientService.getClient();
         
         // Creating the transfer transaction...
-        const transaction = await new TransferTransaction()
+        const transaction = await new TransferTransaction();
+
+        if(!Array.isArray(tokenId) && !Array.isArray(amount)) {
+          transaction
           .addTokenTransfer(tokenId, from, Number(-amount  * (10 ** tokenDecimals)))
           .addTokenTransfer(tokenId, to, Number(amount  * (10 ** tokenDecimals)));
-
-          if(memo) {
-            transaction.setTransactionMemo(memo);
+        } else {
+          if(Array.isArray(tokenId) && Array.isArray(amount)) {
+            tokenId.forEach((token_id, index) => {
+              transaction
+              .addTokenTransfer(token_id, from, Number(-amount[index]  * (10 ** tokenDecimals)))
+              .addTokenTransfer(token_id, to, Number(+amount[index]  * (10 ** tokenDecimals)));
+            });
           }
+        }
+
+        if(memo) {
+          transaction.setTransactionMemo(memo);
+        }
 
         if(key) {
           transaction.freezeWith(client);
