@@ -14,6 +14,6 @@ export declare class HtsService {
     burnNftToken(tokenId: TokenId, serialNumber: number, supplyKey: PrivateKey): Promise<TransactionReceipt>;
     getNftInfo(tokenId: TokenId, serialNumber: number): Promise<TokenNftInfo[]>;
     transferHbar(amount: number, from: AccountId, to: AccountId, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
-    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
+    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
     transferNftToken(tokenId: TokenId, from: AccountId, to: AccountId, serialNumber: number, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
 }
