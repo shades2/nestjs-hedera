@@ -272,7 +272,7 @@ export class HtsService {
     from: AccountId,
     to: AccountId,    
     amount: number | Array<Number>,
-    tokenDecimals: number,
+    tokenDecimals: number | Array<Number>,
     memo?: string,
     key?: PrivateKey
   ): Promise<TransactionDetails | Transaction> {
@@ -283,16 +283,16 @@ export class HtsService {
         // Creating the transfer transaction...
         const transaction = await new TransferTransaction();
 
-        if(!Array.isArray(tokenId) && !Array.isArray(amount)) {
+        if(!Array.isArray(tokenId) && !Array.isArray(amount) && !Array.isArray(tokenDecimals)) {
           transaction
           .addTokenTransfer(tokenId, from, Number(-amount  * (10 ** tokenDecimals)))
           .addTokenTransfer(tokenId, to, Number(amount  * (10 ** tokenDecimals)));
         } else {
-          if(Array.isArray(tokenId) && Array.isArray(amount)) {
+          if(Array.isArray(tokenId) && Array.isArray(amount) && Array.isArray(tokenDecimals)) {
             tokenId.forEach((token_id, index) => {
               transaction
-              .addTokenTransfer(token_id, from, Number(-amount[index]  * (10 ** tokenDecimals)))
-              .addTokenTransfer(token_id, to, Number(+amount[index]  * (10 ** tokenDecimals)));
+              .addTokenTransfer(token_id, from, Number(-amount[index]  * (10 ** Number(tokenDecimals[index]))))
+              .addTokenTransfer(token_id, to, Number(+amount[index]  * (10 ** Number(tokenDecimals[index]))));
             });
           }
         }
