@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Injectable</p>
+
+            </p>
 
 
 
@@ -143,12 +150,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/hedera/accounts/accounts.service.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/hedera/accounts/accounts.service.ts:31</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -213,21 +222,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createAccount(balance: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysLength: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysThreshold?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>createAccount(balance: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysLength: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, publicKeys?: Array<string>, keysThreshold?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:149</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Creates a single or multi-sig account</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -266,6 +277,18 @@
 
                                 </tr>
                                 <tr>
+                                    <td>publicKeys</td>
+                                    <td>
+                                            <code>Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
                                     <td>keysThreshold</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
@@ -287,7 +310,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>, PrivateKey} single or multi-sig account</p>
+
                     </div>
                 </td>
             </tr>
@@ -315,14 +339,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="142"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:142</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:195</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Freezes account related to token ID</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -410,14 +436,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:48</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetches specific Account Info</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -481,14 +509,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:73</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetches Specific account public key</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -524,7 +554,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Account Public Key</p>
+
                     </div>
                 </td>
             </tr>
@@ -550,14 +581,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="184"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:184</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="254"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:254</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get query balance</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -633,14 +666,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="163"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:163</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:225</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Unfreezes account related to token ID</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -728,14 +763,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:95</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Updates Account</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -807,7 +844,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Account Update</p>
+
                     </div>
                 </td>
             </tr>
@@ -844,10 +882,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/hedera/accounts/accounts.service.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/hedera/accounts/accounts.service.ts:31</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Logger Service</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -857,18 +901,19 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { 
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   AccountBalanceQuery,
-  AccountCreateTransaction, 
-  AccountId, 
-  AccountInfo, 
-  AccountInfoQuery, 
-  AccountUpdateTransaction, 
+  AccountCreateTransaction,
+  AccountId,
+  AccountInfo,
+  AccountInfoQuery,
+  AccountUpdateTransaction,
   Hbar,
   PrivateKey,
-  Status, 
-  TokenFreezeTransaction, 
-  TokenId, 
+  PublicKey,
+  Status,
+  TokenFreezeTransaction,
+  TokenId,
   TokenUnfreezeTransaction
 } from &#x27;@hashgraph/sdk&#x27;;
 import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
@@ -878,194 +923,265 @@ import { TokenBalance } from &#x27;../../types/token_balance.types&#x27;;
 import { AccountBalance } from &#x27;../../types/account_balance.types&#x27;;
 import { PrivateKeyList } from &#x27;../../types/private-key-list.types&#x27;;
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class AccountsService {
+  /**
+  * Logger Service
+  */
   protected logger: Logger &#x3D; new Logger(&quot;Accounts Service&quot;);
 
+  /**
+   * Constructor
+   * @param {ClientService} clientService 
+   * @param {KeysService} keysService 
+   */
   constructor(
     private clientService: ClientService,
     private keysService: KeysService
-  ) {}
+  ) { }
 
+  /**
+   * Fetches specific Account Info
+   * @param {AccountId} accountId 
+   * @returns {AccountInfo}
+   */
   async getInfo(accountId: AccountId): Promise&lt;AccountInfo&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; new AccountInfoQuery()
-            .setAccountId(accountId);
+          .setAccountId(accountId);
 
         // Signing the transaction...
-        const accountInfo &#x3D; await transaction.execute(this.clientService.getClient());
+        const accountInfo &#x3D; await transaction.execute(client);
 
         // resolving the account&#x27;s info...
-        resolve(accountInfo);        
-      } catch(error) {
+        resolve(accountInfo);
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+ * Fetches Specific account public key
+ * @param {AccountId} accountId 
+ * @returns {any} Account Public Key
+ */
   async getKeys(accountId: AccountId): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         const accountInfo &#x3D; await this.getInfo(accountId);
         resolve(&lt;any&gt;accountInfo.key);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+
+  /**
+   * Updates Account
+   * @param {AccountId} accountId 
+   * @param {PrivateKey} signKey 
+   * @param {PrivateKey} newKey 
+   * @param {string} memo 
+   * @returns {Status} Account Update
+   */
   async updateAccount(
     accountId: AccountId,
     signKey: PrivateKey,
     newKey?: PrivateKey,
     memo?: string
   ): Promise&lt;Status&gt; {
-    return new Promise(async(resolve,reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; await new AccountUpdateTransaction()
-            // setting single node accountId, as a workound for offline signature...
-            .setNodeAccountIds([new AccountId(6)])    
-            .setAccountId(accountId);
+          // setting single node accountId, as a workound for offline signature...
+          .setNodeAccountIds([new AccountId(6)])
+          .setAccountId(accountId);
 
-        if(memo) {
+        if (memo) {
           transaction.setAccountMemo(memo);
         }
 
-        if(newKey) {
+        if (newKey) {
           transaction.setKey(newKey);
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
 
         // Signing the transaction...
         let signTx &#x3D; await transaction.sign(signKey);
 
-        if(newKey) {
+        if (newKey) {
           signTx &#x3D; await signTx.sign(newKey);
         }
 
         // Signing the transaction with the client operator...
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
+        const txResponse &#x3D; await signTx.execute(client);
 
         // Request the receipt of the transaction...
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await txResponse.getReceipt(client);
 
         // Get the transaction consensus status...
         resolve(receipt.status);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+ * Creates a single or multi-sig account
+ * @param {number} balance 
+ * @param {number} keysLength 
+ * @param {number} keysThreshold 
+ * @returns {AccountId, PrivateKey} single or multi-sig account
+ */
   async createAccount(
     balance: number,
     keysLength: number,
+    publicKeys?: Array&lt;string&gt;,
     keysThreshold?: number
-  ): Promise&lt;{accountId: AccountId | null, key: PrivateKey | PrivateKeyList}&gt; {
-    return new Promise(async(resolve,reject) &#x3D;&gt; {
+  ): Promise&lt;{ accountId: AccountId | null, key: PrivateKey | PrivateKeyList }&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
         let key &#x3D; null;
 
-        if(keysLength &gt; 1) {
-          key &#x3D; await this.keysService.generateKeyList(undefined, keysLength, keysThreshold);
+        if (keysLength &gt; 1) {
+          key &#x3D; await this.keysService.generateKeyList(publicKeys, keysLength, keysThreshold);
         } else {
           key &#x3D; await this.keysService.generateKey();
         }
 
         //Creating the transaction...
         const transaction &#x3D; new AccountCreateTransaction()
-            .setKey(keysLength &gt; 1 ? (&lt;PrivateKeyList&gt;key).keyList : (&lt;PrivateKey&gt;key).publicKey)
-            .setInitialBalance(new Hbar(balance));
+          .setKey(keysLength &gt; 1 ? (&lt;PrivateKeyList&gt;key).keyList : (&lt;PrivateKey&gt;key).publicKey)
+          .setInitialBalance(new Hbar(balance));
 
         // Executing the transactions...
-        const txResponse &#x3D; await transaction.execute(this.clientService.getClient());
+        const txResponse &#x3D; await transaction.execute(client);
 
         // Fetching the receipt...
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await txResponse.getReceipt(client);
 
         // resolving the accountId...
         resolve({
           accountId: receipt.accountId,
           key: key
         });
-      } catch(error) {
-        reject(error);        
+      } catch (error) {
+        reject(error);
       }
     });
   }
 
+  /**
+ * Freezes account related to token ID
+ * @param {AccountId} accountId 
+ * @param {TokenId} tokenId 
+ * @param {string} freezeKey 
+ * @returns {Status}
+ */
   async freezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         const transaction &#x3D; await new TokenFreezeTransaction()
-            .setAccountId(accountId)
-            .setTokenId(tokenId)
-            .freezeWith(this.clientService.getClient());
+          .setAccountId(accountId)
+          .setTokenId(tokenId)
+          .freezeWith(client);
 
-        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));   
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
         resolve({
           status: receipt.status,
           transaction_id: txResponse.transactionId.toString()
         });
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+ * Unfreezes account related to token ID
+ * @param {AccountId} accountId 
+ * @param {TokenId} tokenId 
+ * @param {string} freezeKey 
+ * @returns {Status}
+ */
   async unfreezeAccount(accountId: AccountId, tokenId: TokenId, freezeKey: string): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
-        const transaction &#x3D; await new TokenUnfreezeTransaction()
-            .setAccountId(accountId)
-            .setTokenId(tokenId)
-            .freezeWith(this.clientService.getClient());
+        const client &#x3D; this.clientService.getClient();
 
-        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));   
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
+        const transaction &#x3D; await new TokenUnfreezeTransaction()
+          .setAccountId(accountId)
+          .setTokenId(tokenId)
+          .freezeWith(client);
+
+        const signTx &#x3D; await transaction.sign(PrivateKey.fromString(freezeKey));
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
         resolve({
           status: receipt.status,
           transaction_id: txResponse.transactionId.toString()
         });
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+ * Get query balance
+ * @param {string} accountId 
+ * @param {string} tokenId 
+ * @returns {AccountBalance}
+ */
   getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise&lt;AccountBalance&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         const query &#x3D; new AccountBalanceQuery()
           .setAccountId(accountId);
 
-        const response &#x3D; await query.execute(this.clientService.getClient());
+        const response &#x3D; await query.execute(client);
         let balance &#x3D; null;
 
-        if(tokenId) {
+        if (tokenId) {
           balance &#x3D; {
             tokens: [{
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()): 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)): 0
+              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
+              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
             }],
             hbars: response.hbars
           };
         } else {
           let tokens &#x3D; new Array&lt;TokenBalance&gt;();
-          
+
           response.tokens?._map.forEach((value, tokenId) &#x3D;&gt; {
             tokens.push({
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()): 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)): 0
+              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
+              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
             });
           });
 

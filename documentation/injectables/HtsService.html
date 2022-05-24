@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Injectable</p>
+
+            </p>
 
 
 
@@ -96,6 +103,10 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#associateToken" >associateToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#burnNftToken" >burnNftToken</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -152,12 +163,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/hedera/hts/hts.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/hedera/hts/hts.service.ts:33</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>HTS Service</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -210,21 +223,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>associateToken(accountId: AccountId, tokenId: TokenId, key: PrivateKey)</code>
+                    <code>associateToken(accountId: AccountId, tokenId: TokenId, keys: PrivateKey | Array<PrivateKey>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:50</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Associate Token</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -263,9 +278,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>key</td>
+                                    <td>keys</td>
                                     <td>
-                                            <code>PrivateKey</code>
+                                            <code>PrivateKey | Array&lt;PrivateKey&gt;</code>
                                     </td>
 
                                     <td>
@@ -294,6 +309,103 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="burnNftToken"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>burnNftToken</b></span>
+                        <a href="#burnNftToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>burnNftToken(tokenId: TokenId, serialNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, supplyKey: PrivateKey)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Burn NFT</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tokenId</td>
+                                    <td>
+                                            <code>TokenId</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>serialNumber</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>supplyKey</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;TransactionReceipt&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="dissociateToken"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -305,21 +417,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>dissociateToken(accountId: AccountId, tokenId: TokenId, key: PrivateKey)</code>
+                    <code>dissociateToken(accountId: AccountId, tokenId: TokenId, keys: PrivateKey | Array<PrivateKey>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:90</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Disassociate Token</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -358,9 +472,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>key</td>
+                                    <td>keys</td>
                                     <td>
-                                            <code>PrivateKey</code>
+                                            <code>PrivateKey | Array&lt;PrivateKey&gt;</code>
                                     </td>
 
                                     <td>
@@ -407,14 +521,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="258"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:258</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get NFT Info</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -483,21 +599,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>mintNftToken(tokenId: TokenId, supplyKey: PrivateKey, CID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>mintNftToken(tokenId: TokenId, CID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, supplyKey?: PrivateKey | Array<PrivateKey>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:180</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Mint NFT</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -524,18 +642,6 @@
 
                                 </tr>
                                 <tr>
-                                    <td>supplyKey</td>
-                                    <td>
-                                            <code>PrivateKey</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
                                     <td>CID</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -547,13 +653,25 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>supplyKey</td>
+                                    <td>
+                                            <code>PrivateKey | Array&lt;PrivateKey&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;TransactionReceipt&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;TransactionReceipt | Transaction&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -585,14 +703,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:129</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Pause Token</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -668,14 +788,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="287"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:287</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Transfer HBAR</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -787,14 +909,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="240"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:240</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="418"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:418</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Transfer NFT</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -899,21 +1023,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transferToken(tokenId: TokenId, from: AccountId, to: AccountId, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, tokenDecimals: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, key?: PrivateKey)</code>
+                    <code>transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, key?: PrivateKey)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="194"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:194</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="347"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:347</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Transfer Token</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -930,7 +1056,7 @@
                                 <tr>
                                     <td>tokenId</td>
                                     <td>
-                                            <code>TokenId</code>
+                                            <code>TokenId | Array&lt;TokenId&gt;</code>
                                     </td>
 
                                     <td>
@@ -966,7 +1092,7 @@
                                 <tr>
                                     <td>amount</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <code>number | Array&lt;Number&gt;</code>
                                     </td>
 
                                     <td>
@@ -978,7 +1104,7 @@
                                 <tr>
                                     <td>tokenDecimals</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <code>number | Array&lt;Number&gt;</code>
                                     </td>
 
                                     <td>
@@ -1049,14 +1175,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="92"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:92</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:154</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Unpause Token</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1141,10 +1269,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/hedera/hts/hts.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/hedera/hts/hts.service.ts:33</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Logger Service</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1154,154 +1288,292 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { 
-  AccountId, 
-  Hbar, 
-  PrivateKey, 
-  Status, 
-  TokenAssociateTransaction, 
-  TokenId, 
-  TokenMintTransaction, 
-  TokenPauseTransaction, 
-  TokenUnpauseTransaction, 
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  AccountId,
+  Hbar,
+  PrivateKey,
+  Status,
+  TokenAssociateTransaction,
+  TokenId,
+  TokenMintTransaction,
+  TokenPauseTransaction,
+  TokenUnpauseTransaction,
   TokenDissociateTransaction,
-  Transaction, 
-  TransferTransaction, 
-  TransactionReceipt, 
-  NftId, 
-  TokenNftInfoQuery, 
-  TokenNftInfo 
+  Transaction,
+  TransferTransaction,
+  TransactionReceipt,
+  NftId,
+  TokenNftInfoQuery,
+  TokenNftInfo,
+  TokenBurnTransaction
 } from &#x27;@hashgraph/sdk&#x27;;
 import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
 import { TransactionDetails } from &#x27;../../types/transaction_details.types&#x27;;
 import { ClientService } from &#x27;../client/client.service&#x27;;
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class HtsService {
+
+  /**
+   * Logger Service
+   */
   protected logger: Logger &#x3D; new Logger(&quot;HTS Service&quot;);
 
+  /**
+   * HTS Service
+   * @param {ClientService} clientService 
+   */
   constructor(
     private clientService: ClientService
-  ) {}
+  ) { }
 
+  /**
+   * Associate Token
+   * @param {AccountId} accountId 
+   * @param {TokenId} tokenId 
+   * @param {PrivateKey} key 
+   * @returns {Status}
+   */
   async associateToken(
     accountId: AccountId,
     tokenId: TokenId,
-    key: PrivateKey
-    ): Promise&lt;Status | undefined&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    keys: PrivateKey | Array&lt;PrivateKey&gt;
+  ): Promise&lt;Status | undefined&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
-        const transaction &#x3D; await new TokenAssociateTransaction()
-        .setAccountId(accountId)
-        .setTokenIds([tokenId])
-        .freezeWith(this.clientService.getClient());
+        const client &#x3D; this.clientService.getClient();
 
-        let signTx &#x3D; await transaction.sign(key);         
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt.status);        
-      } catch(error) {
+        const transaction &#x3D; await new TokenAssociateTransaction()
+          .setAccountId(accountId)
+          .setTokenIds([tokenId])
+          .freezeWith(client);
+
+        let signTx &#x3D; null;
+
+        if (Array.isArray(keys)) {
+          for (let i &#x3D; 0; i &lt; keys.length; i++) {
+            signTx &#x3D; await transaction.sign(keys[i]);
+          };
+        } else {
+          signTx &#x3D; await transaction.sign(keys);
+        }
+
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
+        resolve(receipt.status);
+      } catch (error) {
         reject(error);
       }
     })
   }
 
+  /**
+   * Disassociate Token
+   * @param {AccountId} accountId 
+   * @param {TokenId} tokenId 
+   * @param {PrivateKey} key 
+   * @returns {Status} 
+   */
   async dissociateToken(
     accountId: AccountId,
     tokenId: TokenId,
-    key: PrivateKey
-    ): Promise&lt;Status | undefined&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    keys: PrivateKey | Array&lt;PrivateKey&gt;
+  ): Promise&lt;Status | undefined&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
-        const transaction &#x3D; await new TokenDissociateTransaction()
-        .setAccountId(accountId)
-        .setTokenIds([tokenId])
-        .freezeWith(this.clientService.getClient());
+        const client &#x3D; this.clientService.getClient();
 
-        let signTx &#x3D; await transaction.sign(key);         
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt.status);        
-      } catch(error) {
+        const transaction &#x3D; await new TokenDissociateTransaction()
+          .setAccountId(accountId)
+          .setTokenIds([tokenId])
+          .freezeWith(client);
+
+        let signTx &#x3D; null;
+
+        if (Array.isArray(keys)) {
+          for (let i &#x3D; 0; i &lt; keys.length; i++) {
+            signTx &#x3D; await transaction.sign(keys[i]);
+          };
+        } else {
+          signTx &#x3D; await transaction.sign(keys);
+        }
+
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
+        resolve(receipt.status);
+      } catch (error) {
         reject(error);
       }
     })
   }
 
+  /**
+   * Pause Token
+   * @param {TokenId} tokenId 
+   * @param {PrivateKey} pauseKey 
+   * @returns {Status} 
+   */
   async pauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise&lt;Status&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         const transaction &#x3D; new TokenPauseTransaction()
-        .setTokenId(tokenId)
-        .freezeWith(this.clientService.getClient());
+          .setTokenId(tokenId)
+          .freezeWith(client);
 
         const signTx &#x3D; await transaction.sign(pauseKey);
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt.status);        
-      } catch(error) {
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
+        resolve(receipt.status);
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Unpause Token
+   * @param {TokenId} tokenId 
+   * @param {PrivateKey} pauseKey 
+   * @returns {Status} 
+   */
   async unpauseToken(tokenId: TokenId, pauseKey: PrivateKey): Promise&lt;Status&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         const transaction &#x3D; new TokenUnpauseTransaction()
-        .setTokenId(tokenId)
-        .freezeWith(this.clientService.getClient());
+          .setTokenId(tokenId)
+          .freezeWith(client);
 
         const signTx &#x3D; await transaction.sign(pauseKey);
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt.status);        
-      } catch(error) {
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
+        resolve(receipt.status);
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Mint NFT
+   * @param {TokenId} tokenId 
+   * @param {PrivateKey} supplyKey 
+   * @param {string} CID 
+   * @returns {TransactionReceipt} 
+   */
   async mintNftToken(
     tokenId: TokenId,
-    supplyKey: PrivateKey,
-    CID: string
-  ): Promise&lt;TransactionReceipt&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    CID: string,
+    supplyKey?: PrivateKey | Array&lt;PrivateKey&gt;
+  ): Promise&lt;TransactionReceipt | Transaction&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
-        const transaction &#x3D; new TokenMintTransaction()
-        .setTokenId(tokenId)
-        .addMetadata(Buffer.from(CID))
-        .freezeWith(this.clientService.getClient());
+        const client &#x3D; this.clientService.getClient();
 
-        const signTx &#x3D; await transaction.sign(supplyKey);
-        const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-        const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-        resolve(receipt);        
-      } catch(error) {
+        const transaction &#x3D; new TokenMintTransaction()
+          .setTokenId(tokenId)
+          .addMetadata(Buffer.from(CID));
+
+        if (supplyKey) {
+          transaction.freezeWith(client);
+
+          let signTx &#x3D; null;
+
+          if (Array.isArray(supplyKey)) {
+            for (let i &#x3D; 0; i &lt; supplyKey.length; i++) {
+              signTx &#x3D; await transaction.sign(supplyKey[i]);
+            };
+          } else {
+            signTx &#x3D; await transaction.sign(supplyKey);
+          }
+
+          const txResponse &#x3D; await signTx.execute(client);
+          const receipt &#x3D; await txResponse.getReceipt(client);
+          resolve(receipt);
+        } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
+          resolve(transaction);
+        }
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Burn NFT
+   * @param {TokenId} tokenId 
+   * @param {number} serialNumber 
+   * @param {PrivateKey} supplyKey 
+   * @returns {TransactionReceipt}
+   */
+  async burnNftToken(
+    tokenId: TokenId,
+    serialNumber: number,
+    supplyKey: PrivateKey
+  ): Promise&lt;TransactionReceipt&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        const client &#x3D; this.clientService.getClient();
+
+        let transaction &#x3D; await new TokenBurnTransaction()
+          .setTokenId(tokenId)
+          .setSerials([serialNumber])
+          .freezeWith(client);
+
+        const signTx &#x3D; await transaction.sign(supplyKey);
+        const txResponse &#x3D; await signTx.execute(client);
+        const receipt &#x3D; await txResponse.getReceipt(client);
+
+        resolve(receipt);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Get NFT Info
+   * @param {TokenId} tokenId 
+   * @param {number} serialNumber 
+   * @returns {TokenNftInfo[]} 
+   */
   async getNftInfo(
     tokenId: TokenId,
     serialNumber: number,
   ): Promise&lt;TokenNftInfo[]&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         let nftId &#x3D; new NftId(tokenId, serialNumber);
         let nftInfos &#x3D; await new TokenNftInfoQuery()
-        .setNftId(nftId)
-        .execute(this.clientService.getClient());
+          .setNftId(nftId)
+          .execute(client);
 
-        resolve(nftInfos);        
-      } catch(error) {
+        resolve(nftInfos);
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Transfer HBAR
+   * @param {number} amount 
+   * @param {AccountId} from 
+   * @param {AccountId} to 
+   * @param {string} memo 
+   * @param {PrivateKey} key 
+   * @returns {TransactionDetails} 
+   */
   async transferHbar(
     amount: number,
     from: AccountId,
@@ -1309,90 +1581,130 @@ export class HtsService {
     memo?: string,
     key?: PrivateKey
   ): Promise&lt;TransactionDetails | Transaction&gt; {
-    return new Promise(async(resolve,reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating a transaction...
         const transaction &#x3D; new TransferTransaction()
           .addHbarTransfer(from, new Hbar(-amount))
           .addHbarTransfer(to, new Hbar(amount));
 
-        if(memo) {
+        if (memo) {
           transaction.setTransactionMemo(memo);
         }
-          
-        if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+
+        if (key) {
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx &#x3D; await transaction.sign(key);
-            
+
           // Submitting the transaction to a Hedera network...
-          const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-  
+          const txResponse &#x3D; await signTx.execute(client);
+
           // Requesting the receipt of the transaction...
-          const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-  
+          const receipt &#x3D; await txResponse.getReceipt(client);
+
           // Resolving the transaction consensus status...
           resolve({
             status: receipt.status,
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...          
           resolve(transaction);
         }
-          
-      } catch(error) {
-        reject(error);        
+
+      } catch (error) {
+        reject(error);
       }
     });
   }
 
+  /**
+   * Transfer Token
+   * @param {TokenId} tokenId 
+   * @param {AccountId} from 
+   * @param {AccountId} to 
+   * @param {number} amount 
+   * @param {number} tokenDecimals 
+   * @param {string} memo 
+   * @param {PrivateKey} key 
+   * @returns {TransactionDetails} 
+   */
   async transferToken(
-    tokenId: TokenId,
+    tokenId: TokenId | Array&lt;TokenId&gt;,
     from: AccountId,
-    to: AccountId,    
-    amount: number,
-    tokenDecimals: number,
+    to: AccountId,
+    amount: number | Array&lt;Number&gt;,
+    tokenDecimals: number | Array&lt;Number&gt;,
     memo?: string,
     key?: PrivateKey
   ): Promise&lt;TransactionDetails | Transaction&gt; {
-    return new Promise(async(resolve,reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transfer transaction...
-        const transaction &#x3D; await new TransferTransaction()
-          .addTokenTransfer(tokenId, from, Number(-amount  * (10 ** tokenDecimals)))
-          .addTokenTransfer(tokenId, to, Number(amount  * (10 ** tokenDecimals)));
+        const transaction &#x3D; await new TransferTransaction();
 
-          if(memo) {
-            transaction.setTransactionMemo(memo);
+        if (!Array.isArray(tokenId) &amp;&amp; !Array.isArray(amount) &amp;&amp; !Array.isArray(tokenDecimals)) {
+          transaction
+            .addTokenTransfer(tokenId, from, Number(-amount * (10 ** tokenDecimals)))
+            .addTokenTransfer(tokenId, to, Number(amount * (10 ** tokenDecimals)));
+        } else {
+          if (Array.isArray(tokenId) &amp;&amp; Array.isArray(amount) &amp;&amp; Array.isArray(tokenDecimals)) {
+            tokenId.forEach((token_id, index) &#x3D;&gt; {
+              transaction
+                .addTokenTransfer(token_id, from, Number(-amount[index] * (10 ** Number(tokenDecimals[index]))))
+                .addTokenTransfer(token_id, to, Number(+amount[index] * (10 ** Number(tokenDecimals[index]))));
+            });
           }
+        }
 
-        if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+        if (memo) {
+          transaction.setTransactionMemo(memo);
+        }
+
+        if (key) {
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx &#x3D; await transaction.sign(key);
-            
+
           // Submitting the transaction to a Hedera network...
-          const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-  
+          const txResponse &#x3D; await signTx.execute(client);
+
           // Requesting the receipt of the transaction...
-          const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-  
+          const receipt &#x3D; await txResponse.getReceipt(client);
+
           // Resolving the transaction consensus status...
           resolve({
             status: receipt.status,
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
           resolve(transaction);
-        }          
-      } catch(error) {
-        reject(error);        
+        }
+      } catch (error) {
+        reject(error);
       }
     });
   }
 
+  /**
+   * Transfer NFT
+   * @param {TokenId} tokenId 
+   * @param {AccountId} from 
+   * @param {AccountId} to 
+   * @param {number} serialNumber 
+   * @param {PrivateKey} key 
+   * @returns {TransactionDetails} 
+   */
   async transferNftToken(
     tokenId: TokenId,
     from: AccountId,
@@ -1400,34 +1712,38 @@ export class HtsService {
     serialNumber: number,
     key?: PrivateKey
   ): Promise&lt;TransactionDetails | Transaction&gt; {
-    return new Promise(async(resolve,reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transfer transaction...
         const transaction &#x3D; await new TransferTransaction()
           .addNftTransfer(new NftId(tokenId, serialNumber), from, to);
 
-        if(key) {
-          transaction.freezeWith(this.clientService.getClient());
+        if (key) {
+          transaction.freezeWith(client);
 
           // signing the transaction with the sender key...
           let signTx &#x3D; await transaction.sign(key);
-            
+
           // Submitting the transaction to a Hedera network...
-          const txResponse &#x3D; await signTx.execute(this.clientService.getClient());
-  
+          const txResponse &#x3D; await signTx.execute(client);
+
           // Requesting the receipt of the transaction...
-          const receipt &#x3D; await txResponse.getReceipt(this.clientService.getClient());
-  
+          const receipt &#x3D; await txResponse.getReceipt(client);
+
           // Resolving the transaction consensus status...
           resolve({
             status: receipt.status,
             transaction_id: txResponse.transactionId
           });
         } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
           resolve(transaction);
-        }          
-      } catch(error) {
-        reject(error);        
+        }
+      } catch (error) {
+        reject(error);
       }
     });
   }
