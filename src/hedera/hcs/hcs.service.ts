@@ -16,19 +16,36 @@ import {
 import { Injectable, Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class HcsService {
+
+  /**
+   * Logger Service
+   */
   protected logger: Logger = new Logger("HCS Service");
 
+  /**
+   * HCS Service
+   * @param {ClientService} clientService 
+   */
   constructor(
     private clientService: ClientService
   ) {
-    // HCS Service
   }
 
-  // Create topic...
+
+  /**
+   * Create topic
+   * @param {PrivateKey} adminKey 
+   * @param {Key} submitKey 
+   * @param {string} memo 
+   * @returns {TopicId}
+   */
   createTopic(
-    adminKey?: PrivateKey, 
+    adminKey?: PrivateKey,
     submitKey?: Key | KeyList,
     memo?: string
   ): Promise<TopicId | null> {
@@ -54,10 +71,10 @@ export class HcsService {
         // freezing the transaction...
         transaction.freezeWith(client);
         // if there is an admin key, transaction must be signed...
-        if(adminKey) {
+        if (adminKey) {
           const signTx = await transaction.sign(adminKey);
           txResponse = await signTx.execute(client);
-        } 
+        }
         // otherwise, we can just execute it...
         else {
           txResponse = await transaction.execute(client);
@@ -71,12 +88,20 @@ export class HcsService {
     });
   }
 
-  // Update topic...
+  /**
+   * Update topic
+   * @param {TopicId} topicId 
+   * @param {PrivateKey} currentAdminKey 
+   * @param {PrivateKey} adminKey 
+   * @param {Key} submitKey 
+   * @param {string} memo 
+   * @returns {Status}
+   */
   updateTopic(
-    topicId: TopicId, 
-    currentAdminKey?: PrivateKey, 
-    adminKey?: PrivateKey, 
-    submitKey?: Key | KeyList, 
+    topicId: TopicId,
+    currentAdminKey?: PrivateKey,
+    adminKey?: PrivateKey,
+    submitKey?: Key | KeyList,
     memo?: string
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
@@ -101,15 +126,15 @@ export class HcsService {
         // freezing the transaction...
         transaction.freezeWith(client);
         // if the transaction has got an admin key, we must use it to sign...
-        if(currentAdminKey) {
+        if (currentAdminKey) {
           let signTx = await transaction.sign(currentAdminKey);
           // if there is a new admin key, we must use it to double sign it...
-          if(adminKey) {
+          if (adminKey) {
             signTx = await signTx.sign(adminKey);
           }
           // executing the transaction, after signatures...
           txResponse = await signTx.execute(client);
-        } 
+        }
         // otherwise we can just sign the transaction...
         else {
           txResponse = await transaction.execute(client);
@@ -123,9 +148,14 @@ export class HcsService {
     });
   }
 
-  // Delete topic...
+  /**
+   * Delete topic
+   * @param {TopicId} topicId 
+   * @param {PrivateKey} adminKey 
+   * @returns {Status}
+   */
   deleteTopic(
-    topicId: TopicId, 
+    topicId: TopicId,
     adminKey: PrivateKey
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
@@ -134,8 +164,8 @@ export class HcsService {
 
         // creating the transaction, and freezing it...
         const transaction = new TopicDeleteTransaction()
-        .setTopicId(topicId)
-        .freezeWith(client);
+          .setTopicId(topicId)
+          .freezeWith(client);
         // signing the transaction with admin key...
         const signTx = await transaction.sign(adminKey);
         // fetching response...
@@ -149,7 +179,11 @@ export class HcsService {
     });
   }
 
-  // Get topic info...
+  /**
+   * Get topic info
+   * @param {TopicId} topicId 
+   * @returns {TopicInfo}
+   */
   topicInfo(
     topicId: TopicId
   ): Promise<TopicInfo> {
@@ -157,7 +191,7 @@ export class HcsService {
       try {
         const client = this.clientService.getClient();
 
-        const transaction = new TopicInfoQuery().setTopicId(topicId);  
+        const transaction = new TopicInfoQuery().setTopicId(topicId);
         const info = await transaction.execute(client);
         resolve(info);
       } catch (error) {
@@ -166,9 +200,15 @@ export class HcsService {
     });
   }
 
-  // Submit Message...
+  /**
+   * Submit Message
+   * @param {TopicId} topicId 
+   * @param {string} message 
+   * @param {PrivateKey} submitKey 
+   * @returns {string} 
+   */
   submitMessage(
-    topicId: TopicId, 
+    topicId: TopicId,
     message: string | Uint8Array,
     submitKey?: PrivateKey
   ): Promise<string | undefined> {
@@ -179,19 +219,19 @@ export class HcsService {
         let txResponse = null;
         // creating the transaction, setting topic and message...
         const transaction = new TopicMessageSubmitTransaction()
-        .setTopicId(topicId)
-        .setMessage(message);
+          .setTopicId(topicId)
+          .setMessage(message);
         // freezing the transaction...
         transaction.freezeWith(client);
         // if there is an submit key, transaction must be signed...
-        if(submitKey) {
+        if (submitKey) {
           const signTx = await transaction.sign(submitKey);
           txResponse = await signTx.execute(client);
-        } 
+        }
         // otherwise, we can just execute it...
         else {
           txResponse = await transaction.execute(client);
-        }        
+        }
         // finally, fetching the status...
         const receipt = await txResponse.getReceipt(client);
         resolve(receipt.topicSequenceNumber?.toString());
@@ -201,7 +241,16 @@ export class HcsService {
     });
   }
 
-  // Get topic message...
+
+  /**
+   * Get topic message
+   * @param {TopicId} topicId 
+   * @param {any} callback 
+   * @param {number} start 
+   * @param {number} end 
+   * @param {number} limit 
+   * @returns {any} Subscription Message
+   */
   getMessages(
     topicId: TopicId,
     callback: (message: any) => void,
@@ -212,26 +261,26 @@ export class HcsService {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
-        
+
         // creating the transaction...
         const transaction = new TopicMessageQuery()
-        .setTopicId(topicId);
+          .setTopicId(topicId);
 
-        if(start !== undefined) {
+        if (start !== undefined) {
           transaction.setStartTime(start);
         }
 
-        if(end !== undefined) {
+        if (end !== undefined) {
           transaction.setEndTime(end);
         }
 
-        if(limit !== undefined) {
+        if (limit !== undefined) {
           transaction.setLimit(limit);
         }
 
         let subscription = transaction.subscribe(
-          this.clientService.getClient(), 
-          null, 
+          this.clientService.getClient(),
+          null,
           (message) => callback(message)
         );
 

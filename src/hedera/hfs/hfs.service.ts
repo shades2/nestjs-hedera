@@ -14,14 +14,32 @@ import {
 import { Injectable, Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class HfsService {
+  /**
+   * Logger Service
+   */
   protected logger: Logger = new Logger("HFS Service");
 
+  /**
+   * HFS Service
+   * @param {ClientService} clientService 
+   */
   constructor(
     private clientService: ClientService
   ) {}
 
+  /**
+   * Create File
+   * @param {PrivateKey} key 
+   * @param {string} content 
+   * @param {string} memo 
+   * @param {number} maxTransactionFee 
+   * @returns {FileId} 
+   */
   async create(
     key: PrivateKey,
     content: string,
@@ -61,6 +79,14 @@ export class HfsService {
     });
   }
 
+  /**
+   * Append File
+   * @param {FileId} fileId 
+   * @param {PrivateKey} key 
+   * @param {string} content 
+   * @param {number} maxTransactionFee 
+   * @returns {Status}
+   */
   async append(
     fileId: FileId,
     key: PrivateKey,
@@ -96,6 +122,16 @@ export class HfsService {
     });
   }
 
+  /**
+   * Update File
+   * @param {FileId} fileId 
+   * @param {string} content 
+   * @param {PrivateKey} signKey 
+   * @param {PrivateKey} newKey 
+   * @param {string} memo 
+   * @param {number} maxTransactionFee 
+   * @returns {Status} 
+   */
   async update(
     fileId: FileId,
     content: string,
@@ -146,6 +182,13 @@ export class HfsService {
     });
   }
 
+  /**
+   * Delete File
+   * @param {FileId} fileId 
+   * @param {PrivateKey} key 
+   * @param {number} maxTransactionFee 
+   * @returns {Status} 
+   */
   async delete(
     fileId: FileId,
     key: PrivateKey,
@@ -179,6 +222,11 @@ export class HfsService {
     });
   }
 
+  /**
+   * Get contents
+   * @param {FileId} fileId 
+   * @returns {string}
+   */
   async getContents(
     fileId: FileId
   ): Promise<string> {
@@ -199,6 +247,11 @@ export class HfsService {
     });
   }
 
+  /**
+   * Get Info
+   * @param {FileId} fileId 
+   * @returns {FileInfo}
+   */
   async getInfos(
     fileId: FileId
   ): Promise<FileInfo> {

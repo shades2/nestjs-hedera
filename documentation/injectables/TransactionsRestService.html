@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Injectable</p>
+
+            </p>
 
 
 
@@ -90,6 +97,12 @@
                             <li>
                                 <a href="#getScheduledTransaction" >getScheduledTransaction</a>
                             </li>
+                            <li>
+                                <a href="#getTransactionById" >getTransactionById</a>
+                            </li>
+                            <li>
+                                <a href="#getTransactionByTimestamp" >getTransactionByTimestamp</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -113,12 +126,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:5</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:8</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Transaction Rest Service</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -176,14 +191,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:59</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetch all transactions</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -231,7 +248,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>response</p>
+
                     </div>
                 </td>
             </tr>
@@ -257,14 +275,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetch all transactions from timestamp</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -312,7 +332,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>response</p>
+
                     </div>
                 </td>
             </tr>
@@ -338,14 +359,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:134</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetch latest transactions</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -381,7 +404,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>response</p>
+
                     </div>
                 </td>
             </tr>
@@ -407,14 +431,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:152</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Fetch scheduled transaction</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -450,7 +476,152 @@
 
                     </div>
                     <div class="io-description">
+                        <p>response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransactionById"></a>
+                    <span class="name">
+                        <span ><b>getTransactionById</b></span>
+                        <a href="#getTransactionById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransactionById(transaction_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetch transaction by id</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
                         
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transaction_id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>response</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransactionByTimestamp"></a>
+                    <span class="name">
+                        <span ><b>getTransactionByTimestamp</b></span>
+                        <a href="#getTransactionByTimestamp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransactionByTimestamp(timestamp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/hedera/transactions/transactions-rest.service.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetch transaction by timestamp</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>timestamp</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>response</p>
+
                     </div>
                 </td>
             </tr>
@@ -465,26 +636,40 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
 import { RestService } from &#x27;../rest/rest.service&#x27;;
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class TransactionsRestService {
+
+  /**
+   * Transaction Rest Service
+   * @param {RestService} restService 
+   */
   constructor(
     private restService: RestService
-  ) {}
+  ) { }
 
-  getAllTransactionsFromTimestamp(timestamp: string, accountId: string):  Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+  /**
+   * Fetch all transactions from timestamp
+   * @param {string} timestamp 
+   * @param {string} accountId 
+   * @returns {any} response
+   */
+  getAllTransactionsFromTimestamp(timestamp: string, accountId: string): Promise&lt;any&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         let transactions: any &#x3D; [];
 
         let response &#x3D; await this.restService
-        .call(&#x60;transactions/?account.id&#x3D;${accountId}&amp;timestamp&#x3D;gt:${timestamp}&#x60;);
+          .call(&#x60;transactions/?account.id&#x3D;${accountId}&amp;timestamp&#x3D;gt:${timestamp}&#x60;);
 
         transactions &#x3D; transactions.concat(response.transactions);
 
-        while(response.links.next) {
+        while (response.links.next) {
           let nextArray &#x3D; response.links.next.split(&quot;&amp;&quot;);
           let next &#x3D; nextArray.slice(1, nextArray.length).join(&#x27;&amp;&#x27;);
-          
+
           await new Promise(resolve &#x3D;&gt; setTimeout(resolve, 1000));
 
           response &#x3D; await this.restService
@@ -494,28 +679,34 @@ export class TransactionsRestService {
         }
 
         resolve(transactions);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Fetch all transactions
+   * @param {string} accountId 
+   * @param {string} filters 
+   * @returns {any} response
+   */
   getAllTransactions(accountId: string, filters?: string): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         let transactions: any &#x3D; [];
         let url &#x3D; &#x60;transactions/?account.id&#x3D;${accountId}&#x60;;
 
-        if(filters) {
+        if (filters) {
           url +&#x3D; &#x60;&amp;${filters}&#x60;;
         }
 
         let response &#x3D; await this.restService
-        .call(url);
+          .call(url);
 
         transactions &#x3D; transactions.concat(response.transactions);
 
-        while(response.links.next) {
+        while (response.links.next) {
           let nextArray &#x3D; response.links.next.split(&quot;&amp;&quot;);
           let next &#x3D; nextArray.slice(1, nextArray.length).join(&#x27;&amp;&#x27;);
 
@@ -528,33 +719,79 @@ export class TransactionsRestService {
         }
 
         resolve(transactions);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Fetch transaction by timestamp
+   * @param {string} timestamp 
+   * @returns {any} response
+   */
+  getTransactionByTimestamp(timestamp: string): Promise&lt;any&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        let response &#x3D; await this.restService
+          .call(&#x60;transactions/?timestamp&#x3D;${timestamp}&#x60;);
+
+        resolve(response.transactions);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Fetch transaction by id
+   * @param {string} transaction_id 
+   * @returns {any} response
+   */
+  getTransactionById(transaction_id: string): Promise&lt;any&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        let response &#x3D; await this.restService
+          .call(&#x60;transactions/${transaction_id}&#x60;);
+
+        resolve(response.transactions);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Fetch latest transactions
+   * @param {string} accountId 
+   * @returns {any} response
+   */
   getLatestTransactions(accountId: string): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         let response &#x3D; await this.restService
-        .call(&#x60;transactions/?account.id&#x3D;${accountId}&#x60;);
+          .call(&#x60;transactions/?account.id&#x3D;${accountId}&#x60;);
 
         resolve(response);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });
   }
 
+  /**
+   * Fetch scheduled transaction
+   * @param {string} transactionId 
+   * @returns {any} response
+   */
   getScheduledTransaction(transactionId: string): Promise&lt;any&gt; {
-    return new Promise(async(resolve, reject) &#x3D;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         let response &#x3D; await this.restService
-        .call(&#x60;schedules/${transactionId}&#x60;);
-        
+          .call(&#x60;schedules/${transactionId}&#x60;);
+
         resolve(response);
-      } catch(error) {
+      } catch (error) {
         reject(error);
       }
     });

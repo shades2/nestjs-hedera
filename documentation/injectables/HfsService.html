@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Injectable</p>
+
+            </p>
 
 
 
@@ -140,12 +147,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/hedera/hfs/hfs.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/hedera/hfs/hfs.service.ts:25</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>HFS Service</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -205,14 +214,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:90</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Append File</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -312,14 +323,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Create File</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -419,14 +432,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="143"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:143</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:192</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Delete File</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -514,14 +529,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="174"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:174</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:230</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get contents</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -585,14 +602,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="192"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:192</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="255"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:255</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get Info</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -656,14 +675,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/hedera/hfs/hfs.service.ts:135</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Update File</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -796,10 +817,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/hedera/hfs/hfs.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/hedera/hfs/hfs.service.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Logger Service</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -825,14 +852,32 @@
 import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
 import { ClientService } from &#x27;../client/client.service&#x27;;
 
+/**
+ * Injectable
+ */
 @Injectable()
 export class HfsService {
+  /**
+   * Logger Service
+   */
   protected logger: Logger &#x3D; new Logger(&quot;HFS Service&quot;);
 
+  /**
+   * HFS Service
+   * @param {ClientService} clientService 
+   */
   constructor(
     private clientService: ClientService
   ) {}
 
+  /**
+   * Create File
+   * @param {PrivateKey} key 
+   * @param {string} content 
+   * @param {string} memo 
+   * @param {number} maxTransactionFee 
+   * @returns {FileId} 
+   */
   async create(
     key: PrivateKey,
     content: string,
@@ -841,6 +886,8 @@ export class HfsService {
   ): Promise&lt;FileId | null&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; await new FileCreateTransaction()
           .setKeys([key])
@@ -854,14 +901,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
 
         // Signing with the file private keys...
         const signTx &#x3D; await transaction.sign(key);
         // Executing the transaction...
-        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        const submitTx &#x3D; await signTx.execute(client);
         // Requesting the receipt...
-        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await submitTx.getReceipt(client);
         // Get the file ID
         resolve(receipt.fileId);        
       } catch(error) {
@@ -870,6 +917,14 @@ export class HfsService {
     });
   }
 
+  /**
+   * Append File
+   * @param {FileId} fileId 
+   * @param {PrivateKey} key 
+   * @param {string} content 
+   * @param {number} maxTransactionFee 
+   * @returns {Status}
+   */
   async append(
     fileId: FileId,
     key: PrivateKey,
@@ -878,6 +933,8 @@ export class HfsService {
   ): Promise&lt;Status&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+        
         // Creating the transaction...
         const transaction &#x3D; await new FileAppendTransaction()
           .setFileId(fileId)
@@ -887,14 +944,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing with the file private keys...
         const signTx &#x3D; await transaction.sign(key);
         // Executing the transaction...
-        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        const submitTx &#x3D; await signTx.execute(client);
         // Requesting the receipt...
-        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -903,6 +960,16 @@ export class HfsService {
     });
   }
 
+  /**
+   * Update File
+   * @param {FileId} fileId 
+   * @param {string} content 
+   * @param {PrivateKey} signKey 
+   * @param {PrivateKey} newKey 
+   * @param {string} memo 
+   * @param {number} maxTransactionFee 
+   * @returns {Status} 
+   */
   async update(
     fileId: FileId,
     content: string,
@@ -913,6 +980,8 @@ export class HfsService {
   ): Promise&lt;Status&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; await new FileUpdateTransaction()
           .setFileId(fileId)
@@ -930,7 +999,7 @@ export class HfsService {
           transaction.setKeys([newKey]);
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing the transaction...
         let signTx &#x3D; await transaction.sign(signKey);
@@ -940,9 +1009,9 @@ export class HfsService {
         }
         
         // Executing the transaction...
-        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        const submitTx &#x3D; await signTx.execute(client);
         // Requesting the receipt...
-        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -951,6 +1020,13 @@ export class HfsService {
     });
   }
 
+  /**
+   * Delete File
+   * @param {FileId} fileId 
+   * @param {PrivateKey} key 
+   * @param {number} maxTransactionFee 
+   * @returns {Status} 
+   */
   async delete(
     fileId: FileId,
     key: PrivateKey,
@@ -958,6 +1034,8 @@ export class HfsService {
   ): Promise&lt;Status&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; await new FileDeleteTransaction()
           .setFileId(fileId);
@@ -966,14 +1044,14 @@ export class HfsService {
           transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
         }
 
-        transaction.freezeWith(this.clientService.getClient());
+        transaction.freezeWith(client);
         
         // Signing with the file private keys...
         const signTx &#x3D; await transaction.sign(key);
         // Executing the transaction...
-        const submitTx &#x3D; await signTx.execute(this.clientService.getClient());
+        const submitTx &#x3D; await signTx.execute(client);
         // Requesting the receipt...
-        const receipt &#x3D; await submitTx.getReceipt(this.clientService.getClient());
+        const receipt &#x3D; await submitTx.getReceipt(client);
         // Get the transaction status
         resolve(receipt.status);        
       } catch(error) {
@@ -982,17 +1060,24 @@ export class HfsService {
     });
   }
 
+  /**
+   * Get contents
+   * @param {FileId} fileId 
+   * @returns {string}
+   */
   async getContents(
     fileId: FileId
   ): Promise&lt;string&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+
         // Creating the transaction...
         const transaction &#x3D; new FileContentsQuery()
             .setFileId(fileId);
 
         // Signing the transaction...
-        const contents &#x3D; await transaction.execute(this.clientService.getClient());
+        const contents &#x3D; await transaction.execute(client);
         resolve(contents.toString());
       } catch(error) {
         reject(error);
@@ -1000,17 +1085,24 @@ export class HfsService {
     });
   }
 
+  /**
+   * Get Info
+   * @param {FileId} fileId 
+   * @returns {FileInfo}
+   */
   async getInfos(
     fileId: FileId
   ): Promise&lt;FileInfo&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
+        const client &#x3D; this.clientService.getClient();
+        
         // Creating the transaction...
         const transaction &#x3D; new FileInfoQuery()
             .setFileId(fileId);
 
         // Signing the transaction...
-        const infos &#x3D; await transaction.execute(this.clientService.getClient());
+        const infos &#x3D; await transaction.execute(client);
         resolve(infos);
       } catch(error) {
         reject(error);
