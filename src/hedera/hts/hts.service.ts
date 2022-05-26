@@ -18,6 +18,7 @@ import {
   TokenBurnTransaction
 } from '@hashgraph/sdk';
 import { Injectable, Logger } from '@nestjs/common';
+import { firstValueFrom } from 'rxjs';
 import { TransactionDetails } from '../../types/transaction_details.types';
 import { ClientService } from '../client/client.service';
 
@@ -351,7 +352,8 @@ export class HtsService {
     amount: number | Array<Number>,
     tokenDecimals: number | Array<Number>,
     memo?: string,
-    key?: PrivateKey
+    key?: PrivateKey,
+    hbarAmount?: number
   ): Promise<TransactionDetails | Transaction> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -359,6 +361,12 @@ export class HtsService {
 
         // Creating the transfer transaction...
         const transaction = await new TransferTransaction();
+
+        if(hbarAmount) {
+          transaction
+          .addHbarTransfer(from, new Hbar(-hbarAmount))
+          .addHbarTransfer(to, new Hbar(hbarAmount))
+        }
 
         if (!Array.isArray(tokenId) && !Array.isArray(amount) && !Array.isArray(tokenDecimals)) {
           transaction

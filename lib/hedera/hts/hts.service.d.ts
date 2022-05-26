@@ -90,7 +90,7 @@ export declare class HtsService {
      * @param {PrivateKey} key
      * @returns {TransactionDetails | Transaction}
      */
-    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
+    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: string, key?: PrivateKey, hbarAmount?: number): Promise<TransactionDetails | Transaction>;
     /**
      * Atomic Swap
      * @param {Array<any>} swaps
