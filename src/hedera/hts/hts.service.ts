@@ -335,14 +335,14 @@ export class HtsService {
 
   /**
    * Transfer Token
-   * @param {TokenId} tokenId 
+   * @param {TokenId | Array<TokenId>} tokenId 
    * @param {AccountId} from 
    * @param {AccountId} to 
-   * @param {number} amount 
-   * @param {number} tokenDecimals 
+   * @param {number | Array<Number>} amount 
+   * @param {number | Array<Number>} tokenDecimals 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {TransactionDetails | Transaction} 
    */
   async transferToken(
     tokenId: TokenId | Array<TokenId>,
@@ -373,6 +373,63 @@ export class HtsService {
             });
           }
         }
+
+        if (memo) {
+          transaction.setTransactionMemo(memo);
+        }
+
+        if (key) {
+          transaction.freezeWith(client);
+
+          // signing the transaction with the sender key...
+          let signTx = await transaction.sign(key);
+
+          // Submitting the transaction to a Hedera network...
+          const txResponse = await signTx.execute(client);
+
+          // Requesting the receipt of the transaction...
+          const receipt = await txResponse.getReceipt(client);
+
+          // Resolving the transaction consensus status...
+          resolve({
+            status: receipt.status,
+            transaction_id: txResponse.transactionId
+          });
+        } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
+          resolve(transaction);
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Atomic Swap
+   * @param {Array<any>} swaps 
+   * @param {string} memo 
+   * @param {PrivateKey} key 
+   * @returns {TransactionDetails | Transaction} 
+   */
+  async atomicSwap(
+    swaps: Array<any>,
+    memo?: string,
+    key?: PrivateKey
+  ): Promise<TransactionDetails | Transaction> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const client = this.clientService.getClient();
+
+        // Creating the transfer transaction...
+        const transaction = await new TransferTransaction();
+
+        swaps.forEach(swap => {
+          transaction
+            .addTokenTransfer(swap.token.id, swap.from, Number(-swap.amount * (10 ** swap.token.decimals)))
+            .addTokenTransfer(swap.token.id, swap.to, Number(swap.amount * (10 ** swap.token.decimals)));
+        });
 
         if (memo) {
           transaction.setTransactionMemo(memo);
