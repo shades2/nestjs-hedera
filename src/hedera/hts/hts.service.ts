@@ -56,9 +56,10 @@ export class HtsService {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
-        // generating random number from 3 to 28, as a workound for offline signature...
-        let nodeAccountId = Math.floor(Math.random() * (28 - 3 + 1) + 3);
-
+        // generating random number from 3 to 9, as a workound for offline signature...
+        let nodeAccountId = Math.floor(Math.random() * (9 - 3 + 1) + 3);
+        
+        console.log("using account ID", (new AccountId(nodeAccountId)).toString());
         const transaction = await new TokenAssociateTransaction()
           // setting single node accountId, as a workound for offline signature...
           .setNodeAccountIds([new AccountId(nodeAccountId)])
