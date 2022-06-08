@@ -23,7 +23,7 @@ export declare class HtsService {
      * @param {PrivateKey} key
      * @returns {Status}
      */
-    associateToken(accountId: AccountId, tokenId: TokenId, keys: PrivateKey | Array<PrivateKey>): Promise<Status | undefined>;
+    associateToken(accountId: AccountId, tokenId: TokenId, keys: PrivateKey | Array<PrivateKey>): Promise<Status | undefined | any>;
     /**
      * Disassociate Token
      * @param {AccountId} accountId

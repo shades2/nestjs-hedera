@@ -52,29 +52,37 @@ export class HtsService {
     accountId: AccountId,
     tokenId: TokenId,
     keys: PrivateKey | Array<PrivateKey>
-  ): Promise<Status | undefined> {
+  ): Promise<Status | undefined | any> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
+        // generating random number from 3 to 28, as a workound for offline signature...
+        let nodeAccountId = Math.floor(Math.random() * (28 - 3 + 1) + 3);
 
         const transaction = await new TokenAssociateTransaction()
+          // setting single node accountId, as a workound for offline signature...
+          .setNodeAccountIds([new AccountId(nodeAccountId)])
           .setAccountId(accountId)
           .setTokenIds([tokenId])
           .freezeWith(client);
 
         let signTx = null;
 
-        if (Array.isArray(keys)) {
-          for (let i = 0; i < keys.length; i++) {
-            signTx = await transaction.sign(keys[i]);
-          };
+        if(keys) {
+          if (Array.isArray(keys)) {
+            for (let i = 0; i < keys.length; i++) {
+              signTx = await transaction.sign(keys[i]);
+            };
+          } else {
+            signTx = await transaction.sign(keys);
+          }
+  
+          const txResponse = await signTx.execute(client);
+          const receipt = await txResponse.getReceipt(client);
+          resolve(receipt.status);          
         } else {
-          signTx = await transaction.sign(keys);
+          resolve(transaction);
         }
-
-        const txResponse = await signTx.execute(client);
-        const receipt = await txResponse.getReceipt(client);
-        resolve(receipt.status);
       } catch (error) {
         reject(error);
       }
