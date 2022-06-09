@@ -40,7 +40,7 @@ export declare class AccountsService {
      * @param {string} memo
      * @returns {Status} Account Update
      */
-    updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: string): Promise<Status>;
+    updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: string, maxAutomaticTokenAssociations?: number): Promise<Status>;
     /**
    * Creates a single or multi-sig account
    * @param {number} balance
@@ -48,7 +48,7 @@ export declare class AccountsService {
    * @param {number} keysThreshold
    * @returns {AccountId, PrivateKey} single or multi-sig account
    */
-    createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number): Promise<{
+    createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number, maxAutomaticTokenAssociations?: number): Promise<{
         accountId: AccountId | null;
         key: PrivateKey | PrivateKeyList;
     }>;

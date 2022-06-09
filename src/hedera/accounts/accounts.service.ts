@@ -96,7 +96,8 @@ export class AccountsService {
     accountId: AccountId,
     signKey: PrivateKey,
     newKey?: PrivateKey,
-    memo?: string
+    memo?: string,
+    maxAutomaticTokenAssociations?: number
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -110,6 +111,10 @@ export class AccountsService {
 
         if (memo) {
           transaction.setAccountMemo(memo);
+        }
+
+        if(maxAutomaticTokenAssociations) {
+          transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
         }
 
         if (newKey) {
@@ -150,7 +155,8 @@ export class AccountsService {
     balance: number,
     keysLength: number,
     publicKeys?: Array<string>,
-    keysThreshold?: number
+    keysThreshold?: number,
+    maxAutomaticTokenAssociations?: number
   ): Promise<{ accountId: AccountId | null, key: PrivateKey | PrivateKeyList }> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -167,6 +173,10 @@ export class AccountsService {
         const transaction = new AccountCreateTransaction()
           .setKey(keysLength > 1 ? (<PrivateKeyList>key).keyList : (<PrivateKey>key).publicKey)
           .setInitialBalance(new Hbar(balance));
+
+        if(maxAutomaticTokenAssociations) {
+          transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
+        }
 
         // Executing the transactions...
         const txResponse = await transaction.execute(client);
