@@ -443,9 +443,15 @@ export class HtsService {
         const transaction = await new TransferTransaction();
 
         swaps.forEach(swap => {
-          transaction
+          if(swap.token.id == 'HBAR') {
+            transaction
+            .addHbarTransfer(swap.from, new Hbar(-swap.amount.toFixed(8)))
+            .addHbarTransfer(swap.to, new Hbar(swap.amount.toFixed(8)));
+          } else {
+            transaction
             .addTokenTransfer(swap.token.id, swap.from, Number(-swap.amount * (10 ** swap.token.decimals)))
             .addTokenTransfer(swap.token.id, swap.to, Number(swap.amount * (10 ** swap.token.decimals)));
+          }
         });
 
         if (memo) {
