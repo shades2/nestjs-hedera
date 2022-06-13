@@ -22,7 +22,7 @@ export declare class ClientService {
      * Network choice
      */
     private network;
-    private customNode;
+    private custom;
     private mirrorNode;
     /**
      * Logger Service

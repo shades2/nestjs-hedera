@@ -23,5 +23,8 @@ export interface HederaOptions {
    */
   network: 'mainnet' | 'testnet' | 'custom'
 
-  customNode: { [key: string]: string | AccountId }
+  custom: {
+    node: { [key: string]: string | AccountId },
+    mirror: string
+  }
 }

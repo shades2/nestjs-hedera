@@ -31,7 +31,14 @@ export class ClientService {
    */
   private network: 'mainnet' | 'testnet' | 'custom';
 
-  private customNode: { [key: string]: string | AccountId };
+  private custom: {
+    node: { [key: string]: string | AccountId },
+    mirror: string
+  } = {
+    node: null,
+    mirror: null
+  };
+
   private mirrorNode: MirrorNode;
 
   /**
@@ -48,8 +55,8 @@ export class ClientService {
   ) {
     this.network = this.hederaOptions.network;
     this.operators = this.hederaOptions.operators;
-    this.customNode = this.hederaOptions.customNode;
-    this.mirrorNode = this.hederaOptions.mirrorNode;
+    this.custom.node = this.hederaOptions.custom.node;
+    this.custom.mirror = this.hederaOptions.custom.mirror;
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
@@ -70,7 +77,7 @@ export class ClientService {
         this.client = Client.forMainnet();
         break;
       case 'custom':
-        this.client = Client.forNetwork(this.customNode).setMirrorNetwork(this.mirrorNode.url);
+        this.client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
         break;
     }
 

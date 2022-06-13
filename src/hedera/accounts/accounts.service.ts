@@ -161,6 +161,7 @@ export class AccountsService {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
+
         let key = null;
 
         if (keysLength > 1) {
