@@ -27,7 +27,7 @@ export class KeysService {
   generateKey(): Promise<PrivateKey> {
     return new Promise(async(resolve, reject) => {
       try {
-        const key = await PrivateKey.generate();
+        const key = await PrivateKey.generateED25519();
         resolve(key);
       } catch(error) {
         reject(error);
@@ -67,7 +67,7 @@ export class KeysService {
 
           if(length) {
             [...Array(length).keys()].forEach(() => {
-              let key = PrivateKey.generate();
+              let key = PrivateKey.generateED25519();
               privateKeys.push(key);
               publicKeyList.push(key.publicKey);
             });
