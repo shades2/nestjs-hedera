@@ -1,3 +1,4 @@
+import { AccountId } from "@hashgraph/sdk";
 import { MirrorNode } from "./mirror.types";
 import { Operator } from "./operator.types";
 /**
@@ -15,5 +16,8 @@ export interface HederaOptions {
     /**
      * Network choice
      */
-    network: 'mainnet' | 'testnet';
+    network: 'mainnet' | 'testnet' | 'custom';
+    customNode: {
+        [key: string]: string | AccountId;
+    };
 }

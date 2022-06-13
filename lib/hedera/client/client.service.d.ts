@@ -1,6 +1,6 @@
-import { Client } from '@hashgraph/sdk';
 import { Operator } from '../../types/operator.types';
 import { HederaOptions } from '../../types/hedera_options.types';
+import { Client } from '@hashgraph/sdk';
 /**
  * Injectable
  */
@@ -22,6 +22,8 @@ export declare class ClientService {
      * Network choice
      */
     private network;
+    private customNode;
+    private mirrorNode;
     /**
      * Logger Service
      */

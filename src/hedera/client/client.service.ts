@@ -1,8 +1,9 @@
 import { Injectable, Inject, Logger } from '@nestjs/common';
-import { Client } from '@hashgraph/sdk';
 import { OnEvent } from '@nestjs/event-emitter';
 import { Operator } from '../../types/operator.types';
 import { HederaOptions } from '../../types/hedera_options.types';
+import { AccountId, Client } from '@hashgraph/sdk';
+import { MirrorNode } from "../../types/mirror.types";
 
 /**
  * Injectable
@@ -28,7 +29,10 @@ export class ClientService {
   /**
    * Network choice
    */
-  private network: 'mainnet' | 'testnet';
+  private network: 'mainnet' | 'testnet' | 'custom';
+
+  private customNode: { [key: string]: string | AccountId };
+  private mirrorNode: MirrorNode;
 
   /**
    * Logger Service
@@ -44,6 +48,8 @@ export class ClientService {
   ) {
     this.network = this.hederaOptions.network;
     this.operators = this.hederaOptions.operators;
+    this.customNode = this.hederaOptions.customNode;
+    this.mirrorNode = this.hederaOptions.mirrorNode;
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
@@ -56,10 +62,16 @@ export class ClientService {
    */
   @OnEvent('client.invalid_node_operator')
   getClient(): Client {
-    if (this.network == 'testnet') {
-      this.client = Client.forTestnet();
-    } else {
-      this.client = Client.forMainnet();
+    switch(this.network)  {
+      case 'testnet':
+        this.client = Client.forTestnet();
+        break;
+      case 'mainnet':
+        this.client = Client.forMainnet();
+        break;
+      case 'custom':
+        this.client = Client.forNetwork(this.customNode).setMirrorNetwork(this.mirrorNode.url);
+        break;
     }
 
     this.operator = this.operators[Math.floor(Math.random() * this.operators.length)];
