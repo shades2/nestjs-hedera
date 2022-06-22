@@ -172,8 +172,11 @@ export class AccountsService {
 
         //Creating the transaction...
         const transaction = new AccountCreateTransaction()
-          .setKey(keysLength > 1 ? (<PrivateKeyList>key).keyList : (<PrivateKey>key).publicKey)
-          .setInitialBalance(new Hbar(balance));
+          .setKey(keysLength > 1 ? (<PrivateKeyList>key).keyList : (<PrivateKey>key).publicKey);
+
+        if(balance) {
+          transaction.setInitialBalance(new Hbar(balance));
+        }
 
         if(maxAutomaticTokenAssociations) {
           transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
