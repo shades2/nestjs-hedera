@@ -78,7 +78,7 @@ export class HtsRestService {
           let response = await this.restService
             .call(`tokens/${tokenId}/nfts`);
   
-          holders = holders.concat(response.balances);
+          holders = holders.concat(response.nfts);
   
           while (response.links.next) {
             let next = lodash.get(response.links.next.split("?"), 1);
@@ -86,7 +86,7 @@ export class HtsRestService {
             response = await this.restService
               .call(`tokens/${tokenId}/nfts?${next}`);
   
-            holders = holders.concat(response.balances);
+            holders = holders.concat(response.nfts);
           }
   
           resolve(holders);
