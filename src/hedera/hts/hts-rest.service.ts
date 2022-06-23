@@ -65,6 +65,37 @@ export class HtsRestService {
     });
   }
 
+    /**
+   * Get array of NFT holders by tokenId
+   * @param {string} tokenId 
+   * @returns {Array}
+   */
+     getAllNftHolders(tokenId: string): Promise<Array<any>> {
+      return new Promise(async (resolve, reject) => {
+        try {
+          let holders: any = [];
+  
+          let response = await this.restService
+            .call(`tokens/${tokenId}/nfts`);
+  
+          holders = holders.concat(response.balances);
+  
+          while (response.links.next) {
+            let next = lodash.get(response.links.next.split("?"), 1);
+  
+            response = await this.restService
+              .call(`tokens/${tokenId}/nfts?${next}`);
+  
+            holders = holders.concat(response.balances);
+          }
+  
+          resolve(holders);
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }
+
   /**
    * Get array of holders from walletId
    * @param {string} tokenId 
