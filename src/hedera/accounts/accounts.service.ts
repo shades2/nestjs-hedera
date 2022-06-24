@@ -175,7 +175,7 @@ export class AccountsService {
           .setKey(keysLength > 1 ? (<PrivateKeyList>key).keyList : (<PrivateKey>key).publicKey);
 
         if(balance) {
-          transaction.setInitialBalance(new Hbar(balance));
+          transaction.setInitialBalance(new Hbar(balance.toFixed(8)));
         }
 
         if(maxAutomaticTokenAssociations) {
