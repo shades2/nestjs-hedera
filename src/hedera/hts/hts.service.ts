@@ -307,8 +307,8 @@ export class HtsService {
 
         // Creating a transaction...
         const transaction = new TransferTransaction()
-          .addHbarTransfer(from, new Hbar(-amount))
-          .addHbarTransfer(to, new Hbar(amount));
+          .addHbarTransfer(from, new Hbar(-amount.toFixed(8)))
+          .addHbarTransfer(to, new Hbar(amount.toFixed(8)));
 
         if (memo) {
           transaction.setTransactionMemo(memo);
@@ -373,8 +373,8 @@ export class HtsService {
 
         if(hbarAmount) {
           transaction
-          .addHbarTransfer(from, new Hbar(-hbarAmount))
-          .addHbarTransfer(to, new Hbar(hbarAmount))
+          .addHbarTransfer(from, new Hbar(-hbarAmount.toFixed(8)))
+          .addHbarTransfer(to, new Hbar(hbarAmount.toFixed(8)))
         }
 
         if (!Array.isArray(tokenId) && !Array.isArray(amount) && !Array.isArray(tokenDecimals)) {

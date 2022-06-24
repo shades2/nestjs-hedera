@@ -60,7 +60,7 @@ export class HfsService {
         }
 
         if(maxTransactionFee) {
-          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee.toFixed(8)));
         }
 
         transaction.freezeWith(client);
@@ -103,7 +103,7 @@ export class HfsService {
           .setContents(content);
 
         if(maxTransactionFee) {
-          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee.toFixed(8)));
         }
 
         transaction.freezeWith(client);
@@ -154,7 +154,7 @@ export class HfsService {
         }          
 
         if(maxTransactionFee) {
-          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee.toFixed(8)));
         }
 
         if(newKey) {
@@ -203,7 +203,7 @@ export class HfsService {
           .setFileId(fileId);
 
         if(maxTransactionFee) {
-          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee));
+          transaction.setMaxTransactionFee(new Hbar(maxTransactionFee.toFixed(8)));
         }
 
         transaction.freezeWith(client);
