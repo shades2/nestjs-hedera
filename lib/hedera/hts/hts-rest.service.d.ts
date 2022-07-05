@@ -28,6 +28,12 @@ export declare class HtsRestService {
    */
     getAllNftHolders(tokenId: string): Promise<Array<any>>;
     /**
+  * Get array of NFT for a given wallet
+  * @param {string} walletId
+  * @returns {Array}
+  */
+    getAllNftForHolder(walletId: string): Promise<Array<any>>;
+    /**
      * Get array of holders from walletId
      * @param {string} tokenId
      * @param {string} walletId
