@@ -14,4 +14,8 @@ export interface Operator {
      * Public key string
      */
     publicKey?: string;
+    /**
+     * url string
+     */
+    url?: string;
 }
