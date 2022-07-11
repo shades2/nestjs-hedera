@@ -1,22 +1,22 @@
 import { AccountId } from "@hashgraph/sdk";
-import { MirrorNode } from "./mirror.types";
-import { Operator } from "./operator.types";
+import { IMirrorNode } from "./mirror.types";
+import { IOperator } from "./operator.types";
 
 /**
  * Interface
  */
-export interface HederaOptions {
+export interface IHederaOptions {
 
 
   /**
    * Array of operators
    */
-  operators: Array<Operator>
+  operators: Array<IOperator>
 
   /**
    * Mirror Node
    */
-  mirrorNode: MirrorNode
+  mirrorNode: IMirrorNode
 
   /**
    * Network choice

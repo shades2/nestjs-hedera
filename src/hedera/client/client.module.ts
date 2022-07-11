@@ -1,12 +1,11 @@
 import { Module, DynamicModule } from '@nestjs/common';
-import { Operator } from '../../types/operator.types';
 import { ClientService } from './client.service';
 import { ConfigModule } from '@nestjs/config';
-import { HederaOptions } from '../../types/hedera_options.types';
+import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
 
 @Module({})
 export class ClientModule {
-  static forRoot(options: HederaOptions): DynamicModule {
+  static forRoot(options: IHederaOptions): DynamicModule {
     return {
       module: ClientModule,
       providers: [

@@ -1,10 +1,10 @@
 import { Hbar } from "@hashgraph/sdk/lib/contract/ContractCreateFlow";
-import { TokenBalance } from "./token_balance.types";
+import { ITokenBalance } from "./token_balance.types";
 
 /**
  * Interface
  */
-export interface AccountBalance {
+export interface IAccountBalance {
 
   /**
    * HBAR
@@ -15,5 +15,5 @@ export interface AccountBalance {
   /**
    * Array of custom tokens
    */
-  tokens: Array<TokenBalance>
+  tokens: Array<ITokenBalance>
 }

@@ -1,13 +1,12 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { RestService } from './rest.service';
 import { HttpModule } from '@nestjs/axios';
-import { MirrorNode } from '../../types/mirror.types';
 import { ConfigModule } from '@nestjs/config';
-import { HederaOptions } from '../../types/hedera_options.types';
+import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
 
 @Module({})
 export class RestModule {
-  static forRoot(options: HederaOptions): DynamicModule {
+  static forRoot(options: IHederaOptions): DynamicModule {
     return {
       module: RestModule,
       imports: [HttpModule],

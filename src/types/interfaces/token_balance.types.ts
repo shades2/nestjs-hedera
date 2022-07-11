@@ -1,7 +1,7 @@
 /**
  * Interface
  */
-export interface TokenBalance {
+export interface ITokenBalance {
 
   /**
    * Token id string

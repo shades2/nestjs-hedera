@@ -1,7 +1,7 @@
 import { Injectable, Inject, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { MirrorNode } from '../../types/mirror.types';
-import { HederaOptions } from '../../types/hedera_options.types';
+import { IMirrorNode } from '../../types/interfaces/mirror.types';
+import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
 
 
 /**
@@ -13,7 +13,7 @@ export class RestService {
   /**
    * Mirror Node
    */
-  private mirrorNode: MirrorNode;
+  private mirrorNode: IMirrorNode;
 
   /**
    * Logger Service
@@ -23,11 +23,11 @@ export class RestService {
 
   /**
    * Rest Transaction Service
-   * @param {HederaOptions} hederaOptions 
+   * @param {IHederaOptions} hederaOptions 
    * @param {HttpService} httpService 
    */
   constructor(
-    @Inject('hederaOptions') private hederaOptions: HederaOptions,
+    @Inject('hederaOptions') private hederaOptions: IHederaOptions,
     private httpService: HttpService
   ) {
     this.mirrorNode = this.hederaOptions.mirrorNode;

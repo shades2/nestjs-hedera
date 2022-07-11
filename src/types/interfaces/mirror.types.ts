@@ -1,7 +1,7 @@
 /**
  * Interface
  */
-export interface MirrorNode {
+export interface IMirrorNode {
 
   /**
    * URL string

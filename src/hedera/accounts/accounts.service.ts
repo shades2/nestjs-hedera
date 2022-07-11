@@ -7,7 +7,6 @@ import {
   AccountUpdateTransaction,
   Hbar,
   PrivateKey,
-  PublicKey,
   Status,
   TokenFreezeTransaction,
   TokenId,
@@ -16,9 +15,9 @@ import {
 import { Injectable, Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
 import { KeysService } from '../keys/keys.service';
-import { TokenBalance } from '../../types/token_balance.types';
-import { AccountBalance } from '../../types/account_balance.types';
-import { PrivateKeyList } from '../../types/private-key-list.types';
+import { ITokenBalance } from '../../types/interfaces/token_balance.types';
+import { IAccountBalance } from '../../types/interfaces/account_balance.types';
+import { IPrivateKeyList } from '../../types/interfaces/private-key-list.types';
 
 /**
  * Injectable
@@ -157,7 +156,7 @@ export class AccountsService {
     publicKeys?: Array<string>,
     keysThreshold?: number,
     maxAutomaticTokenAssociations?: number
-  ): Promise<{ accountId: AccountId | null, key: PrivateKey | PrivateKeyList }> {
+  ): Promise<{ accountId: AccountId | null, key: PrivateKey | IPrivateKeyList }> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -172,7 +171,7 @@ export class AccountsService {
 
         //Creating the transaction...
         const transaction = new AccountCreateTransaction()
-          .setKey(keysLength > 1 ? (<PrivateKeyList>key).keyList : (<PrivateKey>key).publicKey);
+          .setKey(keysLength > 1 ? (<IPrivateKeyList>key).keyList : (<PrivateKey>key).publicKey);
 
         if(balance) {
           transaction.setInitialBalance(new Hbar(balance.toFixed(8)));
@@ -263,9 +262,9 @@ export class AccountsService {
  * Get query balance
  * @param {string} accountId 
  * @param {string} tokenId 
- * @returns {AccountBalance}
+ * @returns {IAccountBalance}
  */
-  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<AccountBalance> {
+  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<IAccountBalance> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -286,7 +285,7 @@ export class AccountsService {
             hbars: response.hbars
           };
         } else {
-          let tokens = new Array<TokenBalance>();
+          let tokens = new Array<ITokenBalance>();
 
           response.tokens?._map.forEach((value, tokenId) => {
             tokens.push({

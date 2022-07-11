@@ -1,6 +1,6 @@
 import { AccountId, PrivateKey, Status, TokenId, Transaction, TransactionReceipt, TokenNftInfo } from '@hashgraph/sdk';
 import { Logger } from '@nestjs/common';
-import { TransactionDetails } from '../../types/transaction_details.types';
+import { ITransactionDetails } from '../../types/interfaces/transaction_details.types';
 import { ClientService } from '../client/client.service';
 /**
  * Injectable
@@ -76,9 +76,9 @@ export declare class HtsService {
      * @param {AccountId} to
      * @param {string} memo
      * @param {PrivateKey} key
-     * @returns {TransactionDetails}
+     * @returns {ITransactionDetails}
      */
-    transferHbar(amount: number, from: AccountId, to: AccountId, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
+    transferHbar(amount: number, from: AccountId, to: AccountId, memo?: string, key?: PrivateKey): Promise<ITransactionDetails | Transaction>;
     /**
      * Transfer Token
      * @param {TokenId | Array<TokenId>} tokenId
@@ -88,17 +88,17 @@ export declare class HtsService {
      * @param {number | Array<Number>} tokenDecimals
      * @param {string} memo
      * @param {PrivateKey} key
-     * @returns {TransactionDetails | Transaction}
+     * @returns {ITransactionDetails | Transaction}
      */
-    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: string, key?: PrivateKey, hbarAmount?: number): Promise<TransactionDetails | Transaction>;
+    transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: string, key?: PrivateKey, hbarAmount?: number): Promise<ITransactionDetails | Transaction>;
     /**
      * Atomic Swap
      * @param {Array<any>} swaps
      * @param {string} memo
      * @param {PrivateKey} key
-     * @returns {TransactionDetails | Transaction}
+     * @returns {ITransactionDetails | Transaction}
      */
-    atomicSwap(swaps: Array<any>, memo?: string, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
+    atomicSwap(swaps: Array<any>, memo?: string, key?: PrivateKey): Promise<ITransactionDetails | Transaction>;
     /**
      * Transfer NFT
      * @param {TokenId} tokenId
@@ -106,7 +106,7 @@ export declare class HtsService {
      * @param {AccountId} to
      * @param {number} serialNumber
      * @param {PrivateKey} key
-     * @returns {TransactionDetails}
+     * @returns {ITransactionDetails}
      */
-    transferNftToken(tokenId: TokenId, from: AccountId, to: AccountId, serialNumber: number, key?: PrivateKey): Promise<TransactionDetails | Transaction>;
+    transferNftToken(tokenId: TokenId, from: AccountId, to: AccountId, serialNumber: number, key?: PrivateKey): Promise<ITransactionDetails | Transaction>;
 }

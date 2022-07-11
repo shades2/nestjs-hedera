@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrivateKey, KeyList, PublicKey } from '@hashgraph/sdk';
-import { PrivateKeyList } from '../../types/private-key-list.types';
+import { IPrivateKeyList } from '../../types/interfaces/private-key-list.types';
 
 /**
  * Injectable
@@ -40,13 +40,13 @@ export class KeysService {
    * @param {string} publicKeys 
    * @param {number} length 
    * @param {number} threshold 
-   * @returns {PrivateKeyList} 
+   * @returns {IPrivateKeyList} 
    */
   generateKeyList(
     publicKeys?: string[],
     length?: number,
     threshold?: number
-  ): Promise<PrivateKeyList> {
+  ): Promise<IPrivateKeyList> {
     return new Promise(async(resolve, reject) => {
       try {
         let publicKeyList: any = [];

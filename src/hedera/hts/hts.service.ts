@@ -18,8 +18,7 @@ import {
   TokenBurnTransaction
 } from '@hashgraph/sdk';
 import { Injectable, Logger } from '@nestjs/common';
-import { firstValueFrom } from 'rxjs';
-import { TransactionDetails } from '../../types/transaction_details.types';
+import { ITransactionDetails } from '../../types/interfaces/transaction_details.types';
 import { ClientService } from '../client/client.service';
 
 /**
@@ -292,7 +291,7 @@ export class HtsService {
    * @param {AccountId} to 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {ITransactionDetails} 
    */
   async transferHbar(
     amount: number,
@@ -300,7 +299,7 @@ export class HtsService {
     to: AccountId,
     memo?: string,
     key?: PrivateKey
-  ): Promise<TransactionDetails | Transaction> {
+  ): Promise<ITransactionDetails | Transaction> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -352,7 +351,7 @@ export class HtsService {
    * @param {number | Array<Number>} tokenDecimals 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails | Transaction} 
+   * @returns {ITransactionDetails | Transaction} 
    */
   async transferToken(
     tokenId: TokenId | Array<TokenId>,
@@ -363,7 +362,7 @@ export class HtsService {
     memo?: string,
     key?: PrivateKey,
     hbarAmount?: number
-  ): Promise<TransactionDetails | Transaction> {
+  ): Promise<ITransactionDetails | Transaction> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -428,13 +427,13 @@ export class HtsService {
    * @param {Array<any>} swaps 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails | Transaction} 
+   * @returns {ITransactionDetails | Transaction} 
    */
   async atomicSwap(
     swaps: Array<any>,
     memo?: string,
     key?: PrivateKey
-  ): Promise<TransactionDetails | Transaction> {
+  ): Promise<ITransactionDetails | Transaction> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -493,7 +492,7 @@ export class HtsService {
    * @param {AccountId} to 
    * @param {number} serialNumber 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {ITransactionDetails} 
    */
   async transferNftToken(
     tokenId: TokenId,
@@ -501,7 +500,7 @@ export class HtsService {
     to: AccountId,
     serialNumber: number,
     key?: PrivateKey
-  ): Promise<TransactionDetails | Transaction> {
+  ): Promise<ITransactionDetails | Transaction> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();

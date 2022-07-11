@@ -2,8 +2,8 @@ import { AccountId, AccountInfo, PrivateKey, Status, TokenId } from '@hashgraph/
 import { Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
 import { KeysService } from '../keys/keys.service';
-import { AccountBalance } from '../../types/account_balance.types';
-import { PrivateKeyList } from '../../types/private-key-list.types';
+import { IAccountBalance } from '../../types/interfaces/account_balance.types';
+import { IPrivateKeyList } from '../../types/interfaces/private-key-list.types';
 /**
  * Injectable
  */
@@ -50,7 +50,7 @@ export declare class AccountsService {
    */
     createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number, maxAutomaticTokenAssociations?: number): Promise<{
         accountId: AccountId | null;
-        key: PrivateKey | PrivateKeyList;
+        key: PrivateKey | IPrivateKeyList;
     }>;
     /**
    * Freezes account related to token ID
@@ -72,7 +72,7 @@ export declare class AccountsService {
    * Get query balance
    * @param {string} accountId
    * @param {string} tokenId
-   * @returns {AccountBalance}
+   * @returns {IAccountBalance}
    */
-    getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<AccountBalance>;
+    getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise<IAccountBalance>;
 }

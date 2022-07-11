@@ -3,7 +3,7 @@ import { Status, TransactionId } from "@hashgraph/sdk";
 /**
  * Interface
  */
-export interface TransactionDetails {
+export interface ITransactionDetails {
 
   /**
    * Transaction status

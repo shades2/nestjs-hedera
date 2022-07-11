@@ -1,9 +1,9 @@
 import { Injectable, Inject, Logger } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
-import { Operator } from '../../types/operator.types';
-import { HederaOptions } from '../../types/hedera_options.types';
+import { IOperator } from '../../types/interfaces/operator.types';
+import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
 import { AccountId, Client } from '@hashgraph/sdk';
-import { MirrorNode } from "../../types/mirror.types";
+import { IMirrorNode } from "../../types/interfaces/mirror.types";
 
 /**
  * Injectable
@@ -17,14 +17,14 @@ export class ClientService {
   private client: Client;
 
   /**
-   * Single Operator
+   * Single IOperator
    */
-  private operator: Operator;
+  private operator: IOperator;
 
   /**
-   * Array of Operators
+   * Array of IOperators
    */
-  private operators: Array<Operator>;
+  private operators: Array<IOperator>;
 
   /**
    * Network choice
@@ -39,7 +39,7 @@ export class ClientService {
     mirror: null
   };
 
-  private mirrorNode: MirrorNode;
+  private mirrorNode: IMirrorNode;
 
   /**
    * Logger Service
@@ -48,10 +48,10 @@ export class ClientService {
 
   /**
    * Hedera Network variables
-   * @param {HederaOptions} hederaOptions 
+   * @param {IHederaOptions} hederaOptions 
    */
   constructor(
-    @Inject('hederaOptions') private hederaOptions: HederaOptions
+    @Inject('hederaOptions') private hederaOptions: IHederaOptions
   ) {
     this.network = this.hederaOptions.network;
     this.operators = this.hederaOptions.operators;
@@ -60,7 +60,7 @@ export class ClientService {
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
-    this.operator = this.getNodeOperator();
+    this.operator = this.getNodeIOperator();
   }
 
   /**
@@ -88,9 +88,9 @@ export class ClientService {
 
   /**
    * Gets a node operator
-   * @returns {Operator}
+   * @returns {IOperator}
    */
-  getNodeOperator(): Operator {
+  getNodeIOperator(): IOperator {
     return this.operator;
   }
 }

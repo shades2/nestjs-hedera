@@ -4,7 +4,7 @@ import { KeyList, PrivateKey } from "@hashgraph/sdk";
 /**
  * Interface
  */
-export interface PrivateKeyList {
+export interface IPrivateKeyList {
 
   /**
    * Array of Private keys

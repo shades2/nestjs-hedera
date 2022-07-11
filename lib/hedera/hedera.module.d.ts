@@ -1,6 +1,6 @@
 import { DynamicModule } from '@nestjs/common';
-import { HederaOptions } from '../types/hedera_options.types';
+import { IHederaOptions } from '../types/interfaces/hedera_options.types';
 export declare class HederaModule {
-    static forRoot(options: HederaOptions): DynamicModule;
+    static forRoot(options: IHederaOptions): DynamicModule;
     static forRootAsync(options: any): DynamicModule;
 }

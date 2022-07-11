@@ -1,7 +1,7 @@
 /**
  * Interface
  */
-export interface Operator {
+export interface IOperator {
 
   /**
    * Account id string

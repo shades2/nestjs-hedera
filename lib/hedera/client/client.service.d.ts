@@ -1,5 +1,5 @@
-import { Operator } from '../../types/operator.types';
-import { HederaOptions } from '../../types/hedera_options.types';
+import { IOperator } from '../../types/interfaces/operator.types';
+import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
 import { Client } from '@hashgraph/sdk';
 /**
  * Injectable
@@ -11,11 +11,11 @@ export declare class ClientService {
      */
     private client;
     /**
-     * Single Operator
+     * Single IOperator
      */
     private operator;
     /**
-     * Array of Operators
+     * Array of IOperators
      */
     private operators;
     /**
@@ -30,9 +30,9 @@ export declare class ClientService {
     private logger;
     /**
      * Hedera Network variables
-     * @param {HederaOptions} hederaOptions
+     * @param {IHederaOptions} hederaOptions
      */
-    constructor(hederaOptions: HederaOptions);
+    constructor(hederaOptions: IHederaOptions);
     /**
      * If the client gives invalid node error...
      * @returns random operator...
@@ -40,7 +40,7 @@ export declare class ClientService {
     getClient(): Client;
     /**
      * Gets a node operator
-     * @returns {Operator}
+     * @returns {IOperator}
      */
-    getNodeOperator(): Operator;
+    getNodeIOperator(): IOperator;
 }
