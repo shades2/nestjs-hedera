@@ -60,7 +60,7 @@ export class ClientService {
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
-    this.operator = this.getNodeIOperator();
+    this.operator = this.getNodeOperator();
   }
 
   /**
@@ -90,7 +90,7 @@ export class ClientService {
    * Gets a node operator
    * @returns {IOperator}
    */
-  getNodeIOperator(): IOperator {
+  getNodeOperator(): IOperator {
     return this.operator;
   }
 }

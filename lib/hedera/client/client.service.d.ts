@@ -42,5 +42,5 @@ export declare class ClientService {
      * Gets a node operator
      * @returns {IOperator}
      */
-    getNodeIOperator(): IOperator;
+    getNodeOperator(): IOperator;
 }
