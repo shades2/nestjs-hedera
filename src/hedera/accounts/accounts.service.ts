@@ -102,10 +102,12 @@ export class AccountsService {
       try {
         const client = this.clientService.getClient();
 
+        // generating random number, as a workound for offline signature...
+        let nodeAccountId = this.clientService.getRandomNodeForNetwork();
+
         // Creating the transaction...
         const transaction = await new AccountUpdateTransaction()
-          // setting single node accountId, as a workound for offline signature...
-          .setNodeAccountIds([new AccountId(6)])
+          .setNodeAccountIds([nodeAccountId])
           .setAccountId(accountId);
 
         if (memo) {

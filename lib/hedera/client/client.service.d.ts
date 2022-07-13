@@ -1,6 +1,6 @@
 import { IOperator } from '../../types/interfaces/operator.types';
 import { IHederaOptions } from '../../types/interfaces/hedera_options.types';
-import { Client } from '@hashgraph/sdk';
+import { AccountId, Client } from '@hashgraph/sdk';
 /**
  * Injectable
  */
@@ -43,4 +43,5 @@ export declare class ClientService {
      * @returns {IOperator}
      */
     getNodeOperator(): IOperator;
+    getRandomNodeForNetwork(): AccountId;
 }

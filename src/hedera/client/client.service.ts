@@ -93,4 +93,21 @@ export class ClientService {
   getNodeOperator(): IOperator {
     return this.operator;
   }
+
+  getRandomNodeForNetwork(): AccountId {
+    let nodeAccountId = 0;
+
+    switch(this.network) {
+      case 'mainnet':
+        // generating random number from 3 to 28...
+        nodeAccountId = Math.floor(Math.random() * (28 - 3 + 1) + 3);
+        break;
+      case 'testnet':
+        // generating random number from 3 to 9...
+        nodeAccountId = Math.floor(Math.random() * (9 - 3 + 1) + 3);
+        break;
+    }
+
+    return new AccountId(nodeAccountId);
+  }
 }
