@@ -39,7 +39,7 @@ export class HtsRestService {
    * @param {string} tokenId 
    * @returns {Array}
    */
-  getAllHolders(tokenId: string): Promise<Array<any>> {
+  getAllHolders(tokenId: string, timeout?: number): Promise<Array<any>> {
     return new Promise(async (resolve, reject) => {
       try {
         let holders: any = [];
@@ -50,6 +50,10 @@ export class HtsRestService {
         holders = holders.concat(response.balances);
 
         while (response.links.next) {
+          if(timeout) {
+            await new Promise(resolve => setTimeout(resolve, timeout));
+          }
+
           let next = lodash.get(response.links.next.split("?"), 1);
 
           response = await this.restService
@@ -70,7 +74,7 @@ export class HtsRestService {
  * @param {string} tokenId 
  * @returns {Array}
  */
-  getAllNftHolders(tokenId: string): Promise<Array<any>> {
+  getAllNftHolders(tokenId: string, timeout?: number): Promise<Array<any>> {
     return new Promise(async (resolve, reject) => {
       try {
         let holders: any = [];
@@ -81,6 +85,10 @@ export class HtsRestService {
         holders = holders.concat(response.nfts);
 
         while (response.links.next) {
+          if(timeout) {
+            await new Promise(resolve => setTimeout(resolve, timeout));
+          }
+          
           let next = lodash.get(response.links.next.split("?"), 1);
 
           response = await this.restService
