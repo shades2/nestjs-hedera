@@ -39,7 +39,7 @@ export class HtsRestService {
    * @param {string} tokenId 
    * @returns {Array}
    */
-  getAllHolders(tokenId: string, timeout?: number): Promise<Array<any>> {
+  getAllHolders(tokenId: string): Promise<Array<any>> {
     return new Promise(async (resolve, reject) => {
       try {
         let holders: any = [];
@@ -48,18 +48,26 @@ export class HtsRestService {
           .call(`tokens/${tokenId}/balances`);
 
         holders = holders.concat(response.balances);
+        let retry = true;
+        let timeout = 0;
 
-        while (response.links.next) {
+        while (response.links.next || retry) {
           if(timeout) {
             await new Promise(resolve => setTimeout(resolve, timeout));
           }
 
           let next = lodash.get(response.links.next.split("?"), 1);
 
-          response = await this.restService
+          try {
+            response = await this.restService
             .call(`tokens/${tokenId}/balances?${next}`);
 
-          holders = holders.concat(response.balances);
+            holders = holders.concat(response.balances);
+            retry = false;
+          } catch(error) {
+            timeout += 100;
+            retry = true;
+          }
         }
 
         resolve(holders);
@@ -74,7 +82,7 @@ export class HtsRestService {
  * @param {string} tokenId 
  * @returns {Array}
  */
-  getAllNftHolders(tokenId: string, timeout?: number): Promise<Array<any>> {
+  getAllNftHolders(tokenId: string): Promise<Array<any>> {
     return new Promise(async (resolve, reject) => {
       try {
         let holders: any = [];
@@ -83,18 +91,26 @@ export class HtsRestService {
           .call(`tokens/${tokenId}/nfts`);
 
         holders = holders.concat(response.nfts);
+        let retry = true;
+        let timeout = 0;
 
-        while (response.links.next) {
+        while (response.links.next || retry) {
           if(timeout) {
             await new Promise(resolve => setTimeout(resolve, timeout));
           }
           
           let next = lodash.get(response.links.next.split("?"), 1);
 
-          response = await this.restService
+          try {  
+            response = await this.restService
             .call(`tokens/${tokenId}/nfts?${next}`);
 
           holders = holders.concat(response.nfts);
+          retry = false;
+          } catch(error) {
+            timeout += 100;
+            retry = true;
+          }
         }
 
         resolve(holders);
@@ -117,15 +133,27 @@ export class HtsRestService {
         let response = await this.restService
           .call(`accounts/${walletId}/nfts`);
 
-          nfts = nfts.concat(response.nfts);
+        nfts = nfts.concat(response.nfts);
+        let retry = true;
+        let timeout = 0;        
 
-        while (response.links.next) {
+        while (response.links.next || retry) {
+          if(timeout) {
+            await new Promise(resolve => setTimeout(resolve, timeout));
+          }
+
           let next = lodash.get(response.links.next.split("?"), 1);
 
-          response = await this.restService
+          try {  
+            response = await this.restService
             .call(`accounts/${walletId}/nfts?${next}`);
 
             nfts = nfts.concat(response.nfts);
+          retry = false;
+          } catch(error) {
+            timeout += 100;
+            retry = true;
+          }
         }
 
         resolve(nfts);

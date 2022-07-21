@@ -20,13 +20,13 @@ export declare class HtsRestService {
      * @param {string} tokenId
      * @returns {Array}
      */
-    getAllHolders(tokenId: string, timeout?: number): Promise<Array<any>>;
+    getAllHolders(tokenId: string): Promise<Array<any>>;
     /**
    * Get array of NFT holders by tokenId
    * @param {string} tokenId
    * @returns {Array}
    */
-    getAllNftHolders(tokenId: string, timeout?: number): Promise<Array<any>>;
+    getAllNftHolders(tokenId: string): Promise<Array<any>>;
     /**
   * Get array of NFT for a given wallet
   * @param {string} walletId
