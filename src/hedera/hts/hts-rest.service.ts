@@ -48,7 +48,7 @@ export class HtsRestService {
           .call(`tokens/${tokenId}/balances`);
 
         holders = holders.concat(response.balances);
-        let retry = true;
+        let retry = false;
         let timeout = 0;
 
         while (response.links.next || retry) {
@@ -91,7 +91,7 @@ export class HtsRestService {
           .call(`tokens/${tokenId}/nfts`);
 
         holders = holders.concat(response.nfts);
-        let retry = true;
+        let retry = false;
         let timeout = 0;
 
         while (response.links.next || retry) {
@@ -134,7 +134,7 @@ export class HtsRestService {
           .call(`accounts/${walletId}/nfts`);
 
         nfts = nfts.concat(response.nfts);
-        let retry = true;
+        let retry = false;
         let timeout = 0;        
 
         while (response.links.next || retry) {

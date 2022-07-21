@@ -87,20 +87,22 @@ export class ClientService {
   }
 
   generateCustomClient(accountId: string, privateKey: string, environment: string): Client {
+    let client = null;
+
     switch(environment)  {
       case 'testnet':
-        this.client = Client.forTestnet();
+        client = Client.forTestnet();
         break;
       case 'mainnet':
-        this.client = Client.forMainnet();
+        client = Client.forMainnet();
         break;
       case 'custom':
-        this.client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
+        client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
         break;
     }
 
-    this.client.setOperator(accountId, privateKey);
-    return this.client;
+    client.setOperator(accountId, privateKey);
+    return client;
   }
 
   /**
