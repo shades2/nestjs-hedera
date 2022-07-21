@@ -86,6 +86,23 @@ export class ClientService {
     return this.client;
   }
 
+  generateCustomClient(accountId: string, privateKey: string, environment: string): Client {
+    switch(environment)  {
+      case 'testnet':
+        this.client = Client.forTestnet();
+        break;
+      case 'mainnet':
+        this.client = Client.forMainnet();
+        break;
+      case 'custom':
+        this.client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
+        break;
+    }
+
+    this.client.setOperator(accountId, privateKey);
+    return this.client;
+  }
+
   /**
    * Gets a node operator
    * @returns {IOperator}

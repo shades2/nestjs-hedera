@@ -38,6 +38,7 @@ export declare class ClientService {
      * @returns random operator...
      */
     getClient(): Client;
+    generateCustomClient(accountId: string, privateKey: string, environment: string): Client;
     /**
      * Gets a node operator
      * @returns {IOperator}
