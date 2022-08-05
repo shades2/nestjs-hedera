@@ -19,7 +19,7 @@ export class HcsRestService {
     return new Promise(async (resolve, reject) => {
       try {
         let response = await this.restService
-          .call(`topics/${topicId}/messages`);
+          .call(`topics/${topicId}/messages?order=desc`);
 
         resolve(response);
       } catch (error) {
