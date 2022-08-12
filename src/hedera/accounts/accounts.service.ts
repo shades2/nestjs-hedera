@@ -96,7 +96,8 @@ export class AccountsService {
     signKey: PrivateKey,
     newKey?: PrivateKey,
     memo?: string,
-    maxAutomaticTokenAssociations?: number
+    maxAutomaticTokenAssociations?: number,
+    isReceiverSignatureRequired?: boolean
   ): Promise<Status> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -117,6 +118,10 @@ export class AccountsService {
         if(maxAutomaticTokenAssociations) {
           transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
         }
+
+        if(isReceiverSignatureRequired) {
+          transaction.setReceiverSignatureRequired(true);
+        }        
 
         if (newKey) {
           transaction.setKey(newKey);
@@ -157,7 +162,8 @@ export class AccountsService {
     keysLength: number,
     publicKeys?: Array<string>,
     keysThreshold?: number,
-    maxAutomaticTokenAssociations?: number
+    maxAutomaticTokenAssociations?: number,
+    isReceiverSignatureRequired?: boolean
   ): Promise<{ accountId: AccountId | null, key: PrivateKey | IPrivateKeyList }> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -181,6 +187,10 @@ export class AccountsService {
 
         if(maxAutomaticTokenAssociations) {
           transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
+        }
+
+        if(isReceiverSignatureRequired) {
+          transaction.setReceiverSignatureRequired(true);
         }
 
         // Executing the transactions...
