@@ -40,7 +40,7 @@ export declare class AccountsService {
      * @param {string} memo
      * @returns {Status} Account Update
      */
-    updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: string, maxAutomaticTokenAssociations?: number, isReceiverSignatureRequired?: boolean): Promise<Status>;
+    updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: string, maxAutomaticTokenAssociations?: number, isReceiverSignatureRequired?: boolean, isOfflineTransaction?: boolean): Promise<Status | any>;
     /**
    * Creates a single or multi-sig account
    * @param {number} balance
@@ -48,10 +48,10 @@ export declare class AccountsService {
    * @param {number} keysThreshold
    * @returns {AccountId, PrivateKey} single or multi-sig account
    */
-    createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number, maxAutomaticTokenAssociations?: number, isReceiverSignatureRequired?: boolean): Promise<{
+    createAccount(balance: number, keysLength: number, publicKeys?: Array<string>, keysThreshold?: number, maxAutomaticTokenAssociations?: number, isReceiverSignatureRequired?: boolean, isOfflineTransaction?: boolean): Promise<{
         accountId: AccountId | null;
         key: PrivateKey | IPrivateKeyList;
-    }>;
+    } | any>;
     /**
    * Freezes account related to token ID
    * @param {AccountId} accountId

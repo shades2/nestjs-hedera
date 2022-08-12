@@ -97,8 +97,9 @@ export class AccountsService {
     newKey?: PrivateKey,
     memo?: string,
     maxAutomaticTokenAssociations?: number,
-    isReceiverSignatureRequired?: boolean
-  ): Promise<Status> {
+    isReceiverSignatureRequired?: boolean,
+    isOfflineTransaction?: boolean
+  ): Promise<Status | any> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -127,8 +128,17 @@ export class AccountsService {
           transaction.setKey(newKey);
         }
 
+        if(isOfflineTransaction) {
+          // generating random number, as a workound for offline signature...
+          let nodeAccountId = this.clientService.getRandomNodeForNetwork();
+          transaction.setNodeAccountIds([nodeAccountId]);
+        }
+
         transaction.freezeWith(client);
 
+        if(isOfflineTransaction) {
+          resolve(transaction);
+        } else {
         // Signing the transaction...
         let signTx = await transaction.sign(signKey);
 
@@ -144,6 +154,7 @@ export class AccountsService {
 
         // Get the transaction consensus status...
         resolve(receipt.status);
+        }
       } catch (error) {
         reject(error);
       }
@@ -163,8 +174,9 @@ export class AccountsService {
     publicKeys?: Array<string>,
     keysThreshold?: number,
     maxAutomaticTokenAssociations?: number,
-    isReceiverSignatureRequired?: boolean
-  ): Promise<{ accountId: AccountId | null, key: PrivateKey | IPrivateKeyList }> {
+    isReceiverSignatureRequired?: boolean,
+    isOfflineTransaction?: boolean
+  ): Promise<{ accountId: AccountId | null, key: PrivateKey | IPrivateKeyList } | any> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -193,17 +205,29 @@ export class AccountsService {
           transaction.setReceiverSignatureRequired(true);
         }
 
-        // Executing the transactions...
-        const txResponse = await transaction.execute(client);
+        if(isOfflineTransaction) {
+          // generating random number, as a workound for offline signature...
+          let nodeAccountId = this.clientService.getRandomNodeForNetwork();
+          transaction.setNodeAccountIds([nodeAccountId]);
+        }
 
-        // Fetching the receipt...
-        const receipt = await txResponse.getReceipt(client);
+        transaction.freezeWith(client);
 
-        // resolving the accountId...
-        resolve({
-          accountId: receipt.accountId,
-          key: key
-        });
+        if(isOfflineTransaction) {
+          resolve(transaction);
+        } else {
+          // Executing the transactions...
+          const txResponse = await transaction.execute(client);
+
+          // Fetching the receipt...
+          const receipt = await txResponse.getReceipt(client);
+
+          // resolving the accountId...
+          resolve({
+            accountId: receipt.accountId,
+            key: key
+          });
+        }
       } catch (error) {
         reject(error);
       }
