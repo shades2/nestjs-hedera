@@ -18,6 +18,7 @@ import { KeysService } from '../keys/keys.service';
 import { ITokenBalance } from '../../types/interfaces/token_balance.types';
 import { IAccountBalance } from '../../types/interfaces/account_balance.types';
 import { IPrivateKeyList } from '../../types/interfaces/private-key-list.types';
+import { Decimal } from 'decimal.js';
 
 /**
  * Injectable
@@ -315,8 +316,8 @@ export class AccountsService {
           balance = {
             tokens: [{
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
+              balance: response.tokens?._map.get(tokenId) ? new Decimal(response.tokens._map.get(tokenId)?.toString()) : 0,
+              decimals: response.tokens?._map.get(tokenId) ? new Decimal(response.tokenDecimals?._map.get(tokenId)) : 0
             }],
             hbars: response.hbars
           };
@@ -326,8 +327,8 @@ export class AccountsService {
           response.tokens?._map.forEach((value, tokenId) => {
             tokens.push({
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
+              balance: response.tokens?._map.get(tokenId) ? new Decimal(response.tokens._map.get(tokenId)?.toString()) : new Decimal(0),
+              decimals: response.tokens?._map.get(tokenId) ? new Decimal(response.tokenDecimals?._map.get(tokenId)) : new Decimal(0)
             });
           });
 

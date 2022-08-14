@@ -1,6 +1,6 @@
 {
   "name": "hsuite-nestjs-hedera",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -40,7 +40,9 @@
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.4.6",
     "@nestjs/event-emitter": "^1.1.1",
+    "@nestjs/swagger": "^6.0.5",
     "axios": "^0.27.2",
+    "decimal.js": "^10.3.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5"
   }

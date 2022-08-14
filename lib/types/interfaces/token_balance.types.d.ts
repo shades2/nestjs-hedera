@@ -1,3 +1,4 @@
+import { Decimal } from 'decimal.js';
 /**
  * Interface
  */
@@ -9,9 +10,9 @@ export interface ITokenBalance {
     /**
       * Token balance
       */
-    balance: number;
+    balance: Decimal;
     /**
       * Token decimals number
       */
-    decimals: number;
+    decimals: Decimal;
 }
