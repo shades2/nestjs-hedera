@@ -279,7 +279,7 @@ export class HcsService {
         }
 
         let subscription = transaction.subscribe(
-          this.clientService.getClient(),
+          client,
           null,
           (message) => callback(message)
         );
