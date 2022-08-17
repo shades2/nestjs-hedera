@@ -1016,7 +1016,7 @@
   resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.6.0.tgz#d7db1bfcc22fd2e4ab574cba0bb6ad779a9a3e7a"
   integrity sha512-BiBWllUROH9w+P21RzoxJKzqoqpkyM1pRnEKG69bulE9TSQD8SAIvTQqIMZmmCO8pUNkgLP1wndX1gKghSpBmg==
 
-"@ethersproject/rlp@^5.6.0":
+"@ethersproject/rlp@^5.6.1":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@ethersproject/rlp/-/rlp-5.6.1.tgz#df8311e6f9f24dcb03d59a2bac457a28a4fe2bd8"
   integrity sha512-uYjmcZx+DKlFUk7a5/W9aQVaoEC7+1MOBgNtvNg13+RnuUwT4F0zTovC0tmay5SmRslb29V1B7Y5KCri46WhuQ==
@@ -1083,10 +1083,10 @@
     protobufjs "^6.11.3"
     yargs "^16.2.0"
 
-"@hashgraph/cryptography@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@hashgraph/cryptography/-/cryptography-1.2.0.tgz#c3078cadc689a7e92ea6151423f36651985a1e0d"
-  integrity sha512-sr7C4iUWIHnLU4LXgafkwEpDOpgtqHhQfAbPiyatzjngPu0euYZ0xeNSrzOpo2SXOhCyUffHFs4z/orIIkaYpg==
+"@hashgraph/cryptography@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@hashgraph/cryptography/-/cryptography-1.4.0.tgz#c97364f7352e80b2d4e6b60d40691d9b550757d9"
+  integrity sha512-NtDmeuwaWJKBDYZd+g/etAD56p/RPUuZGdT9jhXxiFW0YrKCaU1k4ramICbRaJg7E+RDSFJXJLarh0G72z5YDA==
   dependencies:
     bignumber.js "^9.0.2"
     crypto-js "^4.1.1"
@@ -1095,30 +1095,30 @@
     tweetnacl "^1.0.3"
     utf8 "^3.0.0"
 
-"@hashgraph/proto@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@hashgraph/proto/-/proto-2.5.0.tgz#d16f5df307410a46bbb7112e162f849395d8fe36"
-  integrity sha512-354Ozgf55mdPUUcED5E8n2ehGMO6mpOgtMIo4l4+t/wpp1qRmOfbHlVfI4TQN7W4WMb/CRnmbjCl6KDF/SnTxA==
+"@hashgraph/proto@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@hashgraph/proto/-/proto-2.9.0.tgz#ec2cc21a2a4e02e6b3f101dd9e09aaef9b92afc2"
+  integrity sha512-Ot0OVLCl9lNBpHZozN0BS4mvlpxgJ0Bkea4p+6MoQ/+sZtOCu+FMsidIVdvFZBvdNjgPXx8byYjkpmFaxiIOpQ==
   dependencies:
     long "^4.0.0"
-    protobufjs "^6.11.2"
+    protobufjs "^6.11.3"
 
-"@hashgraph/sdk@^2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@hashgraph/sdk/-/sdk-2.15.0.tgz#1814906e1b2c654dfbd0ea1334e7ea76e06a010a"
-  integrity sha512-SP3Wnb7DlLwwhLqr3tnYfKVMyL6wfm+5aBCM6K0ES90b9yYlnTYehMO/EJAmSlvwer2abmzxEneHXP/DmK9LoQ==
+"@hashgraph/sdk@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@hashgraph/sdk/-/sdk-2.18.0.tgz#868f14eefa60f2841a32b79144eef73b6f4c0225"
+  integrity sha512-+ycMaHKk9HWdhMSuw5BCo450FT9CCpjIwbWpw2lpJ+QKeifORzM1wc70nAm27FkING8/azC4/FL7CLf1DelgTA==
   dependencies:
-    "@ethersproject/rlp" "^5.6.0"
+    "@ethersproject/rlp" "^5.6.1"
     "@grpc/grpc-js" "^1.6.7"
-    "@hashgraph/cryptography" "^1.2.0"
-    "@hashgraph/proto" "2.5.0"
+    "@hashgraph/cryptography" "^1.4.0"
+    "@hashgraph/proto" "2.9.0"
     axios "^0.27.2"
     bignumber.js "^9.0.2"
     crypto-js "^4.1.1"
     js-base64 "^3.7.2"
     js-logger "^1.6.1"
     long "^4.0.0"
-    protobufjs "^6.11.2"
+    protobufjs "^6.11.3"
     utf8 "^3.0.0"
 
 "@jridgewell/gen-mapping@^0.1.0":
@@ -3365,7 +3365,7 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-protobufjs@^6.11.2, protobufjs@^6.11.3:
+protobufjs@^6.11.3:
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.3.tgz#637a527205a35caa4f3e2a9a4a13ddffe0e7af74"
   integrity sha512-xL96WDdCZYdU7Slin569tFX712BxsxslWwAfAhCYjQKGTq7dAU91Lomy6nLLhh/dyGhk/YH4TwTSRxTzhuHyZg==

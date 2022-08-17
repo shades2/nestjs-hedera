@@ -280,7 +280,9 @@ export class HcsService {
 
         let subscription = transaction.subscribe(
           client,
-          null,
+          function(message, error) {
+            console.error("error while subscribing",error);
+          },
           (message) => callback(message)
         );
 
