@@ -95,6 +95,7 @@ export class ClientService {
         break;
       case 'mainnet':
         client = Client.forMainnet();
+        this.client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443");
         break;
       case 'custom':
         client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
