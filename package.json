@@ -2,7 +2,8 @@
   "name": "@hsuite/nestjs-hedera",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "files": ["lib/**"],
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compodoc": "npx compodoc -p tsconfig.doc.json -s",
