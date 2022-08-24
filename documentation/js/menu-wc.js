@@ -15,7 +15,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
         <nav>
             <ul class="list">
                 <li class="title">
-                    <a href="index.html" data-type="index-link">hsuite-nestjs-hedera documentation</a>
+                    <a href="index.html" data-type="index-link">@hsuite/nestjs-hedera documentation</a>
                 </li>
 
                 <li class="divider"></li>
@@ -59,13 +59,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AccountsModule.html" data-type="entity-link" >AccountsModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-AccountsModule-ea762e261849b9f86514fe3b63493cd36e9c98d599da4b32b3b9cb17f350d688271b87c425aa52b63b5e548e0a91bb80c36c7fec84c9a3adc95c9dd78962e4f4"' : 'data-target="#xs-injectables-links-module-AccountsModule-ea762e261849b9f86514fe3b63493cd36e9c98d599da4b32b3b9cb17f350d688271b87c425aa52b63b5e548e0a91bb80c36c7fec84c9a3adc95c9dd78962e4f4"' }>
+                                        'data-target="#injectables-links-module-AccountsModule-c121df67fb933fdb7864a71d3836a03a556ecda4e53f43fa6bc9f555d962e5e3b2c62e199e72e46a5e5190ede180df159a5e4f42510dbeb729cb336b589f00c3"' : 'data-target="#xs-injectables-links-module-AccountsModule-c121df67fb933fdb7864a71d3836a03a556ecda4e53f43fa6bc9f555d962e5e3b2c62e199e72e46a5e5190ede180df159a5e4f42510dbeb729cb336b589f00c3"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AccountsModule-ea762e261849b9f86514fe3b63493cd36e9c98d599da4b32b3b9cb17f350d688271b87c425aa52b63b5e548e0a91bb80c36c7fec84c9a3adc95c9dd78962e4f4"' :
-                                        'id="xs-injectables-links-module-AccountsModule-ea762e261849b9f86514fe3b63493cd36e9c98d599da4b32b3b9cb17f350d688271b87c425aa52b63b5e548e0a91bb80c36c7fec84c9a3adc95c9dd78962e4f4"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AccountsModule-c121df67fb933fdb7864a71d3836a03a556ecda4e53f43fa6bc9f555d962e5e3b2c62e199e72e46a5e5190ede180df159a5e4f42510dbeb729cb336b589f00c3"' :
+                                        'id="xs-injectables-links-module-AccountsModule-c121df67fb933fdb7864a71d3836a03a556ecda4e53f43fa6bc9f555d962e5e3b2c62e199e72e46a5e5190ede180df159a5e4f42510dbeb729cb336b589f00c3"' }>
+                                        <li class="link">
+                                            <a href="injectables/AccountsRestService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AccountsRestService</a>
+                                        </li>
                                         <li class="link">
                                             <a href="injectables/AccountsService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AccountsService</a>
                                         </li>
@@ -79,13 +82,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/HcsModule.html" data-type="entity-link" >HcsModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-HcsModule-50846150c3b54be6b924680aa142615861f6b5653c053f62a4f1e5b810134b883a54ed1756eb0937ce00045f596e2d01d533d59b20eac67926f9d66b0644a546"' : 'data-target="#xs-injectables-links-module-HcsModule-50846150c3b54be6b924680aa142615861f6b5653c053f62a4f1e5b810134b883a54ed1756eb0937ce00045f596e2d01d533d59b20eac67926f9d66b0644a546"' }>
+                                        'data-target="#injectables-links-module-HcsModule-4800cb710ac4a39e281409030405d315765bf0cc1f749ab3741469a40eab7e275f8f33d0260b73022bfc5b9b118ea175081d4bcd20eccf5f4084a6e88564f944"' : 'data-target="#xs-injectables-links-module-HcsModule-4800cb710ac4a39e281409030405d315765bf0cc1f749ab3741469a40eab7e275f8f33d0260b73022bfc5b9b118ea175081d4bcd20eccf5f4084a6e88564f944"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-HcsModule-50846150c3b54be6b924680aa142615861f6b5653c053f62a4f1e5b810134b883a54ed1756eb0937ce00045f596e2d01d533d59b20eac67926f9d66b0644a546"' :
-                                        'id="xs-injectables-links-module-HcsModule-50846150c3b54be6b924680aa142615861f6b5653c053f62a4f1e5b810134b883a54ed1756eb0937ce00045f596e2d01d533d59b20eac67926f9d66b0644a546"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-HcsModule-4800cb710ac4a39e281409030405d315765bf0cc1f749ab3741469a40eab7e275f8f33d0260b73022bfc5b9b118ea175081d4bcd20eccf5f4084a6e88564f944"' :
+                                        'id="xs-injectables-links-module-HcsModule-4800cb710ac4a39e281409030405d315765bf0cc1f749ab3741469a40eab7e275f8f33d0260b73022bfc5b9b118ea175081d4bcd20eccf5f4084a6e88564f944"' }>
+                                        <li class="link">
+                                            <a href="injectables/HcsRestService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HcsRestService</a>
+                                        </li>
                                         <li class="link">
                                             <a href="injectables/HcsService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HcsService</a>
                                         </li>
@@ -174,6 +180,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                 </ul>
                 </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
+                            'data-target="#xs-classes-links"' }>
+                            <span class="icon ion-ios-paper"></span>
+                            <span>Classes</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
+                            <li class="link">
+                                <a href="classes/AccountBalance.html" data-type="entity-link" >AccountBalance</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/TokenBalance.html" data-type="entity-link" >TokenBalance</a>
+                            </li>
+                        </ul>
+                    </li>
                         <li class="chapter">
                             <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
                                 'data-target="#xs-injectables-links"' }>
@@ -202,25 +224,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/AccountBalance.html" data-type="entity-link" >AccountBalance</a>
+                                <a href="interfaces/IAccountBalance.html" data-type="entity-link" >IAccountBalance</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/HederaOptions.html" data-type="entity-link" >HederaOptions</a>
+                                <a href="interfaces/IHederaOptions.html" data-type="entity-link" >IHederaOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/MirrorNode.html" data-type="entity-link" >MirrorNode</a>
+                                <a href="interfaces/IMirrorNode.html" data-type="entity-link" >IMirrorNode</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/Operator.html" data-type="entity-link" >Operator</a>
+                                <a href="interfaces/IOperator.html" data-type="entity-link" >IOperator</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/PrivateKeyList.html" data-type="entity-link" >PrivateKeyList</a>
+                                <a href="interfaces/IPrivateKeyList.html" data-type="entity-link" >IPrivateKeyList</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/TokenBalance.html" data-type="entity-link" >TokenBalance</a>
+                                <a href="interfaces/ITokenBalance.html" data-type="entity-link" >ITokenBalance</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/TransactionDetails.html" data-type="entity-link" >TransactionDetails</a>
+                                <a href="interfaces/ITransactionDetails.html" data-type="entity-link" >ITransactionDetails</a>
                             </li>
                         </ul>
                     </li>

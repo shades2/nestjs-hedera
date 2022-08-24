@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="../" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -87,15 +87,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(options: <a href="../interfaces/HederaOptions.html" target="_self">HederaOptions</a>)</code>
+                    <code>forRoot(options: <a href="../interfaces/IHederaOptions.html" target="_self">IHederaOptions</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/hedera/client/client.module.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">src/hedera/client/client.module.ts:8</a></div>
                 </td>
             </tr>
 
@@ -118,7 +118,7 @@
                                 <tr>
                                     <td>options</td>
                                     <td>
-                                                <code><a href="../interfaces/HederaOptions.html" target="_self" >HederaOptions</a></code>
+                                                <code><a href="../interfaces/IHederaOptions.html" target="_self" >IHederaOptions</a></code>
                                     </td>
 
                                     <td>
@@ -165,8 +165,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/hedera/client/client.module.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/hedera/client/client.module.ts:22</a></div>
                 </td>
             </tr>
 
@@ -220,14 +220,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
-import { Operator } from &#x27;../../types/operator.types&#x27;;
 import { ClientService } from &#x27;./client.service&#x27;;
 import { ConfigModule } from &#x27;@nestjs/config&#x27;;
-import { HederaOptions } from &#x27;../../types/hedera_options.types&#x27;;
+import { IHederaOptions } from &#x27;../../types/interfaces/hedera_options.types&#x27;;
 
 @Module({})
 export class ClientModule {
-  static forRoot(options: HederaOptions): DynamicModule {
+  static forRoot(options: IHederaOptions): DynamicModule {
     return {
       module: ClientModule,
       providers: [

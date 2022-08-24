@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="../" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -222,15 +222,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createAccount(balance: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysLength: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, publicKeys?: Array<string>, keysThreshold?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>createAccount(balance: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, keysLength: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, publicKeys?: Array<string>, keysThreshold?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, maxAutomaticTokenAssociations?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, isReceiverSignatureRequired?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, isOfflineTransaction?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:172</a></div>
                 </td>
             </tr>
 
@@ -300,13 +300,49 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>maxAutomaticTokenAssociations</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isReceiverSignatureRequired</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isOfflineTransaction</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;literal type | any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -339,8 +375,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="195"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:195</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:245</a></div>
                 </td>
             </tr>
 
@@ -581,8 +617,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="254"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:254</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="304"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:304</a></div>
                 </td>
             </tr>
 
@@ -634,7 +670,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/AccountBalance.html" target="_self" >Promise&lt;AccountBalance&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IAccountBalance.html" target="_self" >Promise&lt;IAccountBalance&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -666,8 +702,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="225"
-                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:225</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="275"
+                            class="link-to-prism">src/hedera/accounts/accounts.service.ts:275</a></div>
                 </td>
             </tr>
 
@@ -756,7 +792,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>updateAccount(accountId: AccountId, signKey: PrivateKey, newKey?: PrivateKey, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, maxAutomaticTokenAssociations?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, isReceiverSignatureRequired?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, isOfflineTransaction?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
@@ -834,13 +870,49 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>maxAutomaticTokenAssociations</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isReceiverSignatureRequired</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isOfflineTransaction</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;Status&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;Status | any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -910,7 +982,6 @@
   AccountUpdateTransaction,
   Hbar,
   PrivateKey,
-  PublicKey,
   Status,
   TokenFreezeTransaction,
   TokenId,
@@ -919,9 +990,10 @@
 import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
 import { ClientService } from &#x27;../client/client.service&#x27;;
 import { KeysService } from &#x27;../keys/keys.service&#x27;;
-import { TokenBalance } from &#x27;../../types/token_balance.types&#x27;;
-import { AccountBalance } from &#x27;../../types/account_balance.types&#x27;;
-import { PrivateKeyList } from &#x27;../../types/private-key-list.types&#x27;;
+import { ITokenBalance } from &#x27;../../types/interfaces/token_balance.types&#x27;;
+import { IAccountBalance } from &#x27;../../types/interfaces/account_balance.types&#x27;;
+import { IPrivateKeyList } from &#x27;../../types/interfaces/private-key-list.types&#x27;;
+import { Decimal } from &#x27;decimal.js&#x27;;
 
 /**
  * Injectable
@@ -999,28 +1071,50 @@ export class AccountsService {
     accountId: AccountId,
     signKey: PrivateKey,
     newKey?: PrivateKey,
-    memo?: string
-  ): Promise&lt;Status&gt; {
+    memo?: string,
+    maxAutomaticTokenAssociations?: number,
+    isReceiverSignatureRequired?: boolean,
+    isOfflineTransaction?: boolean
+  ): Promise&lt;Status | any&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
 
+        // generating random number, as a workound for offline signature...
+        let nodeAccountId &#x3D; this.clientService.getRandomNodeForNetwork();
+
         // Creating the transaction...
         const transaction &#x3D; await new AccountUpdateTransaction()
-          // setting single node accountId, as a workound for offline signature...
-          .setNodeAccountIds([new AccountId(6)])
+          .setNodeAccountIds([nodeAccountId])
           .setAccountId(accountId);
 
         if (memo) {
           transaction.setAccountMemo(memo);
         }
 
+        if(maxAutomaticTokenAssociations) {
+          transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
+        }
+
+        if(isReceiverSignatureRequired) {
+          transaction.setReceiverSignatureRequired(true);
+        }        
+
         if (newKey) {
           transaction.setKey(newKey);
         }
 
+        if(isOfflineTransaction) {
+          // generating random number, as a workound for offline signature...
+          let nodeAccountId &#x3D; this.clientService.getRandomNodeForNetwork();
+          transaction.setNodeAccountIds([nodeAccountId]);
+        }
+
         transaction.freezeWith(client);
 
+        if(isOfflineTransaction) {
+          resolve(transaction);
+        } else {
         // Signing the transaction...
         let signTx &#x3D; await transaction.sign(signKey);
 
@@ -1036,6 +1130,7 @@ export class AccountsService {
 
         // Get the transaction consensus status...
         resolve(receipt.status);
+        }
       } catch (error) {
         reject(error);
       }
@@ -1053,11 +1148,15 @@ export class AccountsService {
     balance: number,
     keysLength: number,
     publicKeys?: Array&lt;string&gt;,
-    keysThreshold?: number
-  ): Promise&lt;{ accountId: AccountId | null, key: PrivateKey | PrivateKeyList }&gt; {
+    keysThreshold?: number,
+    maxAutomaticTokenAssociations?: number,
+    isReceiverSignatureRequired?: boolean,
+    isOfflineTransaction?: boolean
+  ): Promise&lt;{ accountId: AccountId | null, key: PrivateKey | IPrivateKeyList } | any&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
+
         let key &#x3D; null;
 
         if (keysLength &gt; 1) {
@@ -1068,20 +1167,43 @@ export class AccountsService {
 
         //Creating the transaction...
         const transaction &#x3D; new AccountCreateTransaction()
-          .setKey(keysLength &gt; 1 ? (&lt;PrivateKeyList&gt;key).keyList : (&lt;PrivateKey&gt;key).publicKey)
-          .setInitialBalance(new Hbar(balance));
+          .setKey(keysLength &gt; 1 ? (&lt;IPrivateKeyList&gt;key).keyList : (&lt;PrivateKey&gt;key).publicKey);
 
-        // Executing the transactions...
-        const txResponse &#x3D; await transaction.execute(client);
+        if(balance) {
+          transaction.setInitialBalance(new Hbar(balance.toFixed(8)));
+        }
 
-        // Fetching the receipt...
-        const receipt &#x3D; await txResponse.getReceipt(client);
+        if(maxAutomaticTokenAssociations) {
+          transaction.setMaxAutomaticTokenAssociations(maxAutomaticTokenAssociations);
+        }
 
-        // resolving the accountId...
-        resolve({
-          accountId: receipt.accountId,
-          key: key
-        });
+        if(isReceiverSignatureRequired) {
+          transaction.setReceiverSignatureRequired(true);
+        }
+
+        if(isOfflineTransaction) {
+          // generating random number, as a workound for offline signature...
+          let nodeAccountId &#x3D; this.clientService.getRandomNodeForNetwork();
+          transaction.setNodeAccountIds([nodeAccountId]);
+        }
+
+        transaction.freezeWith(client);
+
+        if(isOfflineTransaction) {
+          resolve(transaction);
+        } else {
+          // Executing the transactions...
+          const txResponse &#x3D; await transaction.execute(client);
+
+          // Fetching the receipt...
+          const receipt &#x3D; await txResponse.getReceipt(client);
+
+          // resolving the accountId...
+          resolve({
+            accountId: receipt.accountId,
+            key: key
+          });
+        }
       } catch (error) {
         reject(error);
       }
@@ -1152,9 +1274,9 @@ export class AccountsService {
  * Get query balance
  * @param {string} accountId 
  * @param {string} tokenId 
- * @returns {AccountBalance}
+ * @returns {IAccountBalance}
  */
-  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise&lt;AccountBalance&gt; {
+  getQueryBalance(accountId: string | AccountId, tokenId?: string): Promise&lt;IAccountBalance&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
@@ -1169,19 +1291,19 @@ export class AccountsService {
           balance &#x3D; {
             tokens: [{
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
+              balance: response.tokens?._map.get(tokenId) ? new Decimal(response.tokens._map.get(tokenId)?.toString()) : 0,
+              decimals: response.tokens?._map.get(tokenId) ? new Decimal(response.tokenDecimals?._map.get(tokenId)) : 0
             }],
             hbars: response.hbars
           };
         } else {
-          let tokens &#x3D; new Array&lt;TokenBalance&gt;();
+          let tokens &#x3D; new Array&lt;ITokenBalance&gt;();
 
           response.tokens?._map.forEach((value, tokenId) &#x3D;&gt; {
             tokens.push({
               tokenId: tokenId,
-              balance: response.tokens?._map.get(tokenId) ? Number(response.tokens._map.get(tokenId)?.toString()) : 0,
-              decimals: response.tokens?._map.get(tokenId) ? Number(response.tokenDecimals?._map.get(tokenId)) : 0
+              balance: response.tokens?._map.get(tokenId) ? new Decimal(response.tokens._map.get(tokenId)?.toString()) : new Decimal(0),
+              decimals: response.tokens?._map.get(tokenId) ? new Decimal(response.tokenDecimals?._map.get(tokenId)) : new Decimal(0)
             });
           });
 

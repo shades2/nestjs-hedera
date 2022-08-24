@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="../" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -103,6 +103,10 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#associateToken" >associateToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#atomicSwap" >atomicSwap</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -295,7 +299,104 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;Status | undefined&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;Status | undefined | any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atomicSwap"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>atomicSwap</b></span>
+                        <a href="#atomicSwap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>atomicSwap(swaps: Array<any>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, key?: PrivateKey)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="430"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:430</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Atomic Swap</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>swaps</td>
+                                    <td>
+                                            <code>Array&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>memo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                            <code>PrivateKey</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ITransactionDetails.html" target="_self" >Promise&lt;ITransactionDetails | Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -327,8 +428,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="227"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:227</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:234</a></div>
                 </td>
             </tr>
 
@@ -424,8 +525,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:97</a></div>
                 </td>
             </tr>
 
@@ -521,8 +622,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="258"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:258</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="265"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:265</a></div>
                 </td>
             </tr>
 
@@ -606,8 +707,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="180"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:180</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:187</a></div>
                 </td>
             </tr>
 
@@ -703,8 +804,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:136</a></div>
                 </td>
             </tr>
 
@@ -788,8 +889,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="287"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:287</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:294</a></div>
                 </td>
             </tr>
 
@@ -877,7 +978,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/TransactionDetails.html" target="_self" >Promise&lt;TransactionDetails | Transaction&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/ITransactionDetails.html" target="_self" >Promise&lt;ITransactionDetails | Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -909,8 +1010,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="418"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:418</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="495"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:495</a></div>
                 </td>
             </tr>
 
@@ -998,7 +1099,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/TransactionDetails.html" target="_self" >Promise&lt;TransactionDetails | Transaction&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/ITransactionDetails.html" target="_self" >Promise&lt;ITransactionDetails | Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1023,15 +1124,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, key?: PrivateKey)</code>
+                    <code>transferToken(tokenId: TokenId | Array<TokenId>, from: AccountId, to: AccountId, amount: number | Array<Number>, tokenDecimals: number | Array<Number>, memo?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, key?: PrivateKey, hbarAmount?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="347"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:347</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="354"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:354</a></div>
                 </td>
             </tr>
 
@@ -1137,13 +1238,25 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>hbarAmount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/TransactionDetails.html" target="_self" >Promise&lt;TransactionDetails | Transaction&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/ITransactionDetails.html" target="_self" >Promise&lt;ITransactionDetails | Transaction&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1175,8 +1288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="154"
-                            class="link-to-prism">src/hedera/hts/hts.service.ts:154</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/hedera/hts/hts.service.ts:161</a></div>
                 </td>
             </tr>
 
@@ -1308,7 +1421,7 @@
   TokenBurnTransaction
 } from &#x27;@hashgraph/sdk&#x27;;
 import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
-import { TransactionDetails } from &#x27;../../types/transaction_details.types&#x27;;
+import { ITransactionDetails } from &#x27;../../types/interfaces/transaction_details.types&#x27;;
 import { ClientService } from &#x27;../client/client.service&#x27;;
 
 /**
@@ -1341,29 +1454,36 @@ export class HtsService {
     accountId: AccountId,
     tokenId: TokenId,
     keys: PrivateKey | Array&lt;PrivateKey&gt;
-  ): Promise&lt;Status | undefined&gt; {
+  ): Promise&lt;Status | undefined | any&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
-
+        // generating random number, as a workound for offline signature...
+        let nodeAccountId &#x3D; this.clientService.getRandomNodeForNetwork();
+        
         const transaction &#x3D; await new TokenAssociateTransaction()
+          .setNodeAccountIds([nodeAccountId])
           .setAccountId(accountId)
           .setTokenIds([tokenId])
           .freezeWith(client);
 
         let signTx &#x3D; null;
 
-        if (Array.isArray(keys)) {
-          for (let i &#x3D; 0; i &lt; keys.length; i++) {
-            signTx &#x3D; await transaction.sign(keys[i]);
-          };
+        if(keys) {
+          if (Array.isArray(keys)) {
+            for (let i &#x3D; 0; i &lt; keys.length; i++) {
+              signTx &#x3D; await transaction.sign(keys[i]);
+            };
+          } else {
+            signTx &#x3D; await transaction.sign(keys);
+          }
+  
+          const txResponse &#x3D; await signTx.execute(client);
+          const receipt &#x3D; await txResponse.getReceipt(client);
+          resolve(receipt.status);          
         } else {
-          signTx &#x3D; await transaction.sign(keys);
+          resolve(transaction);
         }
-
-        const txResponse &#x3D; await signTx.execute(client);
-        const receipt &#x3D; await txResponse.getReceipt(client);
-        resolve(receipt.status);
       } catch (error) {
         reject(error);
       }
@@ -1572,7 +1692,7 @@ export class HtsService {
    * @param {AccountId} to 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {ITransactionDetails} 
    */
   async transferHbar(
     amount: number,
@@ -1580,15 +1700,15 @@ export class HtsService {
     to: AccountId,
     memo?: string,
     key?: PrivateKey
-  ): Promise&lt;TransactionDetails | Transaction&gt; {
+  ): Promise&lt;ITransactionDetails | Transaction&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
 
         // Creating a transaction...
         const transaction &#x3D; new TransferTransaction()
-          .addHbarTransfer(from, new Hbar(-amount))
-          .addHbarTransfer(to, new Hbar(amount));
+          .addHbarTransfer(from, new Hbar(-amount.toFixed(8)))
+          .addHbarTransfer(to, new Hbar(amount.toFixed(8)));
 
         if (memo) {
           transaction.setTransactionMemo(memo);
@@ -1625,14 +1745,14 @@ export class HtsService {
 
   /**
    * Transfer Token
-   * @param {TokenId} tokenId 
+   * @param {TokenId | Array&lt;TokenId&gt;} tokenId 
    * @param {AccountId} from 
    * @param {AccountId} to 
-   * @param {number} amount 
-   * @param {number} tokenDecimals 
+   * @param {number | Array&lt;Number&gt;} amount 
+   * @param {number | Array&lt;Number&gt;} tokenDecimals 
    * @param {string} memo 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {ITransactionDetails | Transaction} 
    */
   async transferToken(
     tokenId: TokenId | Array&lt;TokenId&gt;,
@@ -1641,14 +1761,21 @@ export class HtsService {
     amount: number | Array&lt;Number&gt;,
     tokenDecimals: number | Array&lt;Number&gt;,
     memo?: string,
-    key?: PrivateKey
-  ): Promise&lt;TransactionDetails | Transaction&gt; {
+    key?: PrivateKey,
+    hbarAmount?: number
+  ): Promise&lt;ITransactionDetails | Transaction&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();
 
         // Creating the transfer transaction...
         const transaction &#x3D; await new TransferTransaction();
+
+        if(hbarAmount) {
+          transaction
+          .addHbarTransfer(from, new Hbar(-hbarAmount.toFixed(8)))
+          .addHbarTransfer(to, new Hbar(hbarAmount.toFixed(8)))
+        }
 
         if (!Array.isArray(tokenId) &amp;&amp; !Array.isArray(amount) &amp;&amp; !Array.isArray(tokenDecimals)) {
           transaction
@@ -1697,13 +1824,76 @@ export class HtsService {
   }
 
   /**
+   * Atomic Swap
+   * @param {Array&lt;any&gt;} swaps 
+   * @param {string} memo 
+   * @param {PrivateKey} key 
+   * @returns {ITransactionDetails | Transaction} 
+   */
+  async atomicSwap(
+    swaps: Array&lt;any&gt;,
+    memo?: string,
+    key?: PrivateKey
+  ): Promise&lt;ITransactionDetails | Transaction&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        const client &#x3D; this.clientService.getClient();
+
+        // Creating the transfer transaction...
+        const transaction &#x3D; await new TransferTransaction();
+
+        swaps.forEach(swap &#x3D;&gt; {
+          if(swap.token.id &#x3D;&#x3D; &#x27;HBAR&#x27;) {
+            transaction
+            .addHbarTransfer(swap.from, new Hbar(-swap.amount.toFixed(8)))
+            .addHbarTransfer(swap.to, new Hbar(swap.amount.toFixed(8)));
+          } else {
+            transaction
+            .addTokenTransfer(swap.token.id, swap.from, Number(-swap.amount * (10 ** swap.token.decimals)))
+            .addTokenTransfer(swap.token.id, swap.to, Number(swap.amount * (10 ** swap.token.decimals)));
+          }
+        });
+
+        if (memo) {
+          transaction.setTransactionMemo(memo);
+        }
+
+        if (key) {
+          transaction.freezeWith(client);
+
+          // signing the transaction with the sender key...
+          let signTx &#x3D; await transaction.sign(key);
+
+          // Submitting the transaction to a Hedera network...
+          const txResponse &#x3D; await signTx.execute(client);
+
+          // Requesting the receipt of the transaction...
+          const receipt &#x3D; await txResponse.getReceipt(client);
+
+          // Resolving the transaction consensus status...
+          resolve({
+            status: receipt.status,
+            transaction_id: txResponse.transactionId
+          });
+        } else {
+          // if no key has been provided, we return the transasction to be wrapped
+          // into a scheduled transaction to allow multisig threshold mechanism...
+          resolve(transaction);
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
    * Transfer NFT
    * @param {TokenId} tokenId 
    * @param {AccountId} from 
    * @param {AccountId} to 
    * @param {number} serialNumber 
    * @param {PrivateKey} key 
-   * @returns {TransactionDetails} 
+   * @returns {ITransactionDetails} 
    */
   async transferNftToken(
     tokenId: TokenId,
@@ -1711,7 +1901,7 @@ export class HtsService {
     to: AccountId,
     serialNumber: number,
     key?: PrivateKey
-  ): Promise&lt;TransactionDetails | Transaction&gt; {
+  ): Promise&lt;ITransactionDetails | Transaction&gt; {
     return new Promise(async (resolve, reject) &#x3D;&gt; {
       try {
         const client &#x3D; this.clientService.getClient();

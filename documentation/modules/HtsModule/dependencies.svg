@@ -14,13 +14,13 @@
 <title>cluster_HtsModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 526,-230.8 526,-32.8 8,-32.8"/>
 </g>
-<g id="clust4" class="cluster">
-<title>cluster_HtsModule_exports</title>
-<polygon fill="none" stroke="black" points="248,-170.8 248,-222.8 468,-222.8 468,-170.8 248,-170.8"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_HtsModule_imports</title>
 <polygon fill="none" stroke="black" points="306,-40.8 306,-92.8 518,-92.8 518,-40.8 306,-40.8"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_HtsModule_exports</title>
+<polygon fill="none" stroke="black" points="248,-170.8 248,-222.8 468,-222.8 468,-170.8 248,-170.8"/>
 </g>
 <g id="clust6" class="cluster">
 <title>cluster_HtsModule_providers</title>

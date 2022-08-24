@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="../" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -90,6 +90,12 @@
                             </li>
                             <li>
                                 <a href="#getAllHoldersFromWallet" >getAllHoldersFromWallet</a>
+                            </li>
+                            <li>
+                                <a href="#getAllNftForHolder" >getAllNftForHolder</a>
+                            </li>
+                            <li>
+                                <a href="#getAllNftHolders" >getAllNftHolders</a>
                             </li>
                             <li>
                                 <a href="#getTokenInfo" >getTokenInfo</a>
@@ -253,8 +259,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/hedera/hts/hts-rest.service.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">src/hedera/hts/hts-rest.service.ts:172</a></div>
                 </td>
             </tr>
 
@@ -290,6 +296,148 @@
                                 </tr>
                                 <tr>
                                     <td>walletId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Array&lt;any&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllNftForHolder"></a>
+                    <span class="name">
+                        <span ><b>getAllNftForHolder</b></span>
+                        <a href="#getAllNftForHolder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllNftForHolder(walletId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/hedera/hts/hts-rest.service.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get array of NFT for a given wallet</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>walletId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Array&lt;any&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllNftHolders"></a>
+                    <span class="name">
+                        <span ><b>getAllNftHolders</b></span>
+                        <a href="#getAllNftHolders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllNftHolders(tokenId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/hedera/hts/hts-rest.service.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get array of NFT holders by tokenId</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tokenId</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -444,17 +592,115 @@ export class HtsRestService {
           .call(&#x60;tokens/${tokenId}/balances&#x60;);
 
         holders &#x3D; holders.concat(response.balances);
+        let retry &#x3D; false;
+        let timeout &#x3D; 0;
 
-        while (response.links.next) {
+        while (response.links.next || retry) {
+          if(timeout) {
+            await new Promise(resolve &#x3D;&gt; setTimeout(resolve, timeout));
+          }
+
           let next &#x3D; lodash.get(response.links.next.split(&quot;?&quot;), 1);
 
-          response &#x3D; await this.restService
+          try {
+            response &#x3D; await this.restService
             .call(&#x60;tokens/${tokenId}/balances?${next}&#x60;);
 
-          holders &#x3D; holders.concat(response.balances);
+            holders &#x3D; holders.concat(response.balances);
+            retry &#x3D; false;
+          } catch(error) {
+            timeout +&#x3D; 100;
+            retry &#x3D; true;
+          }
         }
 
         resolve(holders);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+ * Get array of NFT holders by tokenId
+ * @param {string} tokenId 
+ * @returns {Array}
+ */
+  getAllNftHolders(tokenId: string): Promise&lt;Array&lt;any&gt;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        let holders: any &#x3D; [];
+
+        let response &#x3D; await this.restService
+          .call(&#x60;tokens/${tokenId}/nfts&#x60;);
+
+        holders &#x3D; holders.concat(response.nfts);
+        let retry &#x3D; false;
+        let timeout &#x3D; 0;
+
+        while (response.links.next || retry) {
+          if(timeout) {
+            await new Promise(resolve &#x3D;&gt; setTimeout(resolve, timeout));
+          }
+          
+          let next &#x3D; lodash.get(response.links.next.split(&quot;?&quot;), 1);
+
+          try {  
+            response &#x3D; await this.restService
+            .call(&#x60;tokens/${tokenId}/nfts?${next}&#x60;);
+
+          holders &#x3D; holders.concat(response.nfts);
+          retry &#x3D; false;
+          } catch(error) {
+            timeout +&#x3D; 100;
+            retry &#x3D; true;
+          }
+        }
+
+        resolve(holders);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+* Get array of NFT for a given wallet
+* @param {string} walletId 
+* @returns {Array}
+*/
+  getAllNftForHolder(walletId: string): Promise&lt;Array&lt;any&gt;&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        let nfts: any &#x3D; [];
+
+        let response &#x3D; await this.restService
+          .call(&#x60;accounts/${walletId}/nfts&#x60;);
+
+        nfts &#x3D; nfts.concat(response.nfts);
+        let retry &#x3D; false;
+        let timeout &#x3D; 0;        
+
+        while (response.links.next || retry) {
+          if(timeout) {
+            await new Promise(resolve &#x3D;&gt; setTimeout(resolve, timeout));
+          }
+
+          let next &#x3D; lodash.get(response.links.next.split(&quot;?&quot;), 1);
+
+          try {  
+            response &#x3D; await this.restService
+            .call(&#x60;accounts/${walletId}/nfts?${next}&#x60;);
+
+            nfts &#x3D; nfts.concat(response.nfts);
+          retry &#x3D; false;
+          } catch(error) {
+            timeout +&#x3D; 100;
+            retry &#x3D; true;
+          }
+        }
+
+        resolve(nfts);
       } catch (error) {
         reject(error);
       }

@@ -4,11 +4,11 @@ An hedera-js-sdk wrapper for NestJS.
 ## Installation
 If you use npm, you shall run:
 ```bash
-npm install hsuite-nestjs-hedera
+npm install @hsuite/nestjs-hedera
 ```
 instead, if you use yarn:
 ```bash
-yarn add hsuite-nestjs-hedera
+yarn add @hsuite/nestjs-hedera
 ```
 
 ## Import into your AppModule
@@ -18,7 +18,7 @@ You can use the forRoot method in order to pass the needed variables to create t
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { HederaModule } from 'hsuite-nestjs-hedera/lib';
+import { HederaModule } from '@hsuite/nestjs-hedera/lib';
 
 @Module({
   imports: [
@@ -58,11 +58,11 @@ Once imported, you can then import the service you need, and use it.
 For example:
 ```js
 import { Injectable } from '@nestjs/common';
-import { KeysService } from 'hsuite-nestjs-hedera/lib/hedera/keys/keys.service';
-import { HcsService } from 'hsuite-nestjs-hedera/lib/hedera/hcs/hcs.service';
-import { HfsService } from 'hsuite-nestjs-hedera/lib/hedera/hfs/hfs.service';
-import { AccountsService } from 'hsuite-nestjs-hedera/lib/hedera/accounts/accounts.service';
-import { TransactionsRestService } from 'hsuite-nestjs-hedera/lib/hedera/transactions/transactions-rest.service';
+import { KeysService } from '@hsuite/nestjs-hedera/lib/hedera/keys/keys.service';
+import { HcsService } from '@hsuite/nestjs-hedera/lib/hedera/hcs/hcs.service';
+import { HfsService } from '@hsuite/nestjs-hedera/lib/hedera/hfs/hfs.service';
+import { AccountsService } from '@hsuite/nestjs-hedera/lib/hedera/accounts/accounts.service';
+import { TransactionsRestService } from '@hsuite/nestjs-hedera/lib/hedera/transactions/transactions-rest.service';
 import { TopicId, PrivateKey } from '@hashgraph/sdk';
 
 @Injectable()

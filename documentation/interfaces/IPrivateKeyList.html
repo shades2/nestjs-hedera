@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  TransactionDetails</li>
+  IPrivateKeyList</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/types/transaction_details.types.ts</code>
+            <code>src/types/interfaces/private-key-list.types.ts</code>
         </p>
 
 
@@ -91,15 +91,15 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#status" 
+                                        <a href="#keyList" 
 >
-                                            status
+                                            keyList
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#transaction_id" 
+                                        <a href="#privateKeys" 
 >
-                                            transaction_id
+                                            privateKeys
                                         </a>
                                 </li>
                             </ul>
@@ -117,9 +117,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="status"></a>
-                                        <span class="name "><b>status</b>
-                                            <a href="#status">
+                                        <a name="keyList"></a>
+                                        <span class="name "><b>keyList</b>
+                                            <a href="#keyList">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -127,7 +127,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>status:     <code>Status</code>
+                                        <code>keyList:     <code>KeyList</code>
 </code>
                                     </td>
                                 </tr>
@@ -135,7 +135,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>Status</code>
+                                            <i>Type : </i>    <code>KeyList</code>
 
                                         </td>
                                     </tr>
@@ -146,7 +146,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Transaction status</p>
+                                    <div class="io-description"><p>List of keys</p>
 </div>
                                 </td>
                             </tr>
@@ -156,9 +156,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="transaction_id"></a>
-                                        <span class="name "><b>transaction_id</b>
-                                            <a href="#transaction_id">
+                                        <a name="privateKeys"></a>
+                                        <span class="name "><b>privateKeys</b>
+                                            <a href="#privateKeys">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -166,7 +166,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>transaction_id:     <code>TransactionId</code>
+                                        <code>privateKeys:     <code>PrivateKey[]</code>
 </code>
                                     </td>
                                 </tr>
@@ -174,7 +174,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>TransactionId</code>
+                                            <i>Type : </i>    <code>PrivateKey[]</code>
 
                                         </td>
                                     </tr>
@@ -185,7 +185,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Transaction id</p>
+                                    <div class="io-description"><p>Array of Private keys</p>
 </div>
                                 </td>
                             </tr>
@@ -196,23 +196,24 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Status, TransactionId } from &quot;@hashgraph/sdk&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { KeyList, PrivateKey } from &quot;@hashgraph/sdk&quot;;
+
 
 /**
  * Interface
  */
-export interface TransactionDetails {
+export interface IPrivateKeyList {
 
   /**
-   * Transaction status
+   * Array of Private keys
    */
-  status: Status
+  privateKeys: PrivateKey[]
 
   /**
-   * Transaction id
+   * List of keys
    */
-  transaction_id: TransactionId
-} </code></pre>
+  keyList: KeyList
+}</code></pre>
     </div>
 </div>
 
@@ -249,7 +250,7 @@ export interface TransactionDetails {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'TransactionDetails.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IPrivateKeyList.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

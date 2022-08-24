@@ -28,46 +28,130 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >RestModule</li>
+  <li>Injectables</li>
+  <li >HcsRestService</li>
 </ol>
 
-
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/hedera/rest/rest.module.ts</code>
+            <code>src/hedera/hcs/hcs-rest.service.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Injectable</p>
+
+            </p>
 
 
 
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
 
-        <section>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getLatestMessages" >getLatestMessages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(restService: <a href="../injectables/RestService.html" target="_self">RestService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/hedera/hcs/hcs-rest.service.ts:8</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Transaction Rest Service</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>restService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RestService.html" target="_self" >RestService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
     
     <h3 id="methods">
         Methods
@@ -76,26 +160,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="forRoot"></a>
+                    <a name="getLatestMessages"></a>
                     <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>forRoot</b></span>
-                        <a href="#forRoot"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getLatestMessages</b></span>
+                        <a href="#getLatestMessages"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRoot(options: <a href="../interfaces/IHederaOptions.html" target="_self">IHederaOptions</a>)</code>
+<code>getLatestMessages(topicId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/hedera/rest/rest.module.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/hedera/hcs/hcs-rest.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -116,9 +198,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>options</td>
+                                    <td>topicId</td>
                                     <td>
-                                                <code><a href="../interfaces/IHederaOptions.html" target="_self" >IHederaOptions</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -133,78 +215,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>DynamicModule</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="forRootAsync"></a>
-                    <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>forRootAsync</b></span>
-                        <a href="#forRootAsync"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>forRootAsync(options: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/hedera/rest/rest.module.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>options</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>DynamicModule</code>
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -215,56 +226,45 @@
         </tbody>
     </table>
 </section>
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module, DynamicModule } from &#x27;@nestjs/common&#x27;;
-import { RestService } from &#x27;./rest.service&#x27;;
-import { HttpModule } from &#x27;@nestjs/axios&#x27;;
-import { ConfigModule } from &#x27;@nestjs/config&#x27;;
-import { IHederaOptions } from &#x27;../../types/interfaces/hedera_options.types&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { RestService } from &#x27;../rest/rest.service&#x27;;
 
-@Module({})
-export class RestModule {
-  static forRoot(options: IHederaOptions): DynamicModule {
-    return {
-      module: RestModule,
-      imports: [HttpModule],
-      providers: [
-        {
-          provide: &#x27;hederaOptions&#x27;,
-          useValue: options,
-        },
-        RestService,
-      ],
-      exports: [RestService]
-    }
-  }
+/**
+ * Injectable
+ */
+@Injectable()
+export class HcsRestService {
 
-  static forRootAsync(options: any): DynamicModule {
-    return {
-      module: RestModule,
-      imports: [HttpModule, ConfigModule],
-      providers: [
-        {
-          provide: &#x27;hederaOptions&#x27;,
-          useFactory: options.useFactory,
-          inject: [options.useExisting]
-        },       
-        RestService,
-      ],
-      exports: [RestService]
-    }
+  /**
+   * Transaction Rest Service
+   * @param {RestService} restService 
+   */
+  constructor(
+    private restService: RestService
+  ) { }
+
+  getLatestMessages(topicId: string): Promise&lt;any&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      try {
+        let response &#x3D; await this.restService
+          .call(&#x60;topics/${topicId}/messages?order&#x3D;desc&#x60;);
+
+        resolve(response);
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
 }
 </code></pre>
     </div>
+
 </div>
-
-
-
-
 
 
 
@@ -303,8 +303,8 @@ export class RestModule {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'RestModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'HcsRestService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

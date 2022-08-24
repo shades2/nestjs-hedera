@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="./" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -35,14 +35,14 @@
 <p>An hedera-js-sdk wrapper for NestJS.</p>
 <h2 id="installation">Installation</h2>
 <p>If you use npm, you shall run:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install hsuite-nestjs-hedera</code></pre></div><p>instead, if you use yarn:</p>
-<div><pre class="line-numbers"><code class="language-bash">yarn add hsuite-nestjs-hedera</code></pre></div><h2 id="import-into-your-appmodule">Import into your AppModule</h2>
+<div><pre class="line-numbers"><code class="language-bash">npm install &#64;hsuite/nestjs-hedera</code></pre></div><p>instead, if you use yarn:</p>
+<div><pre class="line-numbers"><code class="language-bash">yarn add &#64;hsuite/nestjs-hedera</code></pre></div><h2 id="import-into-your-appmodule">Import into your AppModule</h2>
 <p>First you need to import the HederaModule into your app.module.ts.
 You can use the forRoot method in order to pass the needed variables to create the Hedera Client and to connect to a Mirror Node, like this:</p>
 <div><pre class="line-numbers"><code class="language-js">import { Module } from &#39;&#64;nestjs/common&#39;;
 import { AppController } from &#39;./app.controller&#39;;
 import { AppService } from &#39;./app.service&#39;;
-import { HederaModule } from &#39;hsuite-nestjs-hedera/lib&#39;;
+import { HederaModule } from &#39;&#64;hsuite/nestjs-hedera/lib&#39;;
 
 &#64;Module({
   imports: [
@@ -75,11 +75,11 @@ export class AppModule {}</code></pre></div><p>You can also use NestJS ConfigSer
 <p>Once imported, you can then import the service you need, and use it.
 For example:</p>
 <div><pre class="line-numbers"><code class="language-js">import { Injectable } from &#39;&#64;nestjs/common&#39;;
-import { KeysService } from &#39;hsuite-nestjs-hedera/lib/hedera/keys/keys.service&#39;;
-import { HcsService } from &#39;hsuite-nestjs-hedera/lib/hedera/hcs/hcs.service&#39;;
-import { HfsService } from &#39;hsuite-nestjs-hedera/lib/hedera/hfs/hfs.service&#39;;
-import { AccountsService } from &#39;hsuite-nestjs-hedera/lib/hedera/accounts/accounts.service&#39;;
-import { TransactionsRestService } from &#39;hsuite-nestjs-hedera/lib/hedera/transactions/transactions-rest.service&#39;;
+import { KeysService } from &#39;&#64;hsuite/nestjs-hedera/lib/hedera/keys/keys.service&#39;;
+import { HcsService } from &#39;&#64;hsuite/nestjs-hedera/lib/hedera/hcs/hcs.service&#39;;
+import { HfsService } from &#39;&#64;hsuite/nestjs-hedera/lib/hedera/hfs/hfs.service&#39;;
+import { AccountsService } from &#39;&#64;hsuite/nestjs-hedera/lib/hedera/accounts/accounts.service&#39;;
+import { TransactionsRestService } from &#39;&#64;hsuite/nestjs-hedera/lib/hedera/transactions/transactions-rest.service&#39;;
 import { TopicId, PrivateKey } from &#39;&#64;hashgraph/sdk&#39;;
 
 &#64;Injectable()

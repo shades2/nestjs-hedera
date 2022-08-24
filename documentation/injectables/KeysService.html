@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>hsuite-nestjs-hedera documentation</title>
+        <title>@hsuite/nestjs-hedera documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">hsuite-nestjs-hedera documentation</a>
+            <a href="../" class="navbar-brand">@hsuite/nestjs-hedera documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -277,7 +277,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/PrivateKeyList.html" target="_self" >Promise&lt;PrivateKeyList&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IPrivateKeyList.html" target="_self" >Promise&lt;IPrivateKeyList&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -339,7 +339,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
 import { PrivateKey, KeyList, PublicKey } from &#x27;@hashgraph/sdk&#x27;;
-import { PrivateKeyList } from &#x27;../../types/private-key-list.types&#x27;;
+import { IPrivateKeyList } from &#x27;../../types/interfaces/private-key-list.types&#x27;;
 
 /**
  * Injectable
@@ -366,7 +366,7 @@ export class KeysService {
   generateKey(): Promise&lt;PrivateKey&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
-        const key &#x3D; await PrivateKey.generate();
+        const key &#x3D; await PrivateKey.generateED25519();
         resolve(key);
       } catch(error) {
         reject(error);
@@ -379,13 +379,13 @@ export class KeysService {
    * @param {string} publicKeys 
    * @param {number} length 
    * @param {number} threshold 
-   * @returns {PrivateKeyList} 
+   * @returns {IPrivateKeyList} 
    */
   generateKeyList(
     publicKeys?: string[],
     length?: number,
     threshold?: number
-  ): Promise&lt;PrivateKeyList&gt; {
+  ): Promise&lt;IPrivateKeyList&gt; {
     return new Promise(async(resolve, reject) &#x3D;&gt; {
       try {
         let publicKeyList: any &#x3D; [];
@@ -406,7 +406,7 @@ export class KeysService {
 
           if(length) {
             [...Array(length).keys()].forEach(() &#x3D;&gt; {
-              let key &#x3D; PrivateKey.generate();
+              let key &#x3D; PrivateKey.generateED25519();
               privateKeys.push(key);
               publicKeyList.push(key.publicKey);
             });
