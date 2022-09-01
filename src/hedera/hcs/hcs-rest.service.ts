@@ -29,11 +29,11 @@ export class HcsRestService {
     });
   }
 
-  getLatestMessagesFromTimestamp(topicId: string, timestamp: number, limit?: number): Promise<any> {
+  getLatestMessagesFromTimestamp(topicId: string, consensus_timestamp: number, limit?: number): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
         let messages = [];
-        let url = `topics/${topicId}/messages?order=desc&timestamp=gte:${timestamp}.000000000`;
+        let url = `topics/${topicId}/messages?order=desc&timestamp=gte:${consensus_timestamp}`;
 
         if(limit) {
           url += `&limit=${limit}`;

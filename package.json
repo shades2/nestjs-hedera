@@ -1,6 +1,6 @@
 {
   "name": "@hsuite/nestjs-hedera",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "files": ["lib/**"],
   "main": "lib/index.js",
