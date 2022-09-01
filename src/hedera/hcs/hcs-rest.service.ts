@@ -29,7 +29,7 @@ export class HcsRestService {
     });
   }
 
-  getLatestMessagesFromTimestamp(topicId: string, consensus_timestamp: number, limit?: number): Promise<any> {
+  getLatestMessagesFromTimestamp(topicId: string, consensus_timestamp: string, limit?: number): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
         let messages = [];
