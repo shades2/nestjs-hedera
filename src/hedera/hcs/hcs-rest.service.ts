@@ -59,7 +59,7 @@ export class HcsRestService {
           }
         }          
 
-        resolve(response);
+        resolve(messages);
       } catch (error) {
         reject(error);
       }
