@@ -29,12 +29,18 @@ export class HcsRestService {
     });
   }
 
-  getLatestMessagesFromTimestamp(topicId: string, timestamp: number): Promise<any> {
+  getLatestMessagesFromTimestamp(topicId: string, timestamp: number, limit?: number): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
         let messages = [];
+        let url = `topics/${topicId}/messages?order=desc&timestamp=gte:${timestamp}.000000000`;
+
+        if(limit) {
+          url += `&limit=${limit}`;
+        }
+
         let response = await this.restService
-          .call(`topics/${topicId}/messages?order=desc&timestamp=gte:${timestamp}.000000000`);
+          .call(url);
 
         messages = messages.concat(response.messages);
         let retry = false;
