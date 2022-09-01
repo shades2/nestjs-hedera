@@ -10,4 +10,5 @@ export declare class HcsRestService {
      */
     constructor(restService: RestService);
     getLatestMessages(topicId: string): Promise<any>;
+    getLatestMessagesFromTimestamp(topicId: string, timestamp: number): Promise<any>;
 }

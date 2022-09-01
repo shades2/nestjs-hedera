@@ -27,4 +27,17 @@ export class HcsRestService {
       }
     });
   }
+
+  getLatestMessagesFromTimestamp(topicId: string, timestamp: number): Promise<any> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        let response = await this.restService
+          .call(`topics/${topicId}/messages?order=desc&timestamp=gte:${timestamp}.000000000`);
+
+        resolve(response);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 }
