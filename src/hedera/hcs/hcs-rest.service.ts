@@ -46,7 +46,7 @@ export class HcsRestService {
         let retry = false;
         let timeout = 0;
 
-        while (response.links.next || retry) {
+        while (response.links.next || retry || messages.length < limit) {
           if(timeout) {
             await new Promise(resolve => setTimeout(resolve, timeout));
           }

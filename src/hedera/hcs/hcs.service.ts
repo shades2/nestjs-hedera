@@ -11,7 +11,8 @@ import {
   PrivateKey,
   Status,
   Key,
-  KeyList
+  KeyList,
+  SubscriptionHandle
 } from '@hashgraph/sdk';
 import { Injectable, Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
@@ -257,7 +258,7 @@ export class HcsService {
     start?: number,
     end?: number,
     limit?: number
-  ): Promise<any> {
+  ): Promise<SubscriptionHandle> {
     return new Promise(async (resolve, reject) => {
       try {
         const client = this.clientService.getClient();
@@ -281,7 +282,7 @@ export class HcsService {
         let subscription = transaction.subscribe(
           client,
           function(message, error) {
-            console.error("error while subscribing",error);
+            reject(error)
           },
           (message) => callback(message)
         );

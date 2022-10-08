@@ -1,4 +1,4 @@
-import { TopicInfo, TopicId, PrivateKey, Status, Key, KeyList } from '@hashgraph/sdk';
+import { TopicInfo, TopicId, PrivateKey, Status, Key, KeyList, SubscriptionHandle } from '@hashgraph/sdk';
 import { Logger } from '@nestjs/common';
 import { ClientService } from '../client/client.service';
 /**
@@ -63,5 +63,5 @@ export declare class HcsService {
      * @param {number} limit
      * @returns {any} Subscription Message
      */
-    getMessages(topicId: TopicId, callback: (message: any) => void, start?: number, end?: number, limit?: number): Promise<any>;
+    getMessages(topicId: TopicId, callback: (message: any) => void, start?: number, end?: number, limit?: number): Promise<SubscriptionHandle>;
 }
