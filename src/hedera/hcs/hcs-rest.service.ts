@@ -35,10 +35,6 @@ export class HcsRestService {
         let messages = [];
         let url = `topics/${topicId}/messages?order=${order}&timestamp=gte:${consensus_timestamp}`;
 
-        if(limit) {
-          url += `&limit=${limit}`;
-        }
-
         let response = await this.restService
           .call(url);
 
