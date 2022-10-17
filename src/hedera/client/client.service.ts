@@ -57,6 +57,7 @@ export class ClientService {
     this.operators = this.hederaOptions.operators;
     this.custom.node = this.hederaOptions.custom.node;
     this.custom.mirror = this.hederaOptions.custom.mirror;
+    this.mirrorNode = this.hederaOptions.mirrorNode;
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
@@ -72,13 +73,18 @@ export class ClientService {
     switch(this.network)  {
       case 'testnet':
         this.client = Client.forTestnet();
+
+        if(!this.mirrorNode.url.includes('testnet.mirrornode.hedera.com')) {
+          this.client.setMirrorNetwork(`${this.mirrorNode.url}:443`);
+        }
         break;
       case 'mainnet':
-        this.client = Client.forMainnet();
-        this.client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443");
+        this.client = Client.forMainnet()
+          .setMirrorNetwork(`${this.mirrorNode.url}:443`);
         break;
       case 'custom':
-        this.client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
+        this.client = Client.forNetwork(this.custom.node)
+          .setMirrorNetwork(this.custom.mirror);
         break;
     }
 
