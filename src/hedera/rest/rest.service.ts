@@ -46,7 +46,6 @@ export class RestService {
 
         if(this.mirrorNode.apiKey) {
           headers = {
-            // 'authorization': this.mirrorNode.apiKey
             'x-api-key': this.mirrorNode.apiKey
           }
         }
