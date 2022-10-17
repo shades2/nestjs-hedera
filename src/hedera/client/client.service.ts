@@ -75,7 +75,7 @@ export class ClientService {
         this.client = Client.forTestnet();
 
         if(!this.mirrorNode.url.includes('testnet.mirrornode.hedera.com')) {
-          this.client.setMirrorNetwork(`${this.mirrorNode.url}:443`);
+          this.client.setMirrorNetwork(`grpc.testnet.arkhia.io:443`);
         }
         break;
       case 'mainnet':
