@@ -10,6 +10,7 @@ export declare class ClientService {
      * Client
      */
     private client;
+    private signatureClient;
     /**
      * Single IOperator
      */
@@ -37,7 +38,7 @@ export declare class ClientService {
      * If the client gives invalid node error...
      * @returns random operator...
      */
-    getClient(): Client;
+    getClient(isPublicMirror?: boolean): Client;
     generateCustomClient(accountId: string, privateKey: string, environment: string): Client;
     /**
      * Gets a node operator

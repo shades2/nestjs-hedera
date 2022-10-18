@@ -63,5 +63,5 @@ export declare class HcsService {
      * @param {number} limit
      * @returns {any} Subscription Message
      */
-    getMessages(topicId: TopicId, callbackSuccess: (message: TopicMessage) => void, start?: number, end?: number, limit?: number, callbackError?: (message: TopicMessage, error: Error) => void): Promise<SubscriptionHandle>;
+    getMessages(topicId: TopicId, callbackSuccess: (message: TopicMessage) => void, start?: number, end?: number, limit?: number, callbackError?: (message: TopicMessage, error: Error) => void, isPublicMirror?: boolean): Promise<SubscriptionHandle>;
 }

@@ -258,11 +258,12 @@ export class HcsService {
     start?: number,
     end?: number,
     limit?: number,
-    callbackError?: (message: TopicMessage, error: Error) => void
+    callbackError?: (message: TopicMessage, error: Error) => void,
+    isPublicMirror?: boolean
   ): Promise<SubscriptionHandle> {
     return new Promise(async (resolve, reject) => {
       try {
-        const client = this.clientService.getClient();
+        const client = this.clientService.getClient(isPublicMirror);
 
         // creating the transaction...
         const transaction = new TopicMessageQuery()

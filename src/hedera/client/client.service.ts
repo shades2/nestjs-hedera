@@ -15,6 +15,8 @@ export class ClientService {
    * Client
    */
   private client: Client;
+  // temp bypass to resolve HCS ResetConnection from custom mirror nodes...
+  private signatureClient: Client;
 
   /**
    * Single IOperator
@@ -61,6 +63,7 @@ export class ClientService {
 
     // Create our connection to the Hedera network...
     this.client = this.getClient();
+    this.signatureClient = this.getClient(true);
     this.operator = this.getNodeOperator();
   }
 
@@ -69,33 +72,35 @@ export class ClientService {
    * @returns random operator...
    */
   @OnEvent('client.invalid_node_operator')
-  getClient(): Client {
+  getClient(isPublicMirror?: boolean): Client {
+    let client = null;
+
     switch(this.network)  {
       case 'testnet':
-        this.client = Client.forTestnet();
+        client = Client.forTestnet();
 
-        if(this.mirrorNode.grpc) {
-          this.client.setMirrorNetwork(this.mirrorNode.grpc);
+        if(this.mirrorNode.grpc && !isPublicMirror) {
+          client.setMirrorNetwork(this.mirrorNode.grpc);
         }
         break;
       case 'mainnet':
-        this.client = Client.forMainnet();
+        client = Client.forMainnet();
 
-        if(this.mirrorNode.grpc) {
-          this.client.setMirrorNetwork(this.mirrorNode.grpc);
+        if(this.mirrorNode.grpc && !isPublicMirror) {
+          client.setMirrorNetwork(this.mirrorNode.grpc);
         } else {
-          this.client.setMirrorNetwork(`https://mainnet-public.mirrornode.hedera.com:443`);
+          client.setMirrorNetwork(`https://mainnet-public.mirrornode.hedera.com:443`);
         }
         break;
       case 'custom':
-        this.client = Client.forNetwork(this.custom.node)
+        client = Client.forNetwork(this.custom.node)
           .setMirrorNetwork(this.custom.mirror);
         break;
     }
 
     this.operator = this.operators[Math.floor(Math.random() * this.operators.length)];
-    this.client.setOperator(this.operator.accountId, this.operator.privateKey);
-    return this.client;
+    client.setOperator(this.operator.accountId, this.operator.privateKey);
+    return client;
   }
 
   generateCustomClient(accountId: string, privateKey: string, environment: string): Client {
@@ -106,8 +111,8 @@ export class ClientService {
         client = Client.forTestnet();
         break;
       case 'mainnet':
-        client = Client.forMainnet();
-        this.client.setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443");
+        client = Client.forMainnet()
+          .setMirrorNetwork("mainnet-public.mirrornode.hedera.com:443");
         break;
       case 'custom':
         client = Client.forNetwork(this.custom.node).setMirrorNetwork(this.custom.mirror);
