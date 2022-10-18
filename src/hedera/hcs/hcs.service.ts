@@ -254,10 +254,11 @@ export class HcsService {
    */
   getMessages(
     topicId: TopicId,
-    callback: (message: any) => void,
+    callbackSuccess: (message: TopicMessage) => void,
     start?: number,
     end?: number,
-    limit?: number
+    limit?: number,
+    callbackError?: (message: TopicMessage, error: Error) => void
   ): Promise<SubscriptionHandle> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -281,10 +282,8 @@ export class HcsService {
 
         let subscription = transaction.subscribe(
           client,
-          function(message, error) {
-            reject(error)
-          },
-          (message) => callback(message)
+          (message, error) => callbackError(message, error),
+          (message) => callbackSuccess(message)
         );
 
         resolve(subscription);
