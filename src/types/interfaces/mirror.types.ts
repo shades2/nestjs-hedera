@@ -4,7 +4,7 @@
 export interface IMirrorNode {
 
   /**
-   * URL string
+   * REST URL string
    */
   url: string
 
@@ -12,4 +12,9 @@ export interface IMirrorNode {
    * API string
    */
   apiKey?: string
+
+    /**
+   * GRPC ULR string
+   */
+  grpc?: string
 }

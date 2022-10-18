@@ -74,18 +74,18 @@ export class ClientService {
       case 'testnet':
         this.client = Client.forTestnet();
 
-        if(!this.mirrorNode.url.includes('mirrornode.hedera.com')) {
-          this.client.setMirrorNetwork(`grpc.testnet.arkhia.io:443`);
+        if(this.mirrorNode.grpc) {
+          this.client.setMirrorNetwork(this.mirrorNode.grpc);
         }
         break;
       case 'mainnet':
         this.client = Client.forMainnet();
 
-        if(!this.mirrorNode.url.includes('mirrornode.hedera.com')) {
-          this.client.setMirrorNetwork(`grpc.mainnet.arkhia.io:443`);
+        if(this.mirrorNode.grpc) {
+          this.client.setMirrorNetwork(this.mirrorNode.grpc);
         } else {
           this.client.setMirrorNetwork(`https://mainnet-public.mirrornode.hedera.com:443`);
-        }        
+        }
         break;
       case 'custom':
         this.client = Client.forNetwork(this.custom.node)
