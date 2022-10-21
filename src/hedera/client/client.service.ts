@@ -89,7 +89,7 @@ export class ClientService {
         if(this.mirrorNode.grpc && !isPublicMirror) {
           client.setMirrorNetwork(this.mirrorNode.grpc);
         } else {
-          client.setMirrorNetwork(`https://mainnet-public.mirrornode.hedera.com:443`);
+          client.setMirrorNetwork(`mainnet-public.mirrornode.hedera.com:443`);
         }
         break;
       case 'custom':
